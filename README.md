@@ -3,7 +3,7 @@
 ### YOLO model
 
 
-[![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)](https://travis-ci.org/joemccann/dillinger)
+[![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)](https://pjreddie.com/darknet/yolo/)
 
 YOLO is a Object Recogniser Model that can choose between 80 different objects, they are the next:
 
@@ -89,7 +89,17 @@ YOLO is a Object Recogniser Model that can choose between 80 different objects, 
  - toothbrush
 
 ## Important Web Pages
- - YOLO offficial web page: https://pjreddie.com/darknet/yolo/
-> As you can see on the image below, the files downloaded is this case were for images 608*608
+ - YOLO official web page: https://pjreddie.com/darknet/yolo/
+> As you can see on the image below, the files downloaded in this case were for size images of 608*608
 
 ![YOLO](https://user-images.githubusercontent.com/86843637/195421887-e9b48352-4ab4-45ce-8ad5-9054f4668d6f.png)
+
+ - Example to understand more about Yolo with Java and Python: https://gurzu.com/blog/YOLO_v3_From_Python_To_Java/
+
+ ## Download the necesary Libraries or IDES
+
+  - OpenCV - 4.5.5: https://opencv.org/releases/
+  - Intellij: https://www.jetbrains.com/es-es/idea/download/#section=windows
+
+## Important Note
+> the file yolov3.weghts must be downloaded from official YOLO web page and must be paste in the folder OR-YOLOImages
