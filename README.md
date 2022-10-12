@@ -92,4 +92,4 @@ YOLO is a Object Recogniser Model that can choose between 80 different objects, 
  - YOLO offficial web page: https://pjreddie.com/darknet/yolo/
 > As you can see on the image below, the files downloaded is this case were for images 608*608
 
-![YOLO Options](https://drive.google.com/file/d/1_ZHq2zirzMSVMliLDuqFoKovEPGJ9R_e/view?usp=sharing)
+![YOLO](https://user-images.githubusercontent.com/86843637/195421887-e9b48352-4ab4-45ce-8ad5-9054f4668d6f.png)
