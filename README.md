@@ -102,4 +102,4 @@ YOLO is a Object Recogniser Model that can choose between 80 different objects, 
   - Intellij: https://www.jetbrains.com/es-es/idea/download/#section=windows
 
 ## Important Note
-> the file yolov3.weghts must be downloaded from official YOLO web page and must be paste in the folder OR-YOLOImages
+> the file yolov3.weights must be downloaded from official YOLO web page and must be paste in the folder OR-YOLOImages
