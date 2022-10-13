@@ -14,9 +14,7 @@ import java.util.stream.Stream;
 
 @Service
 public class FilesStorageServiceImpl implements FilesStorageService{
-
     private final Path root = Paths.get("uploads");
-
     @Override
     public void init() {
         try {
@@ -30,10 +28,10 @@ public class FilesStorageServiceImpl implements FilesStorageService{
 
     @Override
     public Path save(MultipartFile file) {
-        String videoPath = String.valueOf(System.currentTimeMillis());
+        String framesPath = String.valueOf(System.currentTimeMillis());
         try {
-            Files.createDirectory(Paths.get("uploads", videoPath));
-            Path uploadsPath = Paths.get("uploads", videoPath, file.getOriginalFilename());
+            Files.createDirectory(Paths.get("uploads", framesPath));
+            Path uploadsPath = Paths.get("uploads", framesPath, file.getOriginalFilename());
             Files.copy(file.getInputStream(), uploadsPath);
             return Paths.get(root.toAbsolutePath().toFile().getAbsolutePath(), file.getOriginalFilename());
         } catch (Exception e) {
