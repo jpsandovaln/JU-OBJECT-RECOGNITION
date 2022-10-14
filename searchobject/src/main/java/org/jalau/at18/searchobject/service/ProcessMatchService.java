@@ -11,7 +11,7 @@ public class ProcessMatchService {
     @Autowired
     NotifyService notifyService;
 
-    public void processMatches(List<MatchInfo> matches) {
-        notifyService.notify(matches);
+    public void processMatches(List<MatchInfo> matches, String notifierType, String recipient) {
+        notifyService.notifyService(matches, notifierType, recipient);
     }
 }

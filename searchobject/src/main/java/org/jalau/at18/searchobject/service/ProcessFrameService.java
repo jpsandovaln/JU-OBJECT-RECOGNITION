@@ -1,29 +1,28 @@
 package org.jalau.at18.searchobject.service;
 
 import org.jalau.at18.searchobject.model.MatchInfo;
-import org.jalau.at18.searchobject.model.ModelRecognizer;
-import org.jalau.at18.searchobject.model.VerifyModelRecognizer;
+import org.jalau.at18.searchobject.modelrecognizer.ModelRecognizer;
+import org.jalau.at18.searchobject.modelrecognizer.VerifyModelRecognizer;
 import org.springframework.stereotype.Service;
 
 import java.nio.file.Path;
-import java.util.ArrayList;
+import java.nio.file.Paths;
 import java.util.List;
 
 @Service
 public class ProcessFrameService {
-    // The modelo needs to analize each frame, according the criteria
-    // should be returned a list of frames that match with the criteria
-
     public List<MatchInfo> processFrameAccordingCriteria(Path zipFilePath,
                                                          String searchCriteria,
                                                          int occurrencyPercentage,
                                                          String modelObjectRecognizer) {
-
-
+        // Verifying the model
         VerifyModelRecognizer verifyModelRecognizer = new VerifyModelRecognizer();
         ModelRecognizer modelRecognizer = verifyModelRecognizer.getModelRecognizer(modelObjectRecognizer);
-        Path unzipFolderPath = null;
-        //UnzipUtil.unzip(zipFilePath, unzipFolderPath);
+
+        // Here we need unzip the folder with frames(images) and after return the path of the folder
+        // UnzipUtil.unzip(zipFilePath, unzipFolderPath);
+        Path unzipFolderPath = Paths.get("c:\\Users\\maria\\JU-OBJECT-RECOGNITION\\uploads\\1665750878176\\");
+
         List<MatchInfo> matchInfos = modelRecognizer.matching(unzipFolderPath, searchCriteria, occurrencyPercentage);
         return matchInfos;
 
@@ -37,7 +36,6 @@ public class ProcessFrameService {
         matches.add(new MatchInfo("120.png", 85.9));
         matches.add(new MatchInfo("152.png", 93.2));
         return matches;
-
          */
     }
 }

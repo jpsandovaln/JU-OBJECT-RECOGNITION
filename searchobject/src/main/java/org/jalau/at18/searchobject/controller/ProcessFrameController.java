@@ -20,7 +20,6 @@ import java.util.List;
 public class ProcessFrameController {
     @Autowired
     FilesStorageService storageService;
-
     @Autowired
     ProcessFrameService processFrameService;
     @Autowired
@@ -30,9 +29,10 @@ public class ProcessFrameController {
     public ResponseEntity<List<MatchInfo>> readDataCriteriaFrame(@RequestParam("file") MultipartFile file,
                                                                  @RequestParam String searchCriteria,
                                                                  @RequestParam int occurrencyPercentage,
-                                                                 @RequestParam String modelObjectRecognizer) {
-        // save file, in this case now we must read a folder compress with the frames
-        // at the same time, we got the path where the folder is saved
+                                                                 @RequestParam String modelObjectRecognizer,
+                                                                 @RequestParam String notifierType,
+                                                                 @RequestParam String recipient) {
+        // save file, it is saving the zip file and getting the path
         Path path = storageService.save(file);
 
         // get the route file
@@ -42,7 +42,7 @@ public class ProcessFrameController {
                 occurrencyPercentage,
                 modelObjectRecognizer);
 
-        processMatchService.processMatches(matchInfos);
+        processMatchService.processMatches(matchInfos, notifierType, recipient);
 
         return ResponseEntity.status(HttpStatus.OK).body(matchInfos);
     }
