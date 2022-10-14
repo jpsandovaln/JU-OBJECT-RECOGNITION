@@ -15,7 +15,7 @@ public class YOLOmodel {
     private ArrayList<Double> scores;
     private ArrayList<String> matchImage;
 
-    YOLOmodel(Path pathFolder, String searchCriteria, int ocurrencyPercentage) {
+    public YOLOmodel(Path pathFolder, String searchCriteria, int ocurrencyPercentage) {
         this.pathFolder = pathFolder;
         this.searchCriteria = searchCriteria;
         this.ocurrencyPercentage = ocurrencyPercentage;
