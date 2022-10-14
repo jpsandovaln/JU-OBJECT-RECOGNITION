@@ -1,17 +1,27 @@
 package org.jalau.at18.searchobject.model;
 
 public class MatchInfo {
-    private FrameInfo info;
+    private String name;
+    private Double score;
 
-    public MatchInfo(FrameInfo info) {
-        this.info = info;
+    public MatchInfo(String name, Double score) {
+        this.name = name;
+        this.score = score;
     }
 
-    public FrameInfo getInfo() {
-        return info;
+    public String getName() {
+        return name;
     }
 
-    public void setInfo(FrameInfo info) {
-        this.info = info;
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public Double getScore() {
+        return score;
+    }
+
+    public void setScore(Double score) {
+        this.score = score;
     }
 }

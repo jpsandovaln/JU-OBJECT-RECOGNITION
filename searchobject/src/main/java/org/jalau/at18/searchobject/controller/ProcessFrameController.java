@@ -5,7 +5,6 @@ import org.jalau.at18.searchobject.model.MatchInfo;
 import org.jalau.at18.searchobject.service.FilesStorageService;
 import org.jalau.at18.searchobject.service.ProcessFrameService;
 import org.jalau.at18.searchobject.service.ProcessMatchService;
-import org.jalau.at18.searchobject.service.ProcessVideoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -22,8 +21,6 @@ public class ProcessFrameController {
     @Autowired
     FilesStorageService storageService;
     @Autowired
-    ProcessVideoService processVideoService;
-    @Autowired
     ProcessFrameService processFrameService;
     @Autowired
     ProcessMatchService processMatchService;
@@ -32,10 +29,12 @@ public class ProcessFrameController {
     public ResponseEntity<List<MatchInfo>> readDataCriteriaFrame(@RequestParam("file") MultipartFile file,
                                                                  @RequestParam String searchCriteria,
                                                                  @RequestParam int occurrencyPercentage,
-                                                                 @RequestParam String modelObjectRecognizer) {
-        // save file, in this case now we must read a folder compress with the drames
-        // at the same time, we got the path where the folder is saved
+                                                                 @RequestParam String modelObjectRecognizer,
+                                                                 @RequestParam String notifierType,
+                                                                 @RequestParam String recipient) {
+        // save file, it is saving the zip file and getting the path
         Path path = storageService.save(file);
+
         // get the route file
         FileSource fileSource = new FileSource(path.toFile().getAbsolutePath());
 
@@ -43,7 +42,7 @@ public class ProcessFrameController {
                 occurrencyPercentage,
                 modelObjectRecognizer);
 
-        processMatchService.processMatches(matchInfos);
+        processMatchService.processMatches(matchInfos, notifierType, recipient);
 
         return ResponseEntity.status(HttpStatus.OK).body(matchInfos);
     }

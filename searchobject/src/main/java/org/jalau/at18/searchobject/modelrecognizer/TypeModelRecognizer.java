@@ -1,9 +1,9 @@
-package org.jalau.at18.searchobject.model;
+package org.jalau.at18.searchobject.modelrecognizer;
 
 public enum TypeModelRecognizer {
     YOLO("yolo"),
     SSD("ssd"),
-    ZOOMODEL("zoomodel");
+    OBJECTDETECTION("objectdetection");
     private String model;
 
     TypeModelRecognizer(String model) {
