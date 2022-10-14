@@ -1,6 +1,7 @@
 package org.jalau.at18.searchobject.controller;
 
-import org.jalau.at18.searchobject.model.*;
+import org.jalau.at18.searchobject.model.FileSource;
+import org.jalau.at18.searchobject.model.MatchInfo;
 import org.jalau.at18.searchobject.service.FilesStorageService;
 import org.jalau.at18.searchobject.service.ProcessFrameService;
 import org.jalau.at18.searchobject.service.ProcessMatchService;
@@ -17,7 +18,7 @@ import java.nio.file.Path;
 import java.util.List;
 
 @RestController
-public class ProcessVideoController {
+public class ProcessFrameController {
     @Autowired
     FilesStorageService storageService;
     @Autowired
@@ -27,21 +28,20 @@ public class ProcessVideoController {
     @Autowired
     ProcessMatchService processMatchService;
 
-    @PostMapping("/processVideo")
-    public ResponseEntity<List<MatchInfo>> readDataCriteriaVideo(@RequestParam("file") MultipartFile file,
+    @PostMapping("/processFrame")
+    public ResponseEntity<List<MatchInfo>> readDataCriteriaFrame(@RequestParam("file") MultipartFile file,
                                                                  @RequestParam String searchCriteria,
                                                                  @RequestParam int occurrencyPercentage,
                                                                  @RequestParam String modelObjectRecognizer) {
+        // save file, in this case now we must read a folder compress with the drames
+        // at the same time, we got the path where the folder is saved
         Path path = storageService.save(file);
         // get the route file
         FileSource fileSource = new FileSource(path.toFile().getAbsolutePath());
-        List<FrameInfo> frameInfos = processVideoService.processVideoInFrames(fileSource);
 
-        List<MatchInfo> matchInfos = processFrameService.processFrameAccordingCriteria(frameInfos,
-                searchCriteria,
+        List<MatchInfo> matchInfos = processFrameService.processFrameAccordingCriteria(path, searchCriteria,
                 occurrencyPercentage,
-                modelObjectRecognizer
-        );
+                modelObjectRecognizer);
 
         processMatchService.processMatches(matchInfos);
 
