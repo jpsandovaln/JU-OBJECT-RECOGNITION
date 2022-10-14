@@ -10,12 +10,14 @@ sourceCompatibility = '11'
 
 repositories {
 	mavenCentral()
+	mavenLocal()
 }
 
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	implementation 'org.bytedeco:javacv:1.0'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	implementation group: "com.twilio.sdk", name: "twilio", version: "9.0.1"
 }
 
 tasks.named('test') {

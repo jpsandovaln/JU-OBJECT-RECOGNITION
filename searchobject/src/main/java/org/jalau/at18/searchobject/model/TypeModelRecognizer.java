@@ -3,7 +3,7 @@ package org.jalau.at18.searchobject.model;
 public enum TypeModelRecognizer {
     YOLO("yolo"),
     SSD("ssd"),
-    ZOOMODEL("zoomodel");
+    OBJECTDETECTION("objectdetection");
     private String model;
 
     TypeModelRecognizer(String model) {
