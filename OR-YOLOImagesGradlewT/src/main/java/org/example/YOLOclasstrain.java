@@ -8,14 +8,14 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class YOLOmodel {
+public class YOLOclasstrain {
     private Path pathFolder;
     private String searchCriteria;
     private int ocurrencyPercentage;
     private ArrayList<Double> scores;
     private ArrayList<String> matchImage;
 
-    public YOLOmodel(Path pathFolder, String searchCriteria, int ocurrencyPercentage) {
+    public YOLOclasstrain(Path pathFolder, String searchCriteria, int ocurrencyPercentage) {
         this.pathFolder = pathFolder;
         this.searchCriteria = searchCriteria;
         this.ocurrencyPercentage = ocurrencyPercentage;
@@ -34,6 +34,5 @@ public class YOLOmodel {
             }
         }
         return Arrays.asList(scores, matchImage);
-
     }
 }
