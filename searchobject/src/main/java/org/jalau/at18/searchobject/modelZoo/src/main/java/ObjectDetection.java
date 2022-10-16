@@ -1,15 +1,10 @@
- 
-/*
- * Copyright 2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+/**
+ * Copyright (c) 2022 Jala University.
  *
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance
- * with the License. A copy of the License is located at
- *
- * http://aws.amazon.com/apache2.0/
- *
- * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES
- * OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
- * and limitations under the License.
+ * This software is the confidential and proprietary information of Jala University
+ * ("Confidential Information"). You shall not disclose such Confidential
+ * Information and shall use it only in accordance with the terms of the
+ * license agreement you entered into with Jala University
  */
 
 import ai.djl.Application;
@@ -33,8 +28,11 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 
 /**
- * An example of inference using an object detection model.
+ * Performs a search for the object within the image,
+ * and what percentage of probability exists.
  *
+ * @author Jose Romay
+ * @version 1.0
  */
 public class ObjectDetection {
 
@@ -79,38 +77,22 @@ public class ObjectDetection {
             try (Predictor<Image, DetectedObjects> predictor = model.newPredictor()) {
 
                 DetectedObjects detection = predictor.predict(img);
-                System.out.println(imageFile.getFileName());
-                System.out.println(detection.getProbabilities());
-                Boolean isProbably= false;
 
-                for (Double item: detection.getProbabilities()) {
-                    if(item>(scoreFind*0.01)){
-                        isProbably= true;
+
+
+
+                if (detection.get(objFind)!= null) {
+                    for (Double item : detection.getProbabilities()) {
+                        if (item > (scoreFind * 0.01)) {
+                            System.out.println("frame: " + imageFile.getFileName() + " -> score: " + detection.getProbabilities());
+                            //return matchInfo(imageFile.getFileName(),score)
+                            break;
+                        }
                     }
-                }
-                if (isProbably){
-                    saveBoundingBoxImage(objFind,imageFile.getFileName()+"",img, detection);
-                    //return matchInfo(nameFile,score)
                 }
 
                 return detection;
             }
-        }
-    }
-
-    private static void saveBoundingBoxImage(String search, String fileName,Image img, DetectedObjects detection)
-            throws IOException {
-        Path outputDir = Paths.get("build/output");
-        Files.createDirectories(outputDir);
-
-        System.out.println(detection.get(search));
-
-        if (detection.get(search)!= null ){
-            System.out.println(detection.get(search).getClassName());
-            img.drawBoundingBoxes(detection);
-            Path imagePath = outputDir.resolve(fileName);
-            img.save(Files.newOutputStream(imagePath), "png");
-            logger.info("Detected objects image has been saved in: {}", imagePath);
         }
     }
 }

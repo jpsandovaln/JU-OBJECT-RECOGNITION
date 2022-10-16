@@ -13,6 +13,17 @@ import ai.djl.translate.TranslateException;
 import java.io.IOException;
 import java.io.File;
 
+/**
+ * It performs a path of images found at an address,
+ * and sends the image along with a percentage
+ * and an object to be searched
+ * to the ObjectDetection class.
+ *
+ * @author Jose Romay
+ * @version 1.0
+ */
+
+
 public class Main {
 
     public static void main(String[] args) throws ModelException, TranslateException, IOException {
@@ -23,7 +34,7 @@ public class Main {
 
         String[] listImg = folder.list();
         if (listImg == null || listImg.length == 0) {
-            System.out.println("No hay elementos dentro de la carpeta actual");
+            System.out.println("There are no elements inside the current folder");
             return;
         }
         else {
