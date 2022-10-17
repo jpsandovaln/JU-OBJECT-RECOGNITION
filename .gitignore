@@ -1,1 +1,4 @@
 /.idea/
+/OR-YOLOImagesGradlewT/src/main/java/*.weights
+/OR-YOLOImagesGradlewT/src/opencv/
+/YOLO.drawio
