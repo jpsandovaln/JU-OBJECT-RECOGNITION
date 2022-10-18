@@ -21,7 +21,7 @@ public class ProcessFrameService {
 
         // Here we need unzip the folder with frames(images) and after return the path of the folder
         // UnzipUtil.unzip(zipFilePath, unzipFolderPath);
-        Path unzipFolderPath = Paths.get("c:\\Users\\maria\\JU-OBJECT-RECOGNITION\\uploads\\1665750878176\\");
+        Path unzipFolderPath = Paths.get("D:\\Object\\JU-OBJECT-RECOGNITION\\images");
 
         List<MatchInfo> matchInfos = modelRecognizer.matching(unzipFolderPath, searchCriteria, occurrencyPercentage);
         return matchInfos;
