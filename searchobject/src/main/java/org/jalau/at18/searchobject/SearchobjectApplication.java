@@ -11,6 +11,7 @@ import javax.annotation.Resource;
 public class SearchobjectApplication implements CommandLineRunner {
     @Resource
     FilesStorageService storageService;
+    UnzipFile unZipper;
 
     public static void main(String[] args) {
         SpringApplication.run(SearchobjectApplication.class, args);
@@ -19,6 +20,7 @@ public class SearchobjectApplication implements CommandLineRunner {
     // it can receive N parameters of type String.
     @Override
     public void run(String... arg) throws Exception {
+        unZipper.ExecuteUnZip();
         storageService.init();
     }
 }
