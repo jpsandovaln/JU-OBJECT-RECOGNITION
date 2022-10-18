@@ -18,12 +18,13 @@ public class ProcessFrameService {
         // Verifying the model
         VerifyModelRecognizer verifyModelRecognizer = new VerifyModelRecognizer();
         ModelRecognizer modelRecognizer = verifyModelRecognizer.getModelRecognizer(modelObjectRecognizer);
-
+        //System.out.println(zipFilePath);
         // Here we need unzip the folder with frames(images) and after return the path of the folder
         // UnzipUtil.unzip(zipFilePath, unzipFolderPath);
-        Path unzipFolderPath = Paths.get("D:\\Object\\JU-OBJECT-RECOGNITION\\images");
+        //Path unzipFolderPath = Paths.get("unzip");
+        //Path unzipFolderPath = Paths.get("D:\\Object\\JU-OBJECT-RECOGNITION\\images");
 
-        List<MatchInfo> matchInfos = modelRecognizer.matching(unzipFolderPath, searchCriteria, occurrencyPercentage);
+        List<MatchInfo> matchInfos = modelRecognizer.matching(zipFilePath, searchCriteria, occurrencyPercentage);
         return matchInfos;
 
         // to be implemented by

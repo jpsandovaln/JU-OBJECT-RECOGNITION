@@ -2,6 +2,7 @@ package org.jalau.at18.searchobject.service;
 
 import org.springframework.stereotype.Service;
 import org.springframework.util.FileSystemUtils;
+import org.springframework.util.StringUtils;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
@@ -26,14 +27,18 @@ public class FilesStorageServiceImpl implements FilesStorageService{
         }
     }
 
-    @Override
+
     public Path save(MultipartFile file) {
+        String file1 = StringUtils.cleanPath(file.getOriginalFilename());
+        //String framesPath = "";
         String framesPath = String.valueOf(System.currentTimeMillis());
+        System.out.println("frames path: " + framesPath);
         try {
             Files.createDirectory(Paths.get("uploads", framesPath));
             Path uploadsPath = Paths.get("uploads", framesPath, file.getOriginalFilename());
             Files.copy(file.getInputStream(), uploadsPath);
-            return Paths.get(root.toAbsolutePath().toFile().getAbsolutePath(), file.getOriginalFilename());
+            return  uploadsPath;
+            //return Paths.get(root.toAbsolutePath().toFile().getAbsolutePath(), file.getOriginalFilename());
         } catch (Exception e) {
             e.printStackTrace();
             throw new RuntimeException("Could not store the file. Error: " + e.getMessage());
