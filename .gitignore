@@ -2,3 +2,5 @@
 /OR-YOLOImagesGradlewT/src/main/java/*.weights
 /OR-YOLOImagesGradlewT/src/opencv/
 /YOLO.drawio
+### YOLO model
+/searchobject/src/main/resources/YOLOConfigurationFiles/*.weights
