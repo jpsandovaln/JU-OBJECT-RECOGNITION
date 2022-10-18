@@ -10,8 +10,8 @@ import java.util.List;
 public class NotifierWhatsApp implements Notifier {
     @Override
     public void notify(List<MatchInfo> matches, String recipient) {
-        final String ACCOUNT_SID = "AC2d0e1623bc4152f97539e97ae3ba8ee2";
-        final String AUTH_TOKEN = "12d0cbaf1d67aa1809f8aeab6acf3ce6";
+        final String ACCOUNT_SID = "AC59ac8b807b4d14fc0983682b5b784a04";
+        final String AUTH_TOKEN = "2508a77a4584fe7119a03c936c9d1201";
 
         Twilio.init(ACCOUNT_SID, AUTH_TOKEN);
         Message message = Message.creator(new PhoneNumber("whatsapp:" + recipient),
