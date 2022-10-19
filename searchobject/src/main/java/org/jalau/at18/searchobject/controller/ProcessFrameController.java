@@ -3,6 +3,8 @@ package org.jalau.at18.searchobject.controller;
 import org.jalau.at18.searchobject.UnzipFile;
 import org.jalau.at18.searchobject.model.FileSource;
 import org.jalau.at18.searchobject.model.MatchInfo;
+import org.jalau.at18.searchobject.modelrecognizer.ModelRecognizer;
+import org.jalau.at18.searchobject.modelrecognizer.SSD;
 import org.jalau.at18.searchobject.service.FilesStorageService;
 import org.jalau.at18.searchobject.service.ProcessFrameService;
 import org.jalau.at18.searchobject.service.ProcessMatchService;
@@ -37,6 +39,7 @@ public class ProcessFrameController {
         // save file, it is saving the zip file and getting the path
         Path path = storageService.save(file);
         System.out.println(path);
+
         // get the route file
         UnzipFile unzip = new UnzipFile(path);
         //FileSource fileSource = new FileSource(path.toFile().getAbsolutePath());
