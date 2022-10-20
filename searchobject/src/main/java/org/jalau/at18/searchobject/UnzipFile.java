@@ -1,4 +1,6 @@
 package org.jalau.at18.searchobject;
+import org.jalau.at18.searchobject.exception.UnzipFileException;
+
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -21,13 +23,13 @@ public class UnzipFile {
             dir = Path.of(newFile.getParent());
             if (zipEntry.isDirectory()) {
                 if (!newFile.isDirectory() && !newFile.mkdirs()) {
-                    throw new IOException("Failed to create directory " + newFile);
+                    throw new UnzipFileException("Failed to create directory " + newFile);
                 }
             } else {
                 // fix for Windows-created archives
                 File parent = newFile.getParentFile();
                 if (!parent.isDirectory() && !parent.mkdirs()) {
-                    throw new IOException("Failed to create directory " + parent);
+                    throw new UnzipFileException("Failed to create directory " + parent);
                 }
                 // write file content
                 FileOutputStream fos = new FileOutputStream(newFile);
@@ -41,7 +43,7 @@ public class UnzipFile {
         }
         zis.closeEntry();
         zis.close();
-        System.out.println("Unzipping complete");
+        //System.out.println("Unzipping complete");
     }
     public static File newFile(File destinationDir, ZipEntry zipEntry) throws IOException {
         File destFile = new File(destinationDir, zipEntry.getName());
@@ -50,7 +52,7 @@ public class UnzipFile {
         String destFilePath = destFile.getCanonicalPath();
 
         if (!destFilePath.startsWith(destDirPath + File.separator)) {
-            throw new IOException("Entry is outside of the target dir: " + zipEntry.getName());
+            throw new UnzipFileException("Entry is outside of the target dir: " + zipEntry.getName());
         }
         return destFile;
     }
