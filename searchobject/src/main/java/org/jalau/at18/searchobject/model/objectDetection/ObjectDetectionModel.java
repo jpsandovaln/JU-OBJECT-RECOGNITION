@@ -19,8 +19,9 @@ import ai.djl.repository.zoo.ZooModel;
 import ai.djl.training.util.ProgressBar;
 import ai.djl.translate.TranslateException;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.jalau.at18.searchobject.common.logger.At18Logger;
+//import org.slf4j.Logger;
+//import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -29,8 +30,12 @@ import java.nio.file.Paths;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.logging.Logger;
+
+
 public class ObjectDetectionModel {
-    private static final Logger logger = LoggerFactory.getLogger(ObjectDetectionModel.class);
+    //private static final Logger logger = LoggerFactory.getLogger(ObjectDetectionModel.class);
+    private static final Logger logger = At18Logger.getLogger();
     private static String imageDir;
     private static String objFind;
     private static double scoreFind;
@@ -48,7 +53,8 @@ public class ObjectDetectionModel {
 
         fileName = imageDir.split("\\\\")[imageDir.split("\\\\").length-1];
         DetectedObjects detection = ObjectDetectionModel.predict();
-        logger.info("{}", detection);
+        //logger.info("{}", detection);
+        logger.info("{}");
         if (objFind.equals(detection.getClassNames().get(0))) {
             for (int index = 0; index < detection.getNumberOfObjects(); index++) {
                 sumProbabilities += (Double.parseDouble(detection.getProbabilities().get(index).toString()) * 100);
