@@ -1,5 +1,6 @@
 package org.jalau.at18.searchobject.service;
 
+import org.jalau.at18.searchobject.exception.FileStorageException;
 import org.springframework.stereotype.Service;
 import org.springframework.util.FileSystemUtils;
 import org.springframework.util.StringUtils;
@@ -23,7 +24,7 @@ public class FilesStorageServiceImpl implements FilesStorageService{
                 Files.createDirectory(root);
             }
         } catch (IOException e) {
-            throw new RuntimeException("Could not initialize folder for upload!");
+            throw new FileStorageException("Could not initialize folder for upload!");
         }
     }
 
@@ -41,7 +42,7 @@ public class FilesStorageServiceImpl implements FilesStorageService{
             //return Paths.get(root.toAbsolutePath().toFile().getAbsolutePath(), file.getOriginalFilename());
         } catch (Exception e) {
             e.printStackTrace();
-            throw new RuntimeException("Could not store the file. Error: " + e.getMessage());
+            throw new FileStorageException("Could not store the file. Error: " + e.getMessage());
         }
     }
 
@@ -55,7 +56,7 @@ public class FilesStorageServiceImpl implements FilesStorageService{
         try {
             return Files.walk(this.root, 1).filter(path -> !path.equals(this.root)).map(this.root::relativize);
         } catch (IOException e) {
-            throw new RuntimeException("Could not load the files!");
+            throw new FileStorageException("Could not load the files!");
         }
     }
 }
