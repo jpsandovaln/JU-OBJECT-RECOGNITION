@@ -1,6 +1,7 @@
 package org.jalau.at18.searchobject.controller;
 
 import org.jalau.at18.searchobject.UnzipFile;
+import org.jalau.at18.searchobject.common.logger.At18Logger;
 import org.jalau.at18.searchobject.model.FileSource;
 import org.jalau.at18.searchobject.model.MatchInfo;
 import org.jalau.at18.searchobject.modelrecognizer.ModelRecognizer;
@@ -19,9 +20,11 @@ import org.springframework.web.multipart.MultipartFile;
 import java.io.IOException;
 import java.nio.file.Path;
 import java.util.List;
+import java.util.logging.Logger;
 
 @RestController
 public class ProcessFrameController {
+    private static final Logger LOG = At18Logger.getLogger();
     @Autowired
     FilesStorageService storageService;
     @Autowired
@@ -38,6 +41,7 @@ public class ProcessFrameController {
                                                                  @RequestParam String recipient) throws IOException {
         // save file, it is saving the zip file and getting the path
         Path path = storageService.save(file);
+        LOG.info(path.toString());
         // get the route file
         UnzipFile unzip = new UnzipFile(path);
         List<MatchInfo> matchInfos = processFrameService.processFrameAccordingCriteria(unzip.getPath(), searchCriteria,
