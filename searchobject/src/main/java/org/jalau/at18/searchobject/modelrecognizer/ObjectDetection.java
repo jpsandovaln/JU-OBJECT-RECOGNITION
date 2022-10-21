@@ -18,6 +18,10 @@ public class ObjectDetection implements ModelRecognizer {
     public List<MatchInfo> matching(Path pathFolder, String searchCriteria, int occurrencyPercentage) {
         List<MatchInfo> matches = new ArrayList<>();
         try {
+<<<<<<< HEAD
+=======
+
+>>>>>>> be98d6e (ZooModel integration and add new logic to merge with the MatchInfo)
             File file = pathFolder.toFile();
             String[] listImg = file.list();
             if (listImg == null || listImg.length == 0) {
@@ -25,8 +29,14 @@ public class ObjectDetection implements ModelRecognizer {
             } else {
                 for (int j=0;j< listImg.length;j++){
                     object = new ObjectDetectionModel(searchCriteria,80,pathFolder+"\\"+listImg[j]);
+<<<<<<< HEAD
                     String avg = String.valueOf(object.getDataList().get(listImg[j].toString()));
                     matches.add(new MatchInfo(listImg[j],Double.parseDouble(avg)));
+=======
+                    String cadena = String.valueOf(object.getDataList().get(listImg[j].toString()));
+                    matches.add(new MatchInfo(listImg[j],Double.parseDouble(cadena)));
+                    System.out.println(cadena+ "***");
+>>>>>>> be98d6e (ZooModel integration and add new logic to merge with the MatchInfo)
                 }
             }
         } catch (Exception e) {
