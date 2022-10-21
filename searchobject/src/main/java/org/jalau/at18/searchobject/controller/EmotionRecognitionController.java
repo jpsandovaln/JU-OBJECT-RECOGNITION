@@ -1,4 +1,5 @@
 package org.jalau.at18.searchobject.controller;
+import org.jalau.at18.searchobject.model.MatchInfo;
 import org.jalau.at18.searchobject.service.EmotionRecognitionService;
 import org.jalau.at18.searchobject.service.FilesStorageService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,9 +23,10 @@ public class EmotionRecognitionController{
     @Autowired
     EmotionRecognitionService emotionRecognitionService;
     @PostMapping("/emotionRecognition")
-    public ResponseEntity <List<String>> readData(@RequestParam("file") MultipartFile file) throws IOException {
+    public ResponseEntity <MatchInfo> readData(@RequestParam("file") MultipartFile file,
+                                               @RequestParam String token) throws IOException {
         Path path = storageService.save(file);
-        List<String> data = emotionRecognitionService.processImage(path.getParent());
+        MatchInfo data = emotionRecognitionService.processImage(path.getParent(), token);
         return ResponseEntity.status(HttpStatus.OK).body(data);
     }
 }
