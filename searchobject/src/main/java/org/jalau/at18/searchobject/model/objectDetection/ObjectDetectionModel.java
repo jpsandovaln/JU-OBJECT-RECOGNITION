@@ -20,8 +20,6 @@ import ai.djl.training.util.ProgressBar;
 import ai.djl.translate.TranslateException;
 
 import org.jalau.at18.searchobject.common.logger.At18Logger;
-//import org.slf4j.Logger;
-//import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -34,7 +32,6 @@ import java.util.logging.Logger;
 
 
 public class ObjectDetectionModel {
-    //private static final Logger logger = LoggerFactory.getLogger(ObjectDetectionModel.class);
     private static final Logger logger = At18Logger.getLogger();
     private static String imageDir;
     private static String objFind;

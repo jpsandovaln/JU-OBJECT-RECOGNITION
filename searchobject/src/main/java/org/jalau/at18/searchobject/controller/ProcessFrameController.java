@@ -42,7 +42,6 @@ public class ProcessFrameController {
         LOG.info(path.toString());
         // get the route file
         UnzipFile unzip = new UnzipFile(path);
-        //FileSource fileSource = new FileSource(path.toFile().getAbsolutePath());
         List<MatchInfo> matchInfos = processFrameService.processFrameAccordingCriteria(unzip.getPath(), searchCriteria,
                 occurrencyPercentage,
                 modelObjectRecognizer);
