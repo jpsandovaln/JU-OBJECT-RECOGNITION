@@ -24,14 +24,12 @@ public class YOLOclasstrain {
     }
 
     public List<ArrayList<? extends Serializable>> getImageAndScore(){
-        for (int i = 0; i <= pathFolder.getNameCount(); i++){
-            String image = pathFolder + String.format("00-00-0%s.jpg", i);
+        for (int i = 0; i < pathFolder.getNameCount(); i++){
+            String image = pathFolder + "\\" + String.format("00-00-0%s.png", i);
             yoloImage yoloForImage = new yoloImage(image, ocurrencyPercentage);
             yoloForImage.loadPipeline();
-            if (yoloForImage.getTheResult(searchCriteria) >= ocurrencyPercentage){
-                scores.add(yoloForImage.getTheResult(searchCriteria));
-                matchImage.add(String.format("00-00-0%s.jpg", i));
-            }
+            scores.add(yoloForImage.getTheResult(searchCriteria));
+            matchImage.add(String.format("00-00-0%s.jpg", i));
         }
         return Arrays.asList(scores, matchImage);
     }
