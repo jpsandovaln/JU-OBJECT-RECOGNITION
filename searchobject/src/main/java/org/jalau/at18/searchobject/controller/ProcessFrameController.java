@@ -4,6 +4,8 @@ import org.jalau.at18.searchobject.UnzipFile;
 import org.jalau.at18.searchobject.common.logger.At18Logger;
 import org.jalau.at18.searchobject.model.FileSource;
 import org.jalau.at18.searchobject.model.MatchInfo;
+import org.jalau.at18.searchobject.modelrecognizer.ModelRecognizer;
+import org.jalau.at18.searchobject.modelrecognizer.SSD;
 import org.jalau.at18.searchobject.service.FilesStorageService;
 import org.jalau.at18.searchobject.service.ProcessFrameService;
 import org.jalau.at18.searchobject.service.ProcessMatchService;
@@ -47,7 +49,6 @@ public class ProcessFrameController {
                 modelObjectRecognizer);
 
         processMatchService.processMatches(matchInfos, notifierType, recipient);
-
         return ResponseEntity.status(HttpStatus.OK).body(matchInfos);
     }
 }
