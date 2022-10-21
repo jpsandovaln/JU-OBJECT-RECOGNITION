@@ -60,8 +60,12 @@ import java.util.logging.Logger;
 
 
 public class ObjectDetectionModel {
+<<<<<<< HEAD
     private static final Logger logger = At18Logger.getLogger();
 >>>>>>> 15f7662 (Create common folder and add at18logger class, remplace logger of the ObjectDetectionModel to the at18logger)
+=======
+    //private static final Logger logger = At18Logger.getLogger();
+>>>>>>> cd3f324 (Yolo Model integration and code refactor)
     private static String imageDir;
     private static String objFind;
     private static double scoreFind;
@@ -88,8 +92,12 @@ public class ObjectDetectionModel {
 >>>>>>> be98d6e (ZooModel integration and add new logic to merge with the MatchInfo)
 =======
         //logger.info("{}", detection);
+<<<<<<< HEAD
         logger.info("{}");
 >>>>>>> 15f7662 (Create common folder and add at18logger class, remplace logger of the ObjectDetectionModel to the at18logger)
+=======
+        //logger.info("{}");
+>>>>>>> cd3f324 (Yolo Model integration and code refactor)
         if (objFind.equals(detection.getClassNames().get(0))) {
             for (int index = 0; index < detection.getNumberOfObjects(); index++) {
                 sumProbabilities += (Double.parseDouble(detection.getProbabilities().get(index).toString()) * 100);
