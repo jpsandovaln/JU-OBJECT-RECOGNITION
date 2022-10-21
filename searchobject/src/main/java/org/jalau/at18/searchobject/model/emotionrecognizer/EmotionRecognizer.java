@@ -1,5 +1,6 @@
 package org.jalau.at18.searchobject.model.emotionrecognizer;
 
+import com.ctc.wstx.shaded.msv_core.util.Uri;
 import com.google.cloud.vision.v1.AnnotateImageRequest;
 import com.google.cloud.vision.v1.AnnotateImageResponse;
 import com.google.cloud.vision.v1.BatchAnnotateImagesResponse;
@@ -8,17 +9,37 @@ import com.google.cloud.vision.v1.Feature;
 import com.google.cloud.vision.v1.Image;
 import com.google.cloud.vision.v1.ImageAnnotatorClient;
 import com.google.protobuf.ByteString;
+
+import net.lingala.zip4j.util.Raw;
+
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Base64;
 import java.util.List;
 
-public class EmotionRecognizer {
+import org.apache.commons.io.FileUtils;
 
-    public static void main(String[] args) throws IOException {
-        // TODO(developer): Replace these variables before running the sample.
-        String filePath = "C:\\Users\\Sergio-Depa\\Desktop\\AT18\\Coding AT18\\practice_git\\dev102\\emotionrecognizer\\src\\main\\resources\\joy.jpg";
-        detectFaces(filePath);
+import java.net.URI;
+import java.net.http.HttpRequest;
+
+public class EmotionRecognizer {
+    private static final String URL_API = "https://vision.googleapis.com/v1/images:annotate";
+    private static String tokenApi;
+    private static String path;
+    private static String filePath = "C:\\Users\\Sergio-Depa\\Desktop\\AT18\\Coding AT18\\practice_git\\dev102\\emotionrecognizer\\src\\main\\resources\\joy.jpg";
+
+    public EmotionRecognizer(String path, String tokenApi) throws IOException {
+        this.path = path;
+        this.tokenApi = tokenApi;
+        convertImage();
+    }
+
+    public String convertImage() throws IOException {
+        byte[] fileContent = FileUtils.readFileToByteArray(new File(filePath));
+        String encodedString = Base64.getEncoder().encodeToString(fileContent);
+        return encodedString;
     }
 
     // Detects faces in the specified local image.
