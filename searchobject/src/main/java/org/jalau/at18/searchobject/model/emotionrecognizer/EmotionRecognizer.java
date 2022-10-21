@@ -1,84 +1,67 @@
 package org.jalau.at18.searchobject.model.emotionrecognizer;
 
-import com.ctc.wstx.shaded.msv_core.util.Uri;
-import com.google.cloud.vision.v1.AnnotateImageRequest;
-import com.google.cloud.vision.v1.AnnotateImageResponse;
-import com.google.cloud.vision.v1.BatchAnnotateImagesResponse;
-import com.google.cloud.vision.v1.FaceAnnotation;
-import com.google.cloud.vision.v1.Feature;
-import com.google.cloud.vision.v1.Image;
-import com.google.cloud.vision.v1.ImageAnnotatorClient;
-import com.google.protobuf.ByteString;
-
-import net.lingala.zip4j.util.Raw;
-
 import java.io.File;
-import java.io.FileInputStream;
 import java.io.IOException;
-import java.util.ArrayList;
+
+import java.io.InputStream;
+import java.io.OutputStreamWriter;
+import java.net.HttpURLConnection;
+import java.net.URL;
 import java.util.Base64;
-import java.util.List;
+import java.util.Scanner;
 
 import org.apache.commons.io.FileUtils;
+import com.google.gson.Gson;
 
-import java.net.URI;
-import java.net.http.HttpRequest;
+class EmotionRecognizer {
+    private static final int JOY_POSITION = 12;
+    private static final int SORROW_POSITION = 11;
+    private static final int ANGER_POSITION = 10;
+    private static final int SURPRISE_POSITION = 9;
 
-public class EmotionRecognizer {
-    private static final String URL_API = "https://vision.googleapis.com/v1/images:annotate";
-    private static String tokenApi;
-    private static String path;
-    private static String filePath = "C:\\Users\\Sergio-Depa\\Desktop\\AT18\\Coding AT18\\practice_git\\dev102\\emotionrecognizer\\src\\main\\resources\\joy.jpg";
-
-    public EmotionRecognizer(String path, String tokenApi) throws IOException {
-        this.path = path;
-        this.tokenApi = tokenApi;
-        convertImage();
-    }
-
-    public String convertImage() throws IOException {
+    public String convertImage(String filePath) throws IOException {
         byte[] fileContent = FileUtils.readFileToByteArray(new File(filePath));
         String encodedString = Base64.getEncoder().encodeToString(fileContent);
-        return encodedString;
+        String firstPart = "{\n\"requests\":[\n{\n\"image\":{\n\"content\":\"";
+        String secondPart = "\"\n},\n\"features\":[\n{\n\"maxResults\":10,\n\"type\":\"FACE_DETECTION\"\n}\n]\n}\n]\n}";
+        String imageBase64 = firstPart + encodedString + secondPart;
+        return imageBase64;
     }
 
-    // Detects faces in the specified local image.
-    public static void detectFaces(String filePath) throws IOException {
-        List<AnnotateImageRequest> requests = new ArrayList<>();
+    public String[] processStream(InputStream responStream) {
+        Scanner scanner = new Scanner(responStream).useDelimiter("\\A");
+        String response = scanner.hasNext() ? scanner.next() : "";
+        String[] splitResponseWithoutLineBreak = response.split("\n");
+        String[] emotionsArray = { splitResponseWithoutLineBreak[splitResponseWithoutLineBreak.length - JOY_POSITION],
+                splitResponseWithoutLineBreak[splitResponseWithoutLineBreak.length - SORROW_POSITION],
+                splitResponseWithoutLineBreak[splitResponseWithoutLineBreak.length - ANGER_POSITION],
+                splitResponseWithoutLineBreak[splitResponseWithoutLineBreak.length - SURPRISE_POSITION] };
+        for (int i = 0; i < emotionsArray.length; i++) {
+            emotionsArray[i] = emotionsArray[i].replaceAll(" ", "");
+            System.out.println(emotionsArray[i]);
 
-        ByteString imgBytes = ByteString.readFrom(new FileInputStream(filePath));
-
-        Image img = Image.newBuilder().setContent(imgBytes).build();
-        Feature feat = Feature.newBuilder().setType(Feature.Type.FACE_DETECTION).build();
-        AnnotateImageRequest request = AnnotateImageRequest.newBuilder().addFeatures(feat).setImage(img).build();
-        requests.add(request);
-
-        // Initialize client that will be used to send requests. This client only needs
-        // to be created
-        // once, and can be reused for multiple requests. After completing all of your
-        // requests, call
-        // the "close" method on the client to safely clean up any remaining background
-        // resources.
-        try (ImageAnnotatorClient client = ImageAnnotatorClient.create()) {
-            BatchAnnotateImagesResponse response = client.batchAnnotateImages(requests);
-            List<AnnotateImageResponse> responses = response.getResponsesList();
-
-            for (AnnotateImageResponse res : responses) {
-                if (res.hasError()) {
-                    System.out.format("Error: %s%n", res.getError().getMessage());
-                    return;
-                }
-
-                // For full list of available annotations, see http://g.co/cloud/vision/docs
-                for (FaceAnnotation annotation : res.getFaceAnnotationsList()) {
-                    System.out.format(
-                            "anger: %s%njoy: %s%nsurprise: %s%nsorrow %s",
-                            annotation.getAngerLikelihoodValue(),
-                            annotation.getJoyLikelihoodValue(),
-                            annotation.getSurpriseLikelihoodValue(),
-                            annotation.getSorrowLikelihoodValue());
-                }
-            }
         }
+        return emotionsArray;
+    }
+
+    public InputStream httpRequest(String key, String encodedString) throws IOException {
+        URL url = new URL("https://vision.googleapis.com/v1/images:annotate");
+        HttpURLConnection httpConn = (HttpURLConnection) url.openConnection();
+        httpConn.setRequestMethod("POST");
+
+        httpConn.setRequestProperty("Authorization", "Bearer " + key);
+        httpConn.setRequestProperty("Content-Type", "application/json");
+
+        httpConn.setDoOutput(true);
+        OutputStreamWriter writer = new OutputStreamWriter(httpConn.getOutputStream());
+        writer.write(encodedString);
+        writer.flush();
+        writer.close();
+        httpConn.getOutputStream().close();
+
+        InputStream responseStream = httpConn.getResponseCode() / 100 == 2
+                ? httpConn.getInputStream()
+                : httpConn.getErrorStream();
+        return responseStream;
     }
 }
