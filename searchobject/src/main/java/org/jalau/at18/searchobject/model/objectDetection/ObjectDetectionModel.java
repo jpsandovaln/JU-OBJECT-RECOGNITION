@@ -20,11 +20,17 @@ import ai.djl.training.util.ProgressBar;
 import ai.djl.translate.TranslateException;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 import org.jalau.at18.searchobject.common.logger.At18Logger;
 =======
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 >>>>>>> be98d6e (ZooModel integration and add new logic to merge with the MatchInfo)
+=======
+import org.jalau.at18.searchobject.common.logger.At18Logger;
+//import org.slf4j.Logger;
+//import org.slf4j.LoggerFactory;
+>>>>>>> 15f7662 (Create common folder and add at18logger class, remplace logger of the ObjectDetectionModel to the at18logger)
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -33,6 +39,7 @@ import java.nio.file.Paths;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+<<<<<<< HEAD
 <<<<<<< HEAD
 import java.util.logging.Logger;
 
@@ -45,6 +52,14 @@ public class ObjectDetectionModel {
 public class ObjectDetectionModel {
     private static final Logger logger = LoggerFactory.getLogger(ObjectDetectionModel.class);
 >>>>>>> be98d6e (ZooModel integration and add new logic to merge with the MatchInfo)
+=======
+import java.util.logging.Logger;
+
+
+public class ObjectDetectionModel {
+    //private static final Logger logger = LoggerFactory.getLogger(ObjectDetectionModel.class);
+    private static final Logger logger = At18Logger.getLogger();
+>>>>>>> 15f7662 (Create common folder and add at18logger class, remplace logger of the ObjectDetectionModel to the at18logger)
     private static String imageDir;
     private static String objFind;
     private static double scoreFind;
@@ -63,11 +78,16 @@ public class ObjectDetectionModel {
         fileName = imageDir.split("\\\\")[imageDir.split("\\\\").length-1];
         DetectedObjects detection = ObjectDetectionModel.predict();
 <<<<<<< HEAD
+<<<<<<< HEAD
         //logger.info("{}", detection);
         //logger.info("{}");
 =======
         logger.info("{}", detection);
 >>>>>>> be98d6e (ZooModel integration and add new logic to merge with the MatchInfo)
+=======
+        //logger.info("{}", detection);
+        logger.info("{}");
+>>>>>>> 15f7662 (Create common folder and add at18logger class, remplace logger of the ObjectDetectionModel to the at18logger)
         if (objFind.equals(detection.getClassNames().get(0))) {
             for (int index = 0; index < detection.getNumberOfObjects(); index++) {
                 sumProbabilities += (Double.parseDouble(detection.getProbabilities().get(index).toString()) * 100);

@@ -24,7 +24,11 @@ import java.util.logging.Logger;
 
 @RestController
 public class ProcessFrameController {
+<<<<<<< HEAD
     //private static final Logger LOG = At18Logger.getLogger();
+=======
+    private static final Logger LOG = At18Logger.getLogger();
+>>>>>>> 15f7662 (Create common folder and add at18logger class, remplace logger of the ObjectDetectionModel to the at18logger)
     @Autowired
     FilesStorageService storageService;
     @Autowired
@@ -42,6 +46,8 @@ public class ProcessFrameController {
         // save file, it is saving the zip file and getting the path
         Path path = storageService.save(file);
         //LOG.info(path.toString());
+
+
         // get the route file
         UnzipFile unzip = new UnzipFile(path);
         List<MatchInfo> matchInfos = processFrameService.processFrameAccordingCriteria(unzip.getPath(), searchCriteria,

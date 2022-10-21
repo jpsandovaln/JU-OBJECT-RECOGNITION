@@ -23,7 +23,11 @@ import java.util.logging.LogManager;
 public class At18Logger {
 
     // Directory of the properties file
+<<<<<<< HEAD
     private static final String PROPERTIES_PATH = "searchobject\\src\\main\\resources\\application.properties";
+=======
+    private static final String PROPERTIES_PATH = "src\\main\\resources\\application.properties";
+>>>>>>> 15f7662 (Create common folder and add at18logger class, remplace logger of the ObjectDetectionModel to the at18logger)
     private static Logger log;
     private static At18Logger at18logger;
 
