@@ -22,10 +22,10 @@ public class EmotionRecognitionController{
     @Autowired
     EmotionRecognitionService emotionRecognitionService;
     @PostMapping("/emotionRecognition")
-    public ResponseEntity <MatchInfo> readData(@RequestParam("file") MultipartFile file,
+    public ResponseEntity <String[]> readData(@RequestParam("file") MultipartFile file,
                                                @RequestParam String token) throws IOException {
         Path path = storageService.save(file);
-        MatchInfo data = emotionRecognitionService.processImage(path.getParent(), token);
+        String[] data = emotionRecognitionService.processImage(path.toAbsolutePath(), token);
         return ResponseEntity.status(HttpStatus.OK).body(data);
     }
 }

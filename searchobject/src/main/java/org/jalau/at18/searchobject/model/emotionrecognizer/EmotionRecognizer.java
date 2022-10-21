@@ -13,13 +13,20 @@ import java.util.Scanner;
 import org.apache.commons.io.FileUtils;
 import com.google.gson.Gson;
 
-class EmotionRecognizer {
+public class EmotionRecognizer {
     private static final int JOY_POSITION = 12;
     private static final int SORROW_POSITION = 11;
     private static final int ANGER_POSITION = 10;
     private static final int SURPRISE_POSITION = 9;
+    private  String[] result;
+    public EmotionRecognizer(String path, String token) throws IOException {
+        String imageBase64 = convertImage(path);
+        InputStream inputStream = httpRequest(token, imageBase64);
+        result = processStream(inputStream);
 
-    public String convertImage(String filePath) throws IOException {
+    }
+
+    private String convertImage(String filePath) throws IOException {
         byte[] fileContent = FileUtils.readFileToByteArray(new File(filePath));
         String encodedString = Base64.getEncoder().encodeToString(fileContent);
         String firstPart = "{\n\"requests\":[\n{\n\"image\":{\n\"content\":\"";
@@ -27,8 +34,11 @@ class EmotionRecognizer {
         String imageBase64 = firstPart + encodedString + secondPart;
         return imageBase64;
     }
+    public String[] getResult() {
+        return result;
+    }
 
-    public String[] processStream(InputStream responStream) {
+    private String[] processStream(InputStream responStream) {
         Scanner scanner = new Scanner(responStream).useDelimiter("\\A");
         String response = scanner.hasNext() ? scanner.next() : "";
         String[] splitResponseWithoutLineBreak = response.split("\n");
@@ -44,12 +54,12 @@ class EmotionRecognizer {
         return emotionsArray;
     }
 
-    public InputStream httpRequest(String key, String encodedString) throws IOException {
+    private InputStream httpRequest(String token, String encodedString) throws IOException {
         URL url = new URL("https://vision.googleapis.com/v1/images:annotate");
         HttpURLConnection httpConn = (HttpURLConnection) url.openConnection();
         httpConn.setRequestMethod("POST");
 
-        httpConn.setRequestProperty("Authorization", "Bearer " + key);
+        httpConn.setRequestProperty("Authorization", "Bearer " + token);
         httpConn.setRequestProperty("Content-Type", "application/json");
 
         httpConn.setDoOutput(true);
