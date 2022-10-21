@@ -28,9 +28,12 @@ import org.slf4j.LoggerFactory;
 >>>>>>> be98d6e (ZooModel integration and add new logic to merge with the MatchInfo)
 =======
 import org.jalau.at18.searchobject.common.logger.At18Logger;
+<<<<<<< HEAD
 //import org.slf4j.Logger;
 //import org.slf4j.LoggerFactory;
 >>>>>>> 15f7662 (Create common folder and add at18logger class, remplace logger of the ObjectDetectionModel to the at18logger)
+=======
+>>>>>>> 786beda (Delete unnecesary comments)
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -57,7 +60,6 @@ import java.util.logging.Logger;
 
 
 public class ObjectDetectionModel {
-    //private static final Logger logger = LoggerFactory.getLogger(ObjectDetectionModel.class);
     private static final Logger logger = At18Logger.getLogger();
 >>>>>>> 15f7662 (Create common folder and add at18logger class, remplace logger of the ObjectDetectionModel to the at18logger)
     private static String imageDir;
