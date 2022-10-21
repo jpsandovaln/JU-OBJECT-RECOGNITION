@@ -38,17 +38,13 @@ public class ProcessFrameController {
                                                                  @RequestParam String recipient) throws IOException {
         // save file, it is saving the zip file and getting the path
         Path path = storageService.save(file);
-        System.out.println(path);
-
         // get the route file
         UnzipFile unzip = new UnzipFile(path);
-        //FileSource fileSource = new FileSource(path.toFile().getAbsolutePath());
         List<MatchInfo> matchInfos = processFrameService.processFrameAccordingCriteria(unzip.getPath(), searchCriteria,
                 occurrencyPercentage,
                 modelObjectRecognizer);
 
         processMatchService.processMatches(matchInfos, notifierType, recipient);
-
         return ResponseEntity.status(HttpStatus.OK).body(matchInfos);
     }
 }

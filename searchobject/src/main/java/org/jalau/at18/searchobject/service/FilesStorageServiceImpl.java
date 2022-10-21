@@ -31,15 +31,12 @@ public class FilesStorageServiceImpl implements FilesStorageService{
 
     public Path save(MultipartFile file) {
         String file1 = StringUtils.cleanPath(file.getOriginalFilename());
-        //String framesPath = "";
         String framesPath = String.valueOf(System.currentTimeMillis());
-        System.out.println("frames path: " + framesPath);
         try {
             Files.createDirectory(Paths.get("uploads", framesPath));
             Path uploadsPath = Paths.get("uploads", framesPath, file.getOriginalFilename());
             Files.copy(file.getInputStream(), uploadsPath);
             return  uploadsPath;
-            //return Paths.get(root.toAbsolutePath().toFile().getAbsolutePath(), file.getOriginalFilename());
         } catch (Exception e) {
             e.printStackTrace();
             throw new FileStorageException("Could not store the file. Error: " + e.getMessage());

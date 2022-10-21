@@ -19,7 +19,6 @@ import java.util.List;
 public class EmotionRecognitionController{
     @Autowired
     FilesStorageService storageService;
-
     @Autowired
     EmotionRecognitionService emotionRecognitionService;
     @PostMapping("/emotionRecognition")
