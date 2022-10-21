@@ -23,7 +23,7 @@ import java.util.logging.LogManager;
 public class At18Logger {
 
     // Directory of the properties file
-    private static final String PROPERTIES_PATH = "src\\main\\resources\\application.properties";
+    private static final String PROPERTIES_PATH = "searchobject\\src\\main\\resources\\application.properties";
     private static Logger log;
     private static At18Logger at18logger;
 

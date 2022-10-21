@@ -32,7 +32,7 @@ import java.util.logging.Logger;
 
 
 public class ObjectDetectionModel {
-    private static final Logger logger = At18Logger.getLogger();
+    //private static final Logger logger = At18Logger.getLogger();
     private static String imageDir;
     private static String objFind;
     private static double scoreFind;
@@ -51,7 +51,7 @@ public class ObjectDetectionModel {
         fileName = imageDir.split("\\\\")[imageDir.split("\\\\").length-1];
         DetectedObjects detection = ObjectDetectionModel.predict();
         //logger.info("{}", detection);
-        logger.info("{}");
+        //logger.info("{}");
         if (objFind.equals(detection.getClassNames().get(0))) {
             for (int index = 0; index < detection.getNumberOfObjects(); index++) {
                 sumProbabilities += (Double.parseDouble(detection.getProbabilities().get(index).toString()) * 100);
