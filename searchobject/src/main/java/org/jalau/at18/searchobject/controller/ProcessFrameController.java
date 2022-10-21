@@ -24,7 +24,9 @@ import java.util.logging.Logger;
 
 @RestController
 public class ProcessFrameController {
+
     //private static final Logger LOG = At18Logger.getLogger();
+
     @Autowired
     FilesStorageService storageService;
     @Autowired
@@ -42,6 +44,8 @@ public class ProcessFrameController {
         // save file, it is saving the zip file and getting the path
         Path path = storageService.save(file);
         //LOG.info(path.toString());
+
+
         // get the route file
         UnzipFile unzip = new UnzipFile(path);
         List<MatchInfo> matchInfos = processFrameService.processFrameAccordingCriteria(unzip.getPath(), searchCriteria,
