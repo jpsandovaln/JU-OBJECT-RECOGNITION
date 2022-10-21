@@ -29,8 +29,6 @@ import java.nio.file.Paths;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
-
 public class ObjectDetectionModel {
     private static final Logger logger = LoggerFactory.getLogger(ObjectDetectionModel.class);
     private static String imageDir;
@@ -85,27 +83,18 @@ public class ObjectDetectionModel {
 
         try (ZooModel<Image, DetectedObjects> model = criteria.loadModel()) {
             try (Predictor<Image, DetectedObjects> predictor = model.newPredictor()) {
-
                 DetectedObjects detection = predictor.predict(img);
-
-
-
-
                 if (detection.get(objFind)!= null) {
                     for (Double item : detection.getProbabilities()) {
                         if (item > (scoreFind * 0.01)) {
-                            //System.out.println("frame: " + imageFile.getFileName() + " -> score: " + detection.getProbabilities());
-                            //return matchInfo(imageFile.getFileName(),score)
                             break;
                         }
                     }
                 }
-
                 return detection;
             }
         }
     }
-
     public Map<String, Double> getDataList() {
         return dataList;
     }
