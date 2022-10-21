@@ -10,9 +10,22 @@ sourceCompatibility = '11'
 
 repositories {
 	mavenCentral()
+	maven {
+		url = uri('https://oss.sonatype.org/content/repositories/snapshots/')
+	}
+
+	maven {
+		url = uri('https://repo.maven.apache.org/maven2/')
+	}
 }
 
 dependencies {
+	implementation 'commons-cli:commons-cli:1.5.0'
+	implementation 'ai.djl:api:0.20.0-SNAPSHOT'
+	implementation 'ai.djl:basicdataset:0.20.0-SNAPSHOT'
+	implementation 'ai.djl:model-zoo:0.20.0-SNAPSHOT'
+	implementation 'ai.djl.mxnet:mxnet-model-zoo:0.20.0-SNAPSHOT'
+	implementation 'ai.djl.pytorch:pytorch-model-zoo:0.20.0-SNAPSHOT'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	implementation 'org.bytedeco:javacv:1.0'
 	implementation 'com.twilio.sdk:twilio:9.0.1'
