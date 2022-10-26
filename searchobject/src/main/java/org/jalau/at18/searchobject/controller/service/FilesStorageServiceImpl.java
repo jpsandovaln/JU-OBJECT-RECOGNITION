@@ -1,6 +1,6 @@
-package org.jalau.at18.searchobject.service;
+package org.jalau.at18.searchobject.controller.service;
 
-import org.jalau.at18.searchobject.exception.FileStorageException;
+import org.jalau.at18.searchobject.common.exception.FileStorageException;
 import org.springframework.stereotype.Service;
 import org.springframework.util.FileSystemUtils;
 import org.springframework.util.StringUtils;

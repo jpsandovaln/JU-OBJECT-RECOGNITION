@@ -1,14 +1,14 @@
-package org.jalau.at18.searchobject.controller;
+package org.jalau.at18.searchobject.controller.endpoint;
 
 import org.jalau.at18.searchobject.UnzipFile;
 import org.jalau.at18.searchobject.common.logger.At18Logger;
+import org.jalau.at18.searchobject.controller.service.FilesStorageService;
+import org.jalau.at18.searchobject.controller.service.ProcessFrameService;
+import org.jalau.at18.searchobject.controller.service.ProcessMatchService;
 import org.jalau.at18.searchobject.model.FileSource;
 import org.jalau.at18.searchobject.model.MatchInfo;
 import org.jalau.at18.searchobject.modelrecognizer.ModelRecognizer;
 import org.jalau.at18.searchobject.modelrecognizer.SSD;
-import org.jalau.at18.searchobject.service.FilesStorageService;
-import org.jalau.at18.searchobject.service.ProcessFrameService;
-import org.jalau.at18.searchobject.service.ProcessMatchService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

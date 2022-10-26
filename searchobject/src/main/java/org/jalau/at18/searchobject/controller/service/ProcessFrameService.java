@@ -1,4 +1,4 @@
-package org.jalau.at18.searchobject.service;
+package org.jalau.at18.searchobject.controller.service;
 
 import org.jalau.at18.searchobject.model.MatchInfo;
 import org.jalau.at18.searchobject.modelrecognizer.ModelRecognizer;

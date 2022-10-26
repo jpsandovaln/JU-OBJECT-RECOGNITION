@@ -1,7 +1,7 @@
-package org.jalau.at18.searchobject.controller;
+package org.jalau.at18.searchobject.controller.endpoint;
+import org.jalau.at18.searchobject.controller.service.EmotionRecognitionService;
+import org.jalau.at18.searchobject.controller.service.FilesStorageService;
 import org.jalau.at18.searchobject.model.MatchInfo;
-import org.jalau.at18.searchobject.service.EmotionRecognitionService;
-import org.jalau.at18.searchobject.service.FilesStorageService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

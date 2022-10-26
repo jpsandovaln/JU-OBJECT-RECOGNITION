@@ -1,4 +1,4 @@
-package org.jalau.at18.searchobject.service;
+package org.jalau.at18.searchobject.controller.service;
 
 import org.springframework.web.multipart.MultipartFile;
 
