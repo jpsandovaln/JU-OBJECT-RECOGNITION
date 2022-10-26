@@ -28,21 +28,28 @@ import java.io.File;
  */
 public class FaceDetect {
     private String faceDetection;
-    public static void main(String[] args) {
+    private static String current_dir;
+    private static String result;
+    public FaceDetect (String file, String type) {
 
-        faceDetection ("D:\\workspacejala\\progra102\\JU-OBJECT-RECOGNITION\\resourcesdetect\\images\\perfil.jpg", "multiple");
+        faceDetection (file, type);
 
     }
 
     public static void faceDetection (String file, String type) {
-        System.loadLibrary(Core.NATIVE_LIBRARY_NAME);
-        File file2 = new File(file);
+        current_dir = System.getProperty("user.dir");
+        System.out.println(current_dir + "\\src\\main\\resources\\libraries\\opencv\\x64\\opencv_java454.dll");
+        System.load(current_dir + "\\src\\main\\resources\\libraries\\opencv\\x64\\opencv_java454.dll");
         Boolean detection = false;
-        String imgFile = file2.toString();//"images/avengers.jpg" //imgFile it's the file we want to analyze if there it's a person in the photo
 
-        Mat src = Imgcodecs.imread(imgFile);
+        String imgFile = current_dir +"\\"+ file;//"images/avengers.jpg" //imgFile it's the file we want to analyze if there it's a person in the phot
+        System.out.println("resultado   " + imgFile +  type);
+        Mat src = Imgcodecs.imread(imgFile.toString());
+        System.out.println("leer imagen   " + src);
+        //Mat [ 432*768*CV_8UC3, isCont=true, isSubmat=false, nativeObj=0x1f5f246abb0, dataAddr=0x1f5f268b000 ]
         // Are the connecting dots of a facial layout. This xml exactly defines a front-face layout
-        String xmlFile = "D:\\workspacejala\\progra102\\JU-OBJECT-RECOGNITION\\resourcesdetect\\xml\\lbpcascade_frontalface.xml";
+        String xmlFile ="D:\\workspacejala\\progra102\\JU-OBJECT-RECOGNITION\\resourcesdetect\\xml\\lbpcascade_frontalface.xml";
+        System.out.println(xmlFile);
         //cascade classifiers is an effective object detection method
         CascadeClassifier cc = new CascadeClassifier(xmlFile);
         // run a face detector on the imag
@@ -50,29 +57,29 @@ public class FaceDetect {
         //detectMultiScale used to detect the faces. This function will return a rectangle with coordinates(x,y,w,h)
         //faceDetection will determine the amount of face that whas fine in the image
         cc.detectMultiScale(src, faceDetection);
-        if (type == "personal" && faceDetection.toArray().length == 1) {
-            for(Rect rect: faceDetection.toArray()) {
-                Imgproc.rectangle(src, new Point(rect.x, rect.y), new Point(rect.x + rect.width, rect.y + rect.height) , new Scalar(0, 0, 255), 3);
-            }
-            detection = true;
-            Imgcodecs.imwrite("images/facedetect.jpg", src);
-            System.out.println("Profile detection");
-            System.exit(0);
-        }  else if (type == "multiple" && faceDetection.toArray().length > 1) {
+
+        if (type.equals( "personal") && faceDetection.toArray().length == 1 ) { //
             for(Rect rect: faceDetection.toArray()) {
                 Imgproc.rectangle(src, new Point(rect.x, rect.y), new Point(rect.x + rect.width, rect.y + rect.height) , new Scalar(0, 0, 255), 3);
             }
 
-            Imgcodecs.imwrite("images/peopledetected.jpg", src);
-            System.out.println(String.format("Detected faces: %d", faceDetection.toArray().length));
-            detection = true;
-            System.exit(0);
+            Imgcodecs.imwrite("D:\\workspacejala\\progra102\\JU-OBJECT-RECOGNITION\\resourcesdetect\\images\\facedetect.jpg", src);
+            result = "profile detected";//"";
+
+        }  else if (type.equals("multiple") && faceDetection.toArray().length > 1 ) { //
+            for(Rect rect: faceDetection.toArray()) {
+                Imgproc.rectangle(src, new Point(rect.x, rect.y), new Point(rect.x + rect.width, rect.y + rect.height) , new Scalar(0, 0, 255), 3);
+            }
+
+            Imgcodecs.imwrite("D:\\workspacejala\\progra102\\JU-OBJECT-RECOGNITION\\resourcesdetect\\images\\peopledetected.jpg", src);
+            result ="multiple person detected";//String.format("Detected faces: %d" + faceDetection.toArray().length);
         } else {
-            detection = false;
-            System.out.println("the image it's wrong, upload the image again");
-            System.exit(0);
+           result = "the image it's wrong, upload the image again";
         }
 
+    }
+    public String getCommand() {
+        return result;
     }
 
 }
