@@ -3,6 +3,7 @@ package org.jalau.at18.searchobject.message;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNull;
 
 class ResponseMessageTest {
 
@@ -25,6 +26,6 @@ class ResponseMessageTest {
     void shouldSetNullMessage() {
         ResponseMessage responseMessage = new ResponseMessage("message");
         responseMessage.setMessage(null);
-        assertEquals(null, responseMessage.getMessage());
+        assertNull(responseMessage.getMessage());
     }
 }
