@@ -3,9 +3,10 @@ package org.jalau.at18.searchobject.notify;
 import com.twilio.Twilio;
 import com.twilio.rest.api.v2010.account.Message;
 import com.twilio.type.PhoneNumber;
-import org.jalau.at18.searchobject.model.MatchInfo;
 
 import java.util.List;
+
+import org.jalau.at18.searchobject.model.objectrecognizer.recognizertypes.MatchInfo;
 
 public class NotifierWhatsApp implements Notifier {
     @Override

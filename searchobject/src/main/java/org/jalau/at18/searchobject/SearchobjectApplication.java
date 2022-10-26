@@ -1,6 +1,6 @@
 package org.jalau.at18.searchobject;
 
-import org.jalau.at18.searchobject.service.FilesStorageService;
+import org.jalau.at18.searchobject.controller.service.FilesStorageService;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
