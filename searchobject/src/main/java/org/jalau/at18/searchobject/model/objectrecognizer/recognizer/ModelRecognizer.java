@@ -1,6 +1,6 @@
-package org.jalau.at18.searchobject.modelrecognizer;
+package org.jalau.at18.searchobject.model.objectrecognizer.recognizer;
 
-import org.jalau.at18.searchobject.model.MatchInfo;
+import org.jalau.at18.searchobject.model.objectrecognizer.recognizertypes.MatchInfo;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.nio.file.Path;

@@ -1,4 +1,4 @@
-package org.jalau.at18.searchobject.modelrecognizer;
+package org.jalau.at18.searchobject.model.objectrecognizer.recognizer;
 
 public enum TypeModelRecognizer {
     YOLO("yolo"),

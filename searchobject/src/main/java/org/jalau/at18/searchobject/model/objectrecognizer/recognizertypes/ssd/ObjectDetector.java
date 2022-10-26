@@ -1,10 +1,11 @@
-package org.jalau.at18.searchobject.model.ssd;
+package org.jalau.at18.searchobject.model.objectrecognizer.recognizertypes.ssd;
 
-import org.jalau.at18.searchobject.model.ssd.utils.FileUtils;
-import org.jalau.at18.searchobject.model.ssd.utils.LabelUtils;
-import org.jalau.at18.searchobject.model.ssd.utils.TensorUtils;
 import net.lingala.zip4j.core.ZipFile;
 import net.lingala.zip4j.exception.ZipException;
+
+import org.jalau.at18.searchobject.model.objectrecognizer.recognizertypes.ssd.utils.FileUtils;
+import org.jalau.at18.searchobject.model.objectrecognizer.recognizertypes.ssd.utils.LabelUtils;
+import org.jalau.at18.searchobject.model.objectrecognizer.recognizertypes.ssd.utils.TensorUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.tensorflow.SavedModelBundle;

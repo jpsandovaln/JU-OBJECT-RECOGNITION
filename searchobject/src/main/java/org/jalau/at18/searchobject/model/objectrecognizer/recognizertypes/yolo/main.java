@@ -1,6 +1,6 @@
-package org.jalau.at18.searchobject.model.yolo;
+package org.jalau.at18.searchobject.model.objectrecognizer.recognizertypes.yolo;
 
-import org.jalau.at18.searchobject.model.yolo.YOLO.yoloImage;
+import org.jalau.at18.searchobject.model.objectrecognizer.recognizertypes.yolo.YOLO.yoloImage;
 
 public class main {
     public static void main(String[] args) {

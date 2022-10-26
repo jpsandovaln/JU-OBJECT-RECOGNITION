@@ -1,5 +1,5 @@
-package org.jalau.at18.searchobject;
-import org.jalau.at18.searchobject.exception.UnzipFileException;
+package org.jalau.at18.searchobject.model.objectrecognizer;
+import org.jalau.at18.searchobject.common.exception.UnzipFileException;
 
 import java.io.File;
 import java.io.FileInputStream;

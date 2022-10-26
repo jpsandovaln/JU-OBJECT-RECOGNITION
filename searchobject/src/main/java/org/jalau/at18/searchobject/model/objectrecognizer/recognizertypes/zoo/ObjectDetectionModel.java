@@ -6,7 +6,7 @@
  * Information and shall use it only in accordance with the terms of the
  * license agreement you entered into with Jala University
  */
-package org.jalau.at18.searchobject.model.objectDetection;
+package org.jalau.at18.searchobject.model.objectrecognizer.recognizertypes.zoo;
 import ai.djl.Application;
 import ai.djl.ModelException;
 import ai.djl.engine.Engine;

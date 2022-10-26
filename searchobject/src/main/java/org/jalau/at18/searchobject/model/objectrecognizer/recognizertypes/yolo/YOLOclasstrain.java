@@ -1,12 +1,12 @@
-package org.jalau.at18.searchobject.model.yolo;
-
-import org.jalau.at18.searchobject.model.yolo.YOLO.yoloImage;
+package org.jalau.at18.searchobject.model.objectrecognizer.recognizertypes.yolo;
 
 import java.io.Serializable;
 import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+
+import org.jalau.at18.searchobject.model.objectrecognizer.recognizertypes.yolo.YOLO.yoloImage;
 
 public class YOLOclasstrain {
     private Path pathFolder;

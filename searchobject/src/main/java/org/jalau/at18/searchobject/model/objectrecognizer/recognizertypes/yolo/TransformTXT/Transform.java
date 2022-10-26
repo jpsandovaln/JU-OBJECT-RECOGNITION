@@ -1,4 +1,4 @@
-package org.jalau.at18.searchobject.model.yolo.TransformTXT;
+package org.jalau.at18.searchobject.model.objectrecognizer.recognizertypes.yolo.TransformTXT;
 
 import java.io.*;
 import java.util.*;

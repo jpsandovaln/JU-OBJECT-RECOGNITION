@@ -1,8 +1,8 @@
-package org.jalau.at18.searchobject.modelrecognizer;
+package org.jalau.at18.searchobject.model.objectrecognizer.recognizer;
 
-import org.jalau.at18.searchobject.model.MatchInfo;
-import org.jalau.at18.searchobject.model.ssd.DetectedObj;
-import org.jalau.at18.searchobject.model.ssd.ObjectDetector;
+import org.jalau.at18.searchobject.model.objectrecognizer.recognizertypes.MatchInfo;
+import org.jalau.at18.searchobject.model.objectrecognizer.recognizertypes.ssd.DetectedObj;
+import org.jalau.at18.searchobject.model.objectrecognizer.recognizertypes.ssd.ObjectDetector;
 
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;

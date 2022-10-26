@@ -1,7 +1,7 @@
-package org.jalau.at18.searchobject.modelrecognizer;
+package org.jalau.at18.searchobject.model.objectrecognizer.recognizer;
 
-import org.jalau.at18.searchobject.model.yolo.YOLOclasstrain;
-import org.jalau.at18.searchobject.model.MatchInfo;
+import org.jalau.at18.searchobject.model.objectrecognizer.recognizertypes.MatchInfo;
+import org.jalau.at18.searchobject.model.objectrecognizer.recognizertypes.yolo.YOLOclasstrain;
 
 import java.nio.file.Path;
 import java.util.ArrayList;

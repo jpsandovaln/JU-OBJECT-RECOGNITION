@@ -1,4 +1,4 @@
-package org.jalau.at18.searchobject.model.ssd.utils;
+package org.jalau.at18.searchobject.model.objectrecognizer.recognizertypes.ssd.utils;
 
 import org.tensorflow.Tensor;
 import org.tensorflow.types.UInt8;

@@ -1,13 +1,13 @@
-package org.jalau.at18.searchobject.modelrecognizer;
+package org.jalau.at18.searchobject.model.objectrecognizer.recognizer;
 
-import org.jalau.at18.searchobject.model.MatchInfo;
+import org.jalau.at18.searchobject.model.objectrecognizer.recognizertypes.MatchInfo;
+import org.jalau.at18.searchobject.model.objectrecognizer.recognizertypes.zoo.ObjectDetectionModel;
 
 import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
 import ai.djl.ModelException;
 import ai.djl.translate.TranslateException;
-import org.jalau.at18.searchobject.model.objectDetection.ObjectDetectionModel;
 
 import java.io.IOException;
 import java.io.File;

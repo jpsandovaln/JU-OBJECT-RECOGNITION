@@ -1,4 +1,4 @@
-package org.jalau.at18.searchobject.model.ssd;
+package org.jalau.at18.searchobject.model.objectrecognizer.recognizertypes.ssd;
 
 public class DetectedObj {
     private String label;

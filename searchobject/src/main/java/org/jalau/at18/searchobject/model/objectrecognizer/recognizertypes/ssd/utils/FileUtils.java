@@ -1,4 +1,4 @@
-package org.jalau.at18.searchobject.model.ssd.utils;
+package org.jalau.at18.searchobject.model.objectrecognizer.recognizertypes.ssd.utils;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

@@ -1,5 +1,6 @@
-package org.jalau.at18.searchobject.model.yolo.YOLO;
+package org.jalau.at18.searchobject.model.objectrecognizer.recognizertypes.yolo.YOLO;
 
+import org.jalau.at18.searchobject.model.objectrecognizer.recognizertypes.yolo.TransformTXT.Transform;
 // Source to review the code: https://gurzu.com/blog/YOLO_v3_From_Python_To_Java/
 import org.opencv.core.*;
 import org.opencv.dnn.Dnn;
@@ -7,7 +8,6 @@ import org.opencv.dnn.Net;
 import org.opencv.imgcodecs.Imgcodecs;
 import org.opencv.imgproc.Imgproc;
 
-import org.jalau.at18.searchobject.model.yolo.TransformTXT.Transform;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;

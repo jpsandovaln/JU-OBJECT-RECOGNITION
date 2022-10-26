@@ -1,4 +1,4 @@
-package org.jalau.at18.searchobject.modelrecognizer;
+package org.jalau.at18.searchobject.model.objectrecognizer.recognizer;
 import org.jalau.at18.searchobject.common.logger.At18Logger;
 import java.util.logging.Logger;
 public class VerifyModelRecognizer {

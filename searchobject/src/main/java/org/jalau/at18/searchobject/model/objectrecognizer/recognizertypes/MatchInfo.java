@@ -1,4 +1,4 @@
-package org.jalau.at18.searchobject.model;
+package org.jalau.at18.searchobject.model.objectrecognizer.recognizertypes;
 
 public class MatchInfo {
     private String name;

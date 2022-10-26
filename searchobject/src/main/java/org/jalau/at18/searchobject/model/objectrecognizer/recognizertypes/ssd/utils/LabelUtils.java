@@ -1,8 +1,9 @@
-package org.jalau.at18.searchobject.model.ssd.utils;
+package org.jalau.at18.searchobject.model.objectrecognizer.recognizertypes.ssd.utils;
 
 import com.google.protobuf.TextFormat;
-import com.machinelearning.ssd.protos.StringIntLabelMapOuterClass;
 import java.nio.charset.StandardCharsets;
+
+import org.jalau.at18.searchobject.model.objectrecognizer.recognizertypes.ssd.protos.StringIntLabelMapOuterClass;
 
 public class LabelUtils {
     public static String[] loadLabels() throws Exception {

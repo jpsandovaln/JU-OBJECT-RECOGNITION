@@ -1,4 +1,4 @@
-package org.jalau.at18.searchobject.model;
+package org.jalau.at18.searchobject.model.objectrecognizer.recognizertypes;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
