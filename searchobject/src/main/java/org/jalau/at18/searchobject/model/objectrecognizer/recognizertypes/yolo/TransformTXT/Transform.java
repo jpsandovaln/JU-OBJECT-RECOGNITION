@@ -1,7 +1,11 @@
 package org.jalau.at18.searchobject.model.objectrecognizer.recognizertypes.yolo.TransformTXT;
 
-import java.io.*;
-import java.util.*;
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.ArrayList;
+
 public class Transform{
     public ArrayList<String> getTheVectorClass(){
         File archivo = null;

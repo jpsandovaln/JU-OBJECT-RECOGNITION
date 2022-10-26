@@ -7,7 +7,8 @@ import org.jalau.at18.searchobject.model.objectrecognizer.recognizertypes.ssd.pr
 
 public class LabelUtils {
     public static String[] loadLabels() throws Exception {
-        String text = new String(FileUtils.getBytes("labels/mscoco_label_map.pbtxt"), StandardCharsets.UTF_8);
+        final String FILE_NAME="labels/mscoco_label_map.pbtxt";
+        String text = new String(FileUtils.getBytes(FILE_NAME), StandardCharsets.UTF_8);
         StringIntLabelMapOuterClass.StringIntLabelMap.Builder builder = StringIntLabelMapOuterClass.StringIntLabelMap.newBuilder();
         TextFormat.merge(text, builder);
         StringIntLabelMapOuterClass.StringIntLabelMap proto = builder.build();
