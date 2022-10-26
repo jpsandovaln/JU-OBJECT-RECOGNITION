@@ -1,8 +1,8 @@
 package org.jalau.at18.searchobject.controller.service;
 
-import org.jalau.at18.searchobject.model.MatchInfo;
-import org.jalau.at18.searchobject.modelrecognizer.ModelRecognizer;
-import org.jalau.at18.searchobject.modelrecognizer.VerifyModelRecognizer;
+import org.jalau.at18.searchobject.model.objectrecognizer.recognizer.ModelRecognizer;
+import org.jalau.at18.searchobject.model.objectrecognizer.recognizer.VerifyModelRecognizer;
+import org.jalau.at18.searchobject.model.objectrecognizer.recognizertypes.MatchInfo;
 import org.springframework.stereotype.Service;
 import java.nio.file.Path;
 import java.util.List;

@@ -1,6 +1,6 @@
 package org.jalau.at18.searchobject.controller.service;
 
-import org.jalau.at18.searchobject.model.MatchInfo;
+import org.jalau.at18.searchobject.model.objectrecognizer.recognizertypes.MatchInfo;
 import org.jalau.at18.searchobject.notify.Notifier;
 import org.jalau.at18.searchobject.notify.VerifyNotifier;
 import org.springframework.stereotype.Service;

@@ -1,6 +1,6 @@
 package org.jalau.at18.searchobject.controller.service;
 
-import org.jalau.at18.searchobject.model.MatchInfo;
+import org.jalau.at18.searchobject.model.objectrecognizer.recognizertypes.MatchInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
