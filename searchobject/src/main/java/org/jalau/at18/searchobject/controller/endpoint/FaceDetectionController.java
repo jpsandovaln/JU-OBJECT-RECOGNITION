@@ -1,8 +1,8 @@
-package org.jalau.at18.searchobject.controller;
-import org.jalau.at18.searchobject.model.MatchInfo;
+package org.jalau.at18.searchobject.controller.endpoint;
+import org.jalau.at18.searchobject.controller.service.EmotionRecognitionService;
+import org.jalau.at18.searchobject.controller.service.FilesStorageService;
 import org.jalau.at18.searchobject.model.facedetector.FaceDetect;
-import org.jalau.at18.searchobject.service.EmotionRecognitionService;
-import org.jalau.at18.searchobject.service.FilesStorageService;
+import org.jalau.at18.searchobject.model.objectrecognizer.recognizertypes.MatchInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -13,8 +13,6 @@ import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
 import java.nio.file.Path;
-import java.util.ArrayList;
-import java.util.List;
 
 @RestController
 public class FaceDetectionController{

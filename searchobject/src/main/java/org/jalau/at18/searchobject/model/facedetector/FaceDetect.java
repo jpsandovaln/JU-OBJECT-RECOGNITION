@@ -8,7 +8,7 @@ package org.jalau.at18.searchobject.model.facedetector;
  * Licence agreement you entered into with Jalasoft
  */
 
-import org.opencv.core.Core;
+
 import org.opencv.core.Mat;
 import org.opencv.core.MatOfRect;
 import org.opencv.core.Point;
@@ -18,7 +18,6 @@ import org.opencv.imgcodecs.Imgcodecs;
 import org.opencv.imgproc.Imgproc;
 import org.opencv.objdetect.CascadeClassifier;
 
-import java.io.File;
 
 /**
  * It is responsible for analyze an image and detect if there it's a face or not.
