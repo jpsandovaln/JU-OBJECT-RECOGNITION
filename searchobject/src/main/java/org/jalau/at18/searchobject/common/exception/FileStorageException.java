@@ -1,4 +1,4 @@
-package org.jalau.at18.searchobject.exception;
+package org.jalau.at18.searchobject.common.exception;
 
 public class FileStorageException extends RuntimeException {
     public FileStorageException(String message) {

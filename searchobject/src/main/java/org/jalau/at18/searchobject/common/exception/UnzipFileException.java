@@ -1,4 +1,4 @@
-package org.jalau.at18.searchobject.exception;
+package org.jalau.at18.searchobject.common.exception;
 
 import java.io.IOException;
 
