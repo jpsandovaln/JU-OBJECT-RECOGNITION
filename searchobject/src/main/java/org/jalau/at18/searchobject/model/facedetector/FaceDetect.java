@@ -9,6 +9,7 @@ package org.jalau.at18.searchobject.model.facedetector;
  */
 
 
+import org.jalau.at18.searchobject.common.logger.At18Logger;
 import org.opencv.core.Mat;
 import org.opencv.core.MatOfRect;
 import org.opencv.core.Point;
@@ -17,6 +18,8 @@ import org.opencv.core.Scalar;
 import org.opencv.imgcodecs.Imgcodecs;
 import org.opencv.imgproc.Imgproc;
 import org.opencv.objdetect.CascadeClassifier;
+
+import java.util.logging.Logger;
 
 
 /**
@@ -27,57 +30,82 @@ import org.opencv.objdetect.CascadeClassifier;
  */
 public class FaceDetect {
     private String faceDetection;
-    private static String current_dir;
-    private static String result;
-    public FaceDetect (String file, String type) {
+    private static String current_dir; //full image path direction
+    private static String result; //result of the face detection in a multiple or profile image
 
+    private static int face_Detect;
+    public FaceDetect (String file, String type) {
+        Logger log = At18Logger.getLogger();
         faceDetection (file, type);
 
     }
 
     public static void faceDetection (String file, String type) {
+        Logger log = At18Logger.getLogger();
+        //Current_dir will take the direction of the path
         current_dir = System.getProperty("user.dir");
-        System.out.println(current_dir + "\\src\\main\\resources\\libraries\\opencv\\x64\\opencv_java454.dll");
-        System.load(current_dir + "\\src\\main\\resources\\libraries\\opencv\\x64\\opencv_java454.dll");
-        Boolean detection = false;
 
-        String imgFile = current_dir +"\\"+ file;//"images/avengers.jpg" //imgFile it's the file we want to analyze if there it's a person in the phot
-        System.out.println("resultado   " + imgFile +  type);
+        //run the dll file, so the Open CV works correctly
+        System.load(current_dir + "\\src\\main\\resources\\libraries\\opencv\\x64\\opencv_java454.dll");
+
+        //imgFile it's the file we want to analyze if there it's a person in the photo
+        String imgFile = current_dir +"\\"+ file;
+
+        //Decodes the images
         Mat src = Imgcodecs.imread(imgFile.toString());
-        System.out.println("leer imagen   " + src);
-        //Mat [ 432*768*CV_8UC3, isCont=true, isSubmat=false, nativeObj=0x1f5f246abb0, dataAddr=0x1f5f268b000 ]
+
         // Are the connecting dots of a facial layout. This xml exactly defines a front-face layout
         String xmlFile ="D:\\workspacejala\\progra102\\JU-OBJECT-RECOGNITION\\resourcesdetect\\xml\\lbpcascade_frontalface.xml";
-        System.out.println(xmlFile);
+
         //cascade classifiers is an effective object detection method
         CascadeClassifier cc = new CascadeClassifier(xmlFile);
-        // run a face detector on the imag
-        MatOfRect faceDetection = new MatOfRect();
+
         //detectMultiScale used to detect the faces. This function will return a rectangle with coordinates(x,y,w,h)
-        //faceDetection will determine the amount of face that whas fine in the image
+        MatOfRect faceDetection = new MatOfRect();
+
+        //faceDetection will determine the amount of face that has in the image
         cc.detectMultiScale(src, faceDetection);
 
-        if (type.equals( "personal") && faceDetection.toArray().length == 1 ) { //
+        //Condition to detect if the input image its a profile or its more people
+        if (type.equals( "profile") && faceDetection.toArray().length == 1 ) {
             for(Rect rect: faceDetection.toArray()) {
-                Imgproc.rectangle(src, new Point(rect.x, rect.y), new Point(rect.x + rect.width, rect.y + rect.height) , new Scalar(0, 0, 255), 3);
+                Imgproc.rectangle(src, new Point(rect.x, rect.y),
+                        new Point(rect.x + rect.width, rect.y + rect.height) , new Scalar(0, 0, 255), 3);
             }
 
+            //Save the image already processed with the face detection
             Imgcodecs.imwrite("D:\\workspacejala\\progra102\\JU-OBJECT-RECOGNITION\\resourcesdetect\\images\\facedetect.jpg", src);
+
+            //logger: info that everything it right
+            log.info("It's only one person in the image");
+
+            //result if the image it's a profile
             result = "profile detected";//"";
 
         }  else if (type.equals("multiple") && faceDetection.toArray().length > 1 ) { //
             for(Rect rect: faceDetection.toArray()) {
-                Imgproc.rectangle(src, new Point(rect.x, rect.y), new Point(rect.x + rect.width, rect.y + rect.height) , new Scalar(0, 0, 255), 3);
+                Imgproc.rectangle(src, new Point(rect.x, rect.y),
+                        new Point(rect.x + rect.width, rect.y + rect.height) , new Scalar(0, 0, 255), 3);
             }
 
             Imgcodecs.imwrite("D:\\workspacejala\\progra102\\JU-OBJECT-RECOGNITION\\resourcesdetect\\images\\peopledetected.jpg", src);
-            result ="multiple person detected";//String.format("Detected faces: %d" + faceDetection.toArray().length);
+
+            //the amount of face detected
+            face_Detect=faceDetection.toArray().length;
+
+            //logger: info that everything it right
+            log.info("multiple people in the image");
+            //final result of the process
+            result ="multiple person detected" + String.valueOf(face_Detect);//String.format("Detected faces: %d" + faceDetection.toArray().length);
         } else {
-           result = "the image it's wrong, upload the image again";
+            log.warning("It's a problem in the file or in the type");
+           result = "Probably the type of image it's different from the image";
         }
 
     }
     public String getCommand() {
+        Logger log = At18Logger.getLogger();
+        log.info("the proccess go successfully");
         return result;
     }
 

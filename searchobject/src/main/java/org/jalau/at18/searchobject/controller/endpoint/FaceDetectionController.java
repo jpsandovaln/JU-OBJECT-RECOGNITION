@@ -24,9 +24,7 @@ public class FaceDetectionController{
                                             @RequestParam("type") String type) throws IOException {
         //String fileName = storageService.save(file);
         Path path = storageService.save(file);
-        System.out.println("imagen   " + path);
         String fileName = path.toString();
-        System.out.println("filename" + fileName);
         FaceDetect imageconverter = new FaceDetect(fileName, type);
         return ResponseEntity.status(HttpStatus.OK).body(imageconverter.getCommand());
     }
