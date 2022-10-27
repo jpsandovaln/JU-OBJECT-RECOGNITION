@@ -8,7 +8,9 @@
  */
 package org.jalau.at18.searchobject.controller.endpoint;
 
+import org.jalau.at18.searchobject.common.exception.ModelRecognizerTypeException;
 import org.jalau.at18.searchobject.common.exception.NotifierTypeException;
+import org.jalau.at18.searchobject.common.exception.UnzipFileException;
 import org.jalau.at18.searchobject.common.logger.At18Logger;
 import org.jalau.at18.searchobject.controller.service.FilesStorageService;
 import org.jalau.at18.searchobject.controller.service.ProcessFrameService;
@@ -65,6 +67,8 @@ public class ProcessFrameController {
 
             processMatchService.processMatches(matchInfos, notifierType, recipient);
             return ResponseEntity.status(HttpStatus.OK).body(matchInfos);
+        } catch (ModelRecognizerTypeException e) {
+            System.out.println(e.getMessage());
         } catch (NotifierTypeException e) {
             System.out.println(e.getMessage());
         }
