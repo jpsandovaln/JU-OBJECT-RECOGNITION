@@ -2,3 +2,11 @@ oct. 26, 2022 9:21:19 P. M. org.jalau.at18.searchobject.model.facedetector.FaceD
 INFO: multiple people in the image
 oct. 26, 2022 9:21:19 P. M. org.jalau.at18.searchobject.model.facedetector.FaceDetect getCommand
 INFO: the proccess go successfully
+oct. 26, 2022 9:24:01 P. M. org.jalau.at18.searchobject.model.facedetector.FaceDetect faceDetection
+WARNING: It's a problem in the file or in the type
+oct. 26, 2022 9:24:01 P. M. org.jalau.at18.searchobject.model.facedetector.FaceDetect getCommand
+INFO: the proccess go successfully
+oct. 26, 2022 9:24:12 P. M. org.jalau.at18.searchobject.model.facedetector.FaceDetect faceDetection
+INFO: It's only one person in the image
+oct. 26, 2022 9:24:12 P. M. org.jalau.at18.searchobject.model.facedetector.FaceDetect getCommand
+INFO: the proccess go successfully
