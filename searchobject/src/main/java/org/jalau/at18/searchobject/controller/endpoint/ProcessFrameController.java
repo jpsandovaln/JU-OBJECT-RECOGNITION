@@ -11,14 +11,10 @@ package org.jalau.at18.searchobject.controller.endpoint;
 import org.jalau.at18.searchobject.common.exception.ObjectRecognizerException;
 import org.jalau.at18.searchobject.common.exception.NotifierTypeException;
 import org.jalau.at18.searchobject.common.exception.UnzipFileException;
-import org.jalau.at18.searchobject.common.logger.At18Logger;
 import org.jalau.at18.searchobject.controller.service.FilesStorageService;
 import org.jalau.at18.searchobject.controller.service.ProcessFrameService;
 import org.jalau.at18.searchobject.controller.service.ProcessMatchService;
 import org.jalau.at18.searchobject.model.objectrecognizer.UnzipFile;
-import org.jalau.at18.searchobject.model.objectrecognizer.recognizer.ModelRecognizer;
-import org.jalau.at18.searchobject.model.objectrecognizer.recognizer.SSD;
-import org.jalau.at18.searchobject.model.objectrecognizer.recognizertypes.FileSource;
 import org.jalau.at18.searchobject.model.objectrecognizer.recognizertypes.MatchInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -28,10 +24,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
-import java.io.IOException;
 import java.nio.file.Path;
 import java.util.List;
-import java.util.logging.Logger;
 
 @RestController
 public class ProcessFrameController {
@@ -51,7 +45,7 @@ public class ProcessFrameController {
                                                                  @RequestParam int occurrencyPercentage,
                                                                  @RequestParam String modelObjectRecognizer,
                                                                  @RequestParam String notifierType,
-                                                                 @RequestParam String recipient) throws IOException {
+                                                                 @RequestParam String recipient)  {
 
         try {
             // save file, it is saving the zip file and getting the path
@@ -67,6 +61,8 @@ public class ProcessFrameController {
 
             processMatchService.processMatches(matchInfos, notifierType, recipient);
             return ResponseEntity.status(HttpStatus.OK).body(matchInfos);
+        } catch (UnzipFileException e) {
+            System.out.println(e.getMessage());
         } catch (ObjectRecognizerException e) {
             System.out.println(e.getMessage());
         } catch (NotifierTypeException e) {
