@@ -8,19 +8,19 @@
  */
 package org.jalau.at18.searchobject.common.exception;
 /**
- * Throws this ModelRecognizerTypeException if the model recognizer type is not one of the available recognizers
+ * Throws this ObjectRecognizerException if the model recognizer type is not one of the available recognizers
  *
  * @author Rodrigo Bernal
  * @version 1.0
  */
 
-public class ModelRecognizerTypeException extends Exception{
+public class ObjectRecognizerException extends Exception{
 
-    public ModelRecognizerTypeException(String message) {
+    public ObjectRecognizerException(String message) {
         super(message);
     }
 
-    public ModelRecognizerTypeException(String message, Throwable ex) {
+    public ObjectRecognizerException(String message, Throwable ex) {
         super(message,ex);
     }
 

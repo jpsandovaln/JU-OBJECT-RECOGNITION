@@ -8,7 +8,7 @@
  */
 package org.jalau.at18.searchobject.controller.service;
 
-import org.jalau.at18.searchobject.common.exception.ModelRecognizerTypeException;
+import org.jalau.at18.searchobject.common.exception.ObjectRecognizerException;
 import org.jalau.at18.searchobject.model.objectrecognizer.recognizer.ModelRecognizer;
 import org.jalau.at18.searchobject.model.objectrecognizer.recognizer.VerifyModelRecognizer;
 import org.jalau.at18.searchobject.model.objectrecognizer.recognizertypes.MatchInfo;
@@ -19,7 +19,7 @@ import java.util.List;
 /**
  *
  *
- * @throws ModelRecognizerTypeException if the model recognizer type is not one of the available recognizers
+ * @throws ObjectRecognizerException if the model recognizer type is not one of the available recognizers
  */
 
 @Service
@@ -27,7 +27,7 @@ public class ProcessFrameService {
     public List<MatchInfo> processFrameAccordingCriteria(Path zipFilePath,
                                                          String searchCriteria,
                                                          int occurrencyPercentage,
-                                                         String modelObjectRecognizer) throws ModelRecognizerTypeException {
+                                                         String modelObjectRecognizer) throws ObjectRecognizerException {
         try {
             // Verifying the model
             VerifyModelRecognizer verifyModelRecognizer = new VerifyModelRecognizer();
@@ -35,7 +35,7 @@ public class ProcessFrameService {
             List<MatchInfo> matchInfos = modelRecognizer.matching(zipFilePath, searchCriteria, occurrencyPercentage);
             return matchInfos;
         } catch (Exception e) {
-            throw new ModelRecognizerTypeException("The model recognizer type is not avaiable",e);
+            throw new ObjectRecognizerException("The model recognizer type is not avaiable",e);
         }
 
     }
