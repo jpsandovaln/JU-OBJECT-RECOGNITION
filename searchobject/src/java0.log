@@ -1,0 +1,10 @@
+oct. 28, 2022 6:41:34 P. M. org.apache.coyote.AbstractProtocol start
+INFO: Starting ProtocolHandler ["http-nio-5000"]
+oct. 28, 2022 6:41:46 P. M. org.apache.catalina.core.ApplicationContext log
+INFO: Initializing Spring DispatcherServlet 'dispatcherServlet'
+oct. 28, 2022 6:41:46 P. M. org.jalau.at18.searchobject.model.objectrecognizer.recognizer.VerifyModelRecognizer getModelRecognizer
+INFO: Model selected: SSD
+oct. 28, 2022 6:44:50 P. M. org.jalau.at18.searchobject.model.objectrecognizer.recognizer.VerifyModelRecognizer getModelRecognizer
+INFO: Model selected: SSD
+oct. 28, 2022 6:45:46 P. M. org.jalau.at18.searchobject.middleware.EmotionRecognitionMiddleware doFilter
+INFO: Esta entrando emotion     Sergio
