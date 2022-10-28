@@ -1,21 +1,21 @@
 package org.jalau.at18.searchobject.message;
 
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNull;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNull;
 
-class ResponseMessageTest {
+public class ResponseMessageTest {
 
     @Test
-    void shouldGetMessage() {
+    public void shouldGetMessage() {
         ResponseMessage responseMessage = new ResponseMessage("Random message");
         String expectedMessage = "Random message";
         assertEquals(expectedMessage, responseMessage.getMessage());
     }
 
     @Test
-    void shouldSetMessage() {
+    public void shouldSetMessage() {
         ResponseMessage responseMessage = new ResponseMessage("message");
         String newMessage = "New message";
         responseMessage.setMessage(newMessage);
@@ -23,7 +23,7 @@ class ResponseMessageTest {
     }
 
     @Test
-    void shouldSetNullMessage() {
+    public void shouldSetNullMessage() {
         ResponseMessage responseMessage = new ResponseMessage("message");
         responseMessage.setMessage(null);
         assertNull(responseMessage.getMessage());
