@@ -34,11 +34,25 @@ public class FaceDetect {
     private static String result; //result of the face detection in a multiple or profile image
 
     private static int face_Detect;
+
+    /**
+
+     * Constructor to the face detection
+
+     * @param file the image that it's going to be in the process of detection
+     * @param type the tipe of result we desire to find in the input image
+
+     */
     public FaceDetect (String file, String type) {
         Logger log = At18Logger.getLogger();
         faceDetection (file, type);
 
     }
+    /**
+
+     * Method that it's the process of the face detection where create the square in the face if it's detected
+
+     */
 
     public static void faceDetection (String file, String type) {
         Logger log = At18Logger.getLogger();
@@ -98,11 +112,20 @@ public class FaceDetect {
             //final result of the process
             result ="multiple person detected" + String.valueOf(face_Detect);//String.format("Detected faces: %d" + faceDetection.toArray().length);
         } else {
+            //
             log.warning("It's a problem in the file or in the type");
            result = "Probably the type of image it's different from the image";
         }
 
     }
+
+    /**
+
+     * Method that return the result after the face detection in the image
+
+     * @return The result if the face detection, if its a profile or multiple
+
+     */
     public String getCommand() {
         Logger log = At18Logger.getLogger();
         log.info("the proccess go successfully");
