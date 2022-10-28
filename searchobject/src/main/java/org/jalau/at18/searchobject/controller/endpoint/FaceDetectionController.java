@@ -58,7 +58,7 @@ public class FaceDetectionController{
                                             @RequestParam("type") String type) throws IOException {
         Path path = storageService.save(file);  //Save the upload image
         String fileName = path.toString(); //convert the path direction to an string
-        FaceDetect imageanalize = new FaceDetect(fileName, type); //initialize the class where we are going to analyze the image
-        return ResponseEntity.status(HttpStatus.OK).body(imageanalize.getCommand());
+        FaceDetect imageAnalize = new FaceDetect(fileName, type); //initialize the class where we are going to analyze the image
+        return ResponseEntity.status(HttpStatus.OK).body(imageAnalize.getCommand());
     }
 }

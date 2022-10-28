@@ -113,8 +113,7 @@ public class FaceDetect {
             //logger: info that everything it right
             log.info("multiple people in the image");
             //final result of the process
-            //String.format("Detected faces: %d" + faceDetection.toArray().length);
-            result ="multiple person detected" +" "+ "\n" + "Quantity of face detect" + String.valueOf(face_Detect);
+            result ="multiple person detected" +" "+ "\n" + "Quantity of face detect: " + String.valueOf(face_Detect);
         } else {
             //
             log.warning("It's a problem in the file or in the type");
