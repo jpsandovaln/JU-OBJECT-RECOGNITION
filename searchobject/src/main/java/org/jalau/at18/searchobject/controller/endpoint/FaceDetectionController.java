@@ -3,7 +3,7 @@ package org.jalau.at18.searchobject.controller.endpoint;
 /**
  * Copyright (c) 2022 Jala University.
  *
- * This software is the confidential and proprieraty information of Jalasoft
+ * This software is the confidential and property information of Jalasoft
  * ("Confidential Information"). You shall not disclose such Confidential
  * Information and shall use it only in accordance with the terms of the
  * Licence agreement you entered into with Jalasoft
@@ -50,15 +50,15 @@ public class FaceDetectionController{
 
      * @param file it's the image that user will upload to analyze
      *
-     * @param type the type of face that we want to detec
+     * @param type the type of face that we want to detect
 
      */
     @PostMapping("/faceDetection")  //direction of the localhost where we are going to set the info
     public ResponseEntity <String> readData(@RequestParam("file") MultipartFile file,
                                             @RequestParam("type") String type) throws IOException {
         Path path = storageService.save(file);  //Save the upload image
-        String fileName = path.toString(); //convert the path direction to an string
-        FaceDetect imageAnalize = new FaceDetect(fileName, type); //initialize the class where we are going to analyze the image
-        return ResponseEntity.status(HttpStatus.OK).body(imageAnalize.getCommand());
+        String fileName = path.toString(); //convert the path direction to a string
+        FaceDetect imageAnalyze = new FaceDetect(fileName, type); //initialize the class where we are going to analyze the image
+        return ResponseEntity.status(HttpStatus.OK).body(imageAnalyze.getCommand());
     }
 }
