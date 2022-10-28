@@ -87,8 +87,10 @@ public class FaceDetect {
                         new Point(rect.x + rect.width, rect.y + rect.height) , new Scalar(0, 0, 255), 3);
             }
 
+            String finalfile = file.substring(22,file.length());
+
             //Save the image already processed with the face detection
-            Imgcodecs.imwrite("D:\\workspacejala\\progra102\\JU-OBJECT-RECOGNITION\\searchobject\\src\\main\\resources\\images\\facedetect.jpg", src);
+            Imgcodecs.imwrite("D:\\workspacejala\\progra102\\JU-OBJECT-RECOGNITION\\searchobject\\src\\main\\resources\\images\\" + finalfile, src);
 
             //logger: info that everything it right
             log.info("It's only one person in the image");
@@ -101,8 +103,9 @@ public class FaceDetect {
                 Imgproc.rectangle(src, new Point(rect.x, rect.y),
                         new Point(rect.x + rect.width, rect.y + rect.height) , new Scalar(0, 0, 255), 3);
             }
+            String finalfile = file.substring(22,file.length());
 
-            Imgcodecs.imwrite("D:\\workspacejala\\progra102\\JU-OBJECT-RECOGNITION\\searchobject\\src\\main\\resources\\images\\peopledetected.jpg", src);
+            Imgcodecs.imwrite("D:\\workspacejala\\progra102\\JU-OBJECT-RECOGNITION\\searchobject\\src\\main\\resources\\images\\"+ finalfile, src);
 
             //the amount of face detected
             face_Detect=faceDetection.toArray().length;
@@ -110,7 +113,8 @@ public class FaceDetect {
             //logger: info that everything it right
             log.info("multiple people in the image");
             //final result of the process
-            result ="multiple person detected" + String.valueOf(face_Detect);//String.format("Detected faces: %d" + faceDetection.toArray().length);
+            //String.format("Detected faces: %d" + faceDetection.toArray().length);
+            result ="multiple person detected" +" "+ "\n" + "Quantity of face detect" + String.valueOf(face_Detect);
         } else {
             //
             log.warning("It's a problem in the file or in the type");
