@@ -4,9 +4,10 @@ import org.jalau.at18.searchobject.controller.service.FilesStorageService;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.web.servlet.ServletComponentScan;
 
 import javax.annotation.Resource;
-
+@ServletComponentScan
 @SpringBootApplication
 public class SearchobjectApplication implements CommandLineRunner {
     @Resource

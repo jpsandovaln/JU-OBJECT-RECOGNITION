@@ -29,7 +29,7 @@ public class At18Logger {
     private static Logger log;
     private static At18Logger at18logger;
 
-    private At18Logger () {
+    public At18Logger() {
         try {
             LogManager.getLogManager().readConfiguration(new FileInputStream(PROPERTIES_PATH));
 
