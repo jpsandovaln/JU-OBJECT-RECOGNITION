@@ -57,7 +57,7 @@ public class FaceDetect {
         Mat src = Imgcodecs.imread(imgFile);
 
         // Are the connecting dots of a facial layout. This xml exactly defines a front-face layout
-        String xmlFile ="D:\\workspacejala\\progra102\\JU-OBJECT-RECOGNITION\\searchobject\\src\\main\\resources\\xml\\lbpcascade_frontalface.xml";
+        String xmlFile =currentDir + "\\src\\main\\resources\\xml\\lbpcascade_frontalface.xml";
 
         //cascade classifiers is an effective object detection method
         CascadeClassifier cc = new CascadeClassifier(xmlFile);
@@ -77,7 +77,7 @@ public class FaceDetect {
 
             String finalFile = file.substring(22,file.length());
             //Save the image already processed with the face detection
-            Imgcodecs.imwrite("D:\\workspacejala\\progra102\\JU-OBJECT-RECOGNITION\\searchobject\\src\\main\\resources\\images\\" + finalFile, src);
+            Imgcodecs.imwrite(currentDir + "\\src\\main\\resources\\images\\" + finalFile, src);
             //logger: info that everything it right
             log.info("It's only one person in the image");
             //result if the image it's a profile
@@ -89,7 +89,8 @@ public class FaceDetect {
                         new Point(rect.x + rect.width, rect.y + rect.height) , new Scalar(0, 0, 255), 3);
             }
             String finalFile = file.substring(22,file.length());
-            Imgcodecs.imwrite("D:\\workspacejala\\progra102\\JU-OBJECT-RECOGNITION\\searchobject\\src\\main\\resources\\images\\"+ finalFile, src);
+            Imgcodecs.imwrite(currentDir + "\\src\\main\\resources\\images\\" + finalFile, src);
+
             //the amount of face detected
             faceDetect=faceDetection.toArray().length;
             //logger: info that everything it right
