@@ -21,17 +21,11 @@ import java.util.List;
  *
  * @throws NotifierTypeExeption if the notifier type is not one of the available notifiers
  */
-
 @Service
 public class NotifyService {
     public void notifyService(List<MatchInfo> matches, String notifierType, String recipient) throws NotifierTypeException {
-        try {
-            VerifyNotifier verifyNotifier = new VerifyNotifier();
-            Notifier notifier = verifyNotifier.getNotifier(notifierType);
-            notifier.notify(matches, recipient);
-        } catch (Exception e) {
-            throw new NotifierTypeException("The notifier type is not avaiable", e);
-        }
-
+        VerifyNotifier verifyNotifier = new VerifyNotifier();
+        Notifier notifier = verifyNotifier.getNotifier(notifierType);
+        notifier.notify(matches, recipient);
     }
 }

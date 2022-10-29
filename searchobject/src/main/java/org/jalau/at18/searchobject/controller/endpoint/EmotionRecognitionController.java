@@ -8,6 +8,7 @@
  */
 package org.jalau.at18.searchobject.controller.endpoint;
 import org.jalau.at18.searchobject.common.exception.EmotionRecognizerException;
+import org.jalau.at18.searchobject.controller.response.ErrorResponse;
 import org.jalau.at18.searchobject.controller.service.EmotionRecognitionService;
 import org.jalau.at18.searchobject.controller.service.FilesStorageService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,16 +28,15 @@ public class EmotionRecognitionController{
     @Autowired
     EmotionRecognitionService emotionRecognitionService;
     @PostMapping("/emotionRecognition")
-    public ResponseEntity <String[]> readData(@RequestParam("file") MultipartFile file,
+    public ResponseEntity readData(@RequestParam("file") MultipartFile file,
                                                @RequestParam String token)  {
         try {
             Path path = storageService.save(file);
             String[] data = emotionRecognitionService.processImage(path.toAbsolutePath(), token);
             return ResponseEntity.status(HttpStatus.OK).body(data);
         } catch (EmotionRecognizerException e) {
-            System.out.println(e.getMessage());
+            return ResponseEntity.badRequest().body(new ErrorResponse("400",e.getMessage()));
         }
-        return null;
 
     }
 }

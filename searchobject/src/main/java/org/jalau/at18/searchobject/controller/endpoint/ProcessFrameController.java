@@ -11,6 +11,7 @@ package org.jalau.at18.searchobject.controller.endpoint;
 import org.jalau.at18.searchobject.common.exception.ObjectRecognizerException;
 import org.jalau.at18.searchobject.common.exception.NotifierTypeException;
 import org.jalau.at18.searchobject.common.exception.UnzipFileException;
+import org.jalau.at18.searchobject.controller.response.ErrorResponse;
 import org.jalau.at18.searchobject.controller.service.FilesStorageService;
 import org.jalau.at18.searchobject.controller.service.ProcessFrameService;
 import org.jalau.at18.searchobject.controller.service.ProcessMatchService;
@@ -23,6 +24,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
+
 
 import java.nio.file.Path;
 import java.util.List;
@@ -40,7 +42,7 @@ public class ProcessFrameController {
     ProcessMatchService processMatchService;
 
     @PostMapping("/processFrame")
-    public ResponseEntity<List<MatchInfo>> readDataCriteriaFrame(@RequestParam("file") MultipartFile file,
+    public ResponseEntity readDataCriteriaFrame(@RequestParam("file") MultipartFile file,
                                                                  @RequestParam String searchCriteria,
                                                                  @RequestParam int occurrencyPercentage,
                                                                  @RequestParam String modelObjectRecognizer,
@@ -62,12 +64,11 @@ public class ProcessFrameController {
             processMatchService.processMatches(matchInfos, notifierType, recipient);
             return ResponseEntity.status(HttpStatus.OK).body(matchInfos);
         } catch (UnzipFileException e) {
-            System.out.println(e.getMessage());
+            return ResponseEntity.badRequest().body(new ErrorResponse("400",e.getMessage()));
         } catch (ObjectRecognizerException e) {
-            System.out.println(e.getMessage());
+            return ResponseEntity.badRequest().body(new ErrorResponse("400",e.getMessage()));
         } catch (NotifierTypeException e) {
-            System.out.println(e.getMessage());
+            return ResponseEntity.badRequest().body(new ErrorResponse("400",e.getMessage()));
         }
-        return null;
     }
 }

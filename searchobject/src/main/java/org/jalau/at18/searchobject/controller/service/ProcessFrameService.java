@@ -28,15 +28,10 @@ public class ProcessFrameService {
                                                          String searchCriteria,
                                                          int occurrencyPercentage,
                                                          String modelObjectRecognizer) throws ObjectRecognizerException {
-        try {
-            // Verifying the model
-            VerifyModelRecognizer verifyModelRecognizer = new VerifyModelRecognizer();
-            ModelRecognizer modelRecognizer = verifyModelRecognizer.getModelRecognizer(modelObjectRecognizer);
-            List<MatchInfo> matchInfos = modelRecognizer.matching(zipFilePath, searchCriteria, occurrencyPercentage);
-            return matchInfos;
-        } catch (Exception e) {
-            throw new ObjectRecognizerException("The model recognizer type is not avaiable",e);
-        }
-
+        // Verifying the model
+        VerifyModelRecognizer verifyModelRecognizer = new VerifyModelRecognizer();
+        ModelRecognizer modelRecognizer = verifyModelRecognizer.getModelRecognizer(modelObjectRecognizer);
+        List<MatchInfo> matchInfos = modelRecognizer.matching(zipFilePath, searchCriteria, occurrencyPercentage);
+        return matchInfos;
     }
 }

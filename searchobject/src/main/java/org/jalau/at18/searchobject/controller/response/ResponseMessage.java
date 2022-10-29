@@ -1,4 +1,4 @@
-package org.jalau.at18.searchobject.model.response;
+package org.jalau.at18.searchobject.controller.response;
 
 // The ResponseMessage is for message to client that we’re gonna use in Rest Controller and Exception Handler.
 public class ResponseMessage {
