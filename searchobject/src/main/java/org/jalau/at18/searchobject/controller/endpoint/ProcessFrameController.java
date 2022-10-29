@@ -1,5 +1,7 @@
 package org.jalau.at18.searchobject.controller.endpoint;
 
+import ai.djl.ModelException;
+import ai.djl.translate.TranslateException;
 import org.jalau.at18.searchobject.common.logger.At18Logger;
 import org.jalau.at18.searchobject.controller.service.FilesStorageService;
 import org.jalau.at18.searchobject.controller.service.ProcessFrameService;
@@ -40,7 +42,7 @@ public class ProcessFrameController {
                                                                  @RequestParam int occurrencyPercentage,
                                                                  @RequestParam String modelObjectRecognizer,
                                                                  @RequestParam String notifierType,
-                                                                 @RequestParam String recipient) throws IOException {
+                                                                 @RequestParam String recipient) throws IOException, ModelException, TranslateException {
         // save file, it is saving the zip file and getting the path
         Path path = storageService.save(file);
         //LOG.info(path.toString());
