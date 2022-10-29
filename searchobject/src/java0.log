@@ -1,14 +1,14 @@
-oct. 29, 2022 10:46:14 A. M. org.apache.coyote.AbstractProtocol start
+oct. 29, 2022 11:16:41 A. M. org.apache.coyote.AbstractProtocol start
 INFO: Starting ProtocolHandler ["http-nio-5000"]
-oct. 29, 2022 10:46:21 A. M. org.apache.catalina.core.ApplicationContext log
+oct. 29, 2022 11:16:50 A. M. org.apache.catalina.core.ApplicationContext log
 INFO: Initializing Spring DispatcherServlet 'dispatcherServlet'
-oct. 29, 2022 10:46:21 A. M. org.jalau.at18.searchobject.middleware.FaceDetectionControllerMiddleware doFilter
+oct. 29, 2022 11:16:50 A. M. org.jalau.at18.searchobject.middleware.FaceDetectionControllerMiddleware doFilter
 INFO:  MODEL FACE DETECTION  
-oct. 29, 2022 10:46:21 A. M. org.jalau.at18.searchobject.middleware.FaceDetectionControllerMiddleware doFilter
+oct. 29, 2022 11:16:50 A. M. org.jalau.at18.searchobject.middleware.FaceDetectionControllerMiddleware doFilter
 INFO:  ACCEPT THE IMAGE 
-oct. 29, 2022 10:46:21 A. M. org.jalau.at18.searchobject.middleware.FaceDetectionControllerMiddleware doFilter
+oct. 29, 2022 11:16:50 A. M. org.jalau.at18.searchobject.middleware.FaceDetectionControllerMiddleware doFilter
 INFO: FACE DETECTION ---- RUNNING -------
-oct. 29, 2022 10:46:21 A. M. org.jalau.at18.searchobject.model.facedetector.FaceDetect faceDetection
+oct. 29, 2022 11:16:51 A. M. org.jalau.at18.searchobject.model.facedetector.FaceDetect faceDetection
 INFO: multiple people in the image
-oct. 29, 2022 10:46:21 A. M. org.jalau.at18.searchobject.model.facedetector.FaceDetect getCommand
+oct. 29, 2022 11:16:51 A. M. org.jalau.at18.searchobject.model.facedetector.FaceDetect getCommand
 INFO: the proccess go successfully
