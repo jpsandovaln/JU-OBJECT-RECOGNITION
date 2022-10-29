@@ -23,7 +23,6 @@ import javax.servlet.annotation.WebFilter;
  * @author Sarai Alvarez
  * @version 1.0
  */
-
 @WebFilter(urlPatterns = "/emotionRecognition")
 
 public class EmotionRecognitionMiddleware implements Filter {
@@ -35,7 +34,6 @@ public class EmotionRecognitionMiddleware implements Filter {
      * Filters: which are applied to HTTP requests before or after they have been served by the servlets.
      * @param //request it's the image that user will upload to analyze
      * @param //response the type of face that we want to detect
-
      */
     @Override
     public void doFilter(ServletRequest request,
@@ -52,7 +50,7 @@ public class EmotionRecognitionMiddleware implements Filter {
                 LOG.info(" ACCEPT THE IMAGE ");
                 //Verify that a field isn't empty
                 if(!req.getParameter("token").isEmpty()) {
-                    System.out.println("EMOTION RECOGNITION ---- RUNNING -------");
+                    LOG.info("EMOTION RECOGNITION ---- RUNNING -------");
                     chain.doFilter(request, response);
                 } else {
                     LOG.warning(" ENTER AN TOKEN ");
@@ -60,10 +58,8 @@ public class EmotionRecognitionMiddleware implements Filter {
             }  else {
                 LOG.warning(" ENTER AN IMAGE ");
             }
-
-
         } catch (InstantiationError e) {
-            LOG.info(" ERROR LOADING THE MODEL "+e);
+            LOG.warning(" ERROR LOADING THE MODEL "+e);
             e.printStackTrace();
         }
 

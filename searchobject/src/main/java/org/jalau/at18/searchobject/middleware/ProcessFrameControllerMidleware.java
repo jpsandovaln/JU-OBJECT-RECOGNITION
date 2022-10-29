@@ -17,16 +17,22 @@ import java.util.logging.Logger;
 import javax.servlet.*;
 import javax.servlet.annotation.WebFilter;
 /**
- * doFilter: It is the one that contains the logic of what the filter does. It receives by parameter the request, the response and the chain of filters.
- * Servlets: which contain the logic that is applied when receiving an HTTP request.
- * Filters: which are applied to HTTP requests before or after they have been served by the servlets.
- * @param // request it's the image that user will upload to analyze
- * @param // response the type of face that we want to detect
-
+ * Filters are Java classes that implement the javax.servlet.Filter interface,
+ * and whose mission is to intercept requests before they reach the servlets
+ * and after, to perform certain operations.
+ * @author Sarai Alvarez
+ * @version 1.0
  */
 @WebFilter(urlPatterns = "/processFrame")
 public class ProcessFrameControllerMidleware implements Filter {
     private static final Logger LOG = new At18Logger().getLogger();
+    /**
+     * doFilter: It is the one that contains the logic of what the filter does. It receives by parameter the request, the response and the chain of filters.
+     * Servlets: which contain the logic that is applied when receiving an HTTP request.
+     * Filters: which are applied to HTTP requests before or after they have been served by the servlets.
+     * @param //request it's the image that user will upload to analyze
+     * @param //response the type of face that we want to detect
+     */
     @Override
     public void doFilter(ServletRequest request,
                          ServletResponse response,
@@ -36,22 +42,22 @@ public class ProcessFrameControllerMidleware implements Filter {
         HttpServletResponse res = (HttpServletResponse) response;
 
         try{
+            LOG.info("MODEL PROCESS FRAME CONTROLLER");
             //Verify that an empty or null file isn't entered
             if(req.getPart("file").getSize() != 0L && req.getPart("file").getSize() > 100 && req.getPart("file").getContentType() != null  &&  req.getPart("file").getContentType().contains("zip")) {
-                System.out.println("MODEL PROCESS FRAME CONTROLLER");
+                LOG.info(" ACCEPT THE FILE ");
                 //Verify that a field isn't empty
                 if(!req.getParameter("searchCriteria").isEmpty() && !req.getParameter("occurrencyPercentage").isEmpty() && !req.getParameter("modelObjectRecognizer").isEmpty() && !req.getParameter("notifierType").isEmpty()) {
-                    System.out.println("PROCESS FRAME CONTROLLER ------ RUNNING ------");
+                    LOG.info("PROCESS FRAME CONTROLLER ------ RUNNING ------");
                     chain.doFilter(request, response);
                 } else {
-                    LOG.info(" THE FIELDS ARE EMPTY ");
+                    LOG.warning(" THE FIELDS ARE EMPTY ");
                 }
             }  else {
-                LOG.info(" THE FILE IS EMPTY OR NOT A .zip FILE ");
+                LOG.warning(" THE FILE IS EMPTY OR NOT A .zip FILE ");
             }
-
         } catch (InstantiationError e) {
-            LOG.info(" ERROR LOADING THE MODEL "+e);
+            LOG.warning(" ERROR LOADING THE MODEL "+e);
             e.printStackTrace();
         }
     }

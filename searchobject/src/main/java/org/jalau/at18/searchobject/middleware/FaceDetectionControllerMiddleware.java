@@ -17,16 +17,22 @@ import java.util.logging.Logger;
 import javax.servlet.FilterChain;
 import javax.servlet.ServletException;
 /**
- * doFilter: It is the one that contains the logic of what the filter does. It receives by parameter the request, the response and the chain of filters.
- * Servlets: which contain the logic that is applied when receiving an HTTP request.
- * Filters: which are applied to HTTP requests before or after they have been served by the servlets.
- * @param // request it's the image that user will upload to analyze
- * @param // response the type of face that we want to detect
-
+ * Filters are Java classes that implement the javax.servlet.Filter interface,
+ * and whose mission is to intercept requests before they reach the servlets
+ * and after, to perform certain operations.
+ * @author Sarai Alvarez
+ * @version 1.0
  */
 @WebFilter(urlPatterns = "/faceDetection")
 public class FaceDetectionControllerMiddleware implements Filter {
     private static final Logger LOG = new At18Logger().getLogger();
+    /**
+     * doFilter: It is the one that contains the logic of what the filter does. It receives by parameter the request, the response and the chain of filters.
+     * Servlets: which contain the logic that is applied when receiving an HTTP request.
+     * Filters: which are applied to HTTP requests before or after they have been served by the servlets.
+     * @param //request it's the image that user will upload to analyze
+     * @param //response the type of face that we want to detect
+     */
     @Override
     public void doFilter(ServletRequest request,
                          ServletResponse response,
@@ -51,7 +57,7 @@ public class FaceDetectionControllerMiddleware implements Filter {
                 LOG.warning(" ENTER AN IMAGE ");
             }
         } catch (InstantiationError e) {
-            LOG.info(" ERROR LOADING THE MODEL "+e);
+            LOG.warning(" ERROR LOADING THE MODEL "+e);
             e.printStackTrace();
         }
 
