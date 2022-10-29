@@ -1,14 +1,86 @@
-oct. 29, 2022 11:16:41 A. M. org.apache.coyote.AbstractProtocol start
+oct. 29, 2022 2:57:47 P. M. org.apache.coyote.AbstractProtocol start
 INFO: Starting ProtocolHandler ["http-nio-5000"]
-oct. 29, 2022 11:16:50 A. M. org.apache.catalina.core.ApplicationContext log
+oct. 29, 2022 2:58:13 P. M. org.apache.catalina.core.ApplicationContext log
 INFO: Initializing Spring DispatcherServlet 'dispatcherServlet'
-oct. 29, 2022 11:16:50 A. M. org.jalau.at18.searchobject.middleware.FaceDetectionControllerMiddleware doFilter
+oct. 29, 2022 2:58:13 P. M. org.jalau.at18.searchobject.middleware.ProcessFrameControllerMidleware doFilter
+INFO: MODEL PROCESS FRAME CONTROLLER
+oct. 29, 2022 2:58:13 P. M. org.jalau.at18.searchobject.middleware.ProcessFrameControllerMidleware doFilter
+INFO:  ACCEPT THE FILE 
+oct. 29, 2022 2:58:13 P. M. org.jalau.at18.searchobject.middleware.ProcessFrameControllerMidleware doFilter
+INFO: PROCESS FRAME CONTROLLER ------ RUNNING ------
+oct. 29, 2022 2:58:13 P. M. org.jalau.at18.searchobject.model.objectrecognizer.recognizer.VerifyModelRecognizer getModelRecognizer
+INFO: Model selected: OBJECTDETECTION
+oct. 29, 2022 2:59:31 P. M. org.jalau.at18.searchobject.middleware.ProcessFrameControllerMidleware doFilter
+INFO: MODEL PROCESS FRAME CONTROLLER
+oct. 29, 2022 2:59:31 P. M. org.jalau.at18.searchobject.middleware.ProcessFrameControllerMidleware doFilter
+INFO:  ACCEPT THE FILE 
+oct. 29, 2022 2:59:31 P. M. org.jalau.at18.searchobject.middleware.ProcessFrameControllerMidleware doFilter
+INFO: PROCESS FRAME CONTROLLER ------ RUNNING ------
+oct. 29, 2022 2:59:33 P. M. org.jalau.at18.searchobject.model.objectrecognizer.recognizer.VerifyModelRecognizer getModelRecognizer
+INFO: Model selected: SSD
+oct. 29, 2022 3:00:35 P. M. org.jalau.at18.searchobject.middleware.ProcessFrameControllerMidleware doFilter
+INFO: MODEL PROCESS FRAME CONTROLLER
+oct. 29, 2022 3:00:35 P. M. org.jalau.at18.searchobject.middleware.ProcessFrameControllerMidleware doFilter
+INFO:  ACCEPT THE FILE 
+oct. 29, 2022 3:00:35 P. M. org.jalau.at18.searchobject.middleware.ProcessFrameControllerMidleware doFilter
+INFO: PROCESS FRAME CONTROLLER ------ RUNNING ------
+oct. 29, 2022 3:00:37 P. M. org.jalau.at18.searchobject.model.objectrecognizer.recognizer.VerifyModelRecognizer getModelRecognizer
+INFO: Model selected: YOLO
+oct. 29, 2022 3:01:13 P. M. org.jalau.at18.searchobject.middleware.FaceDetectionControllerMiddleware doFilter
 INFO:  MODEL FACE DETECTION  
-oct. 29, 2022 11:16:50 A. M. org.jalau.at18.searchobject.middleware.FaceDetectionControllerMiddleware doFilter
+oct. 29, 2022 3:01:13 P. M. org.jalau.at18.searchobject.middleware.FaceDetectionControllerMiddleware doFilter
 INFO:  ACCEPT THE IMAGE 
-oct. 29, 2022 11:16:50 A. M. org.jalau.at18.searchobject.middleware.FaceDetectionControllerMiddleware doFilter
+oct. 29, 2022 3:01:13 P. M. org.jalau.at18.searchobject.middleware.FaceDetectionControllerMiddleware doFilter
 INFO: FACE DETECTION ---- RUNNING -------
-oct. 29, 2022 11:16:51 A. M. org.jalau.at18.searchobject.model.facedetector.FaceDetect faceDetection
+oct. 29, 2022 3:01:15 P. M. org.jalau.at18.searchobject.model.facedetector.FaceDetect faceDetection
 INFO: multiple people in the image
-oct. 29, 2022 11:16:51 A. M. org.jalau.at18.searchobject.model.facedetector.FaceDetect getCommand
+oct. 29, 2022 3:01:15 P. M. org.jalau.at18.searchobject.model.facedetector.FaceDetect getCommand
 INFO: the proccess go successfully
+oct. 29, 2022 3:01:56 P. M. org.jalau.at18.searchobject.middleware.FaceDetectionControllerMiddleware doFilter
+INFO:  MODEL FACE DETECTION  
+oct. 29, 2022 3:01:56 P. M. org.jalau.at18.searchobject.middleware.FaceDetectionControllerMiddleware doFilter
+INFO:  ACCEPT THE IMAGE 
+oct. 29, 2022 3:01:56 P. M. org.jalau.at18.searchobject.middleware.FaceDetectionControllerMiddleware doFilter
+INFO: FACE DETECTION ---- RUNNING -------
+oct. 29, 2022 3:01:56 P. M. org.jalau.at18.searchobject.model.facedetector.FaceDetect faceDetection
+WARNING: It's a problem in the file or in the type
+oct. 29, 2022 3:01:56 P. M. org.jalau.at18.searchobject.model.facedetector.FaceDetect getCommand
+INFO: the proccess go successfully
+oct. 29, 2022 3:03:41 P. M. org.jalau.at18.searchobject.middleware.FaceDetectionControllerMiddleware doFilter
+INFO:  MODEL FACE DETECTION  
+oct. 29, 2022 3:03:41 P. M. org.jalau.at18.searchobject.middleware.FaceDetectionControllerMiddleware doFilter
+INFO:  ACCEPT THE IMAGE 
+oct. 29, 2022 3:03:41 P. M. org.jalau.at18.searchobject.middleware.FaceDetectionControllerMiddleware doFilter
+INFO: FACE DETECTION ---- RUNNING -------
+oct. 29, 2022 3:03:43 P. M. org.jalau.at18.searchobject.model.facedetector.FaceDetect faceDetection
+INFO: It's only one person in the image
+oct. 29, 2022 3:03:43 P. M. org.jalau.at18.searchobject.model.facedetector.FaceDetect getCommand
+INFO: the proccess go successfully
+oct. 29, 2022 3:12:36 P. M. org.jalau.at18.searchobject.middleware.FaceDetectionControllerMiddleware doFilter
+INFO:  MODEL FACE DETECTION  
+oct. 29, 2022 3:12:36 P. M. org.jalau.at18.searchobject.middleware.FaceDetectionControllerMiddleware doFilter
+INFO:  ACCEPT THE IMAGE 
+oct. 29, 2022 3:12:36 P. M. org.jalau.at18.searchobject.middleware.FaceDetectionControllerMiddleware doFilter
+INFO: FACE DETECTION ---- RUNNING -------
+oct. 29, 2022 3:12:36 P. M. org.jalau.at18.searchobject.model.facedetector.FaceDetect faceDetection
+INFO: It's only one person in the image
+oct. 29, 2022 3:12:36 P. M. org.jalau.at18.searchobject.model.facedetector.FaceDetect getCommand
+INFO: the proccess go successfully
+oct. 29, 2022 3:12:50 P. M. org.jalau.at18.searchobject.middleware.FaceDetectionControllerMiddleware doFilter
+INFO:  MODEL FACE DETECTION  
+oct. 29, 2022 3:12:50 P. M. org.jalau.at18.searchobject.middleware.FaceDetectionControllerMiddleware doFilter
+INFO:  ACCEPT THE IMAGE 
+oct. 29, 2022 3:12:50 P. M. org.jalau.at18.searchobject.middleware.FaceDetectionControllerMiddleware doFilter
+INFO: FACE DETECTION ---- RUNNING -------
+oct. 29, 2022 3:12:50 P. M. org.jalau.at18.searchobject.model.facedetector.FaceDetect faceDetection
+INFO: multiple people in the image
+oct. 29, 2022 3:12:50 P. M. org.jalau.at18.searchobject.model.facedetector.FaceDetect getCommand
+INFO: the proccess go successfully
+oct. 29, 2022 3:13:08 P. M. org.jalau.at18.searchobject.middleware.ProcessFrameControllerMidleware doFilter
+INFO: MODEL PROCESS FRAME CONTROLLER
+oct. 29, 2022 3:13:08 P. M. org.jalau.at18.searchobject.middleware.ProcessFrameControllerMidleware doFilter
+INFO:  ACCEPT THE FILE 
+oct. 29, 2022 3:13:08 P. M. org.jalau.at18.searchobject.middleware.ProcessFrameControllerMidleware doFilter
+INFO: PROCESS FRAME CONTROLLER ------ RUNNING ------
+oct. 29, 2022 3:13:08 P. M. org.jalau.at18.searchobject.model.objectrecognizer.recognizer.VerifyModelRecognizer getModelRecognizer
+INFO: Model selected: SSD

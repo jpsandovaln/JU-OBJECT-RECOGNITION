@@ -11,7 +11,6 @@ import org.jalau.at18.searchobject.common.logger.At18Logger;
 import javax.servlet.*;
 import javax.servlet.annotation.WebFilter;
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.logging.Logger;
 import javax.servlet.FilterChain;
@@ -39,7 +38,6 @@ public class FaceDetectionControllerMiddleware implements Filter {
                          FilterChain chain) throws IOException, ServletException
     {
         HttpServletRequest req = (HttpServletRequest) request;
-        HttpServletResponse res = (HttpServletResponse) response;
 
         try{
             LOG.info(" MODEL FACE DETECTION  ");
