@@ -8,6 +8,7 @@ package org.jalau.at18.searchobject.model.facedetector;
  * Licence agreement you entered into with Jalasoft
  */
 
+import org.jalau.at18.searchobject.common.exception.FaceDetectionException;
 import org.jalau.at18.searchobject.common.logger.At18Logger;
 import org.opencv.core.Mat;
 import org.opencv.core.MatOfRect;
@@ -33,8 +34,9 @@ public class FaceDetect {
      * Constructor to the face detection
      * @param file the image that it's going to be in the process of detection
      * @param type the type of result we desire to find in the input image
+     * @throws FaceDetectionException if the there is a problem in the fyle or in the type
      */
-    public FaceDetect (String file, String type) {
+    public FaceDetect (String file, String type) throws FaceDetectionException {
         Logger log = At18Logger.getLogger();
         faceDetection (file, type);
 
@@ -42,7 +44,7 @@ public class FaceDetect {
     /**
      * Method that it's the process of the face detection where create the square in the face if it's detected
      */
-    public static void faceDetection (String file, String type) {
+    public static void faceDetection (String file, String type) throws FaceDetectionException {
         Logger log = At18Logger.getLogger();
         //Current_dir will take the direction of the path
         currentDir = System.getProperty("user.dir");
@@ -77,8 +79,7 @@ public class FaceDetect {
 
             String finalFile = file.substring(22,file.length());
             //Save the image already processed with the face detection
-            Imgcodecs.imwrite(currentDir + "\\src\\main\\resources\\images\\" + finalFile, src);
-            //logger: info that everything it right
+            Imgcodecs.imwrite(currentDir + "\\src\\main\\resources\\images\\" + finalFile, src);            //logger: info that everything it right
             log.info("It's only one person in the image");
             //result if the image it's a profile
             result = "profile detected";//"";
@@ -89,18 +90,14 @@ public class FaceDetect {
                         new Point(rect.x + rect.width, rect.y + rect.height) , new Scalar(0, 0, 255), 3);
             }
             String finalFile = file.substring(22,file.length());
-            Imgcodecs.imwrite(currentDir + "\\src\\main\\resources\\images\\" + finalFile, src);
-
-            //the amount of face detected
+            Imgcodecs.imwrite(currentDir + "\\src\\main\\resources\\images\\"+ finalFile, src);            //the amount of face detected
             faceDetect=faceDetection.toArray().length;
             //logger: info that everything it right
             log.info("multiple people in the image");
             //final result of the process
             result ="multiple person detected" +" "+ "\n" + "Quantity of face detect: " + String.valueOf(faceDetect);
         } else {
-            //
-            log.warning("It's a problem in the file or in the type");
-           result = "Probably the type of image it's different from the image";
+            throw new FaceDetectionException("It's a problem in the file or in the type");
         }
     }
 
