@@ -78,7 +78,6 @@ public class FaceDetect {
             String finalFile = file.substring(22,file.length());
             //Save the image already processed with the face detection
             Imgcodecs.imwrite(currentDir + "\\src\\main\\resources\\images\\" + finalFile, src);
-            System.out.println("la imagen   :  "+ currentDir + "\\src\\main\\resources\\images\\" + finalFile);
             //logger: info that everything it right
             log.info("It's only one person in the image");
             //result if the image it's a profile
@@ -91,7 +90,6 @@ public class FaceDetect {
             }
             String finalFile = file.substring(22,file.length());
             Imgcodecs.imwrite(currentDir + "\\src\\main\\resources\\images\\" + finalFile, src);
-            System.out.println("la imagen   :  "+ currentDir + "\\src\\main\\resources\\images\\" + finalFile);
 
             //the amount of face detected
             faceDetect=faceDetection.toArray().length;
