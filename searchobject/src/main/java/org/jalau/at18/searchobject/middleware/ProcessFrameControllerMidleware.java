@@ -24,19 +24,19 @@ public class ProcessFrameControllerMidleware implements Filter {
 
         try{
             if(req.getPart("file").getSize() != 0L && req.getPart("file").getSize() > 100 && req.getPart("file").getContentType() != null  &&  req.getPart("file").getContentType().contains("zip")) {
-                System.out.println("EL ARCHIVO PASO ! PROCES FRAME CONTROLLER");
+                System.out.println("MODEL PROCESS FRAME CONTROLLER");
                 if(!req.getParameter("searchCriteria").isEmpty() && !req.getParameter("occurrencyPercentage").isEmpty() && !req.getParameter("modelObjectRecognizer").isEmpty() && !req.getParameter("notifierType").isEmpty()) {
-                    System.out.println("PROCES FRAME CONTROLLER ---- EJECUTANDO -------");
+                    System.out.println("PROCESS FRAME CONTROLLER ------ RUNNING ------");
                     chain.doFilter(request, response);
                 } else {
-                    LOG.info("El archivo esta vacio o no es un archivo .zip");
+                    LOG.info(" THE FIELDS ARE EMPTY ");
                 }
             }  else {
-                LOG.info("El archivo esta vacio o no es un archivo .zip");
+                LOG.info(" THE FILE IS EMPTY OR NOT A .zip FILE ");
             }
 
         } catch (InstantiationError e) {
-            LOG.info("El archivo esta vacio o no es un archivo .zip" + e);
+            LOG.info(" ERROR LOADING THE MODEL "+e);
             e.printStackTrace();
         }
     }
