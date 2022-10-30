@@ -14,7 +14,6 @@ public class yoloImageTest {
         assertEquals(yoloImage.class, image.getClass());
     }
 
-
     @Test
     public void shouldLoadPipeline() {
         yoloImage yoloForImage = new yoloImage("../searchobject/src/test/java/testemotionfaces/motocat.jpeg", 90);
