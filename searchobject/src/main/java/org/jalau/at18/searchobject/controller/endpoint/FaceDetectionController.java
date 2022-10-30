@@ -1,5 +1,9 @@
 package org.jalau.at18.searchobject.controller.endpoint;
 
+import org.jalau.at18.searchobject.common.exception.FaceDetectionException;
+import org.jalau.at18.searchobject.controller.response.ErrorResponse;
+import org.jalau.at18.searchobject.controller.response.FaceDetectionResponse;
+
 /**
  * Copyright (c) 2022 Jala University.
  *
@@ -54,11 +58,15 @@ public class FaceDetectionController{
 
      */
     @PostMapping("/faceDetection")  //direction of the localhost where we are going to set the info
-    public ResponseEntity <String> readData(@RequestParam("file") MultipartFile file,
-                                            @RequestParam("type") String type) throws IOException {
-        Path path = storageService.save(file);  //Save the upload image
-        String fileName = path.toString(); //convert the path direction to a string
-        FaceDetect imageAnalyze = new FaceDetect(fileName, type); //initialize the class where we are going to analyze the image
-        return ResponseEntity.status(HttpStatus.OK).body(imageAnalyze.getCommand());
+    public ResponseEntity readData(@RequestParam("file") MultipartFile file,
+                                            @RequestParam("type") String type) {
+        try {
+            Path path = storageService.save(file);  //Save the upload image
+            String fileName = path.toString(); //convert the path direction to a string
+            FaceDetect imageAnalyze = new FaceDetect(fileName, type); //initialize the class where we are going to analyze the image
+            return ResponseEntity.status(HttpStatus.OK).body(new FaceDetectionResponse(imageAnalyze.getCommand()));
+        } catch (FaceDetectionException e) {
+            return ResponseEntity.badRequest().body(new ErrorResponse("400",e.getMessage()));
+        }
     }
 }
