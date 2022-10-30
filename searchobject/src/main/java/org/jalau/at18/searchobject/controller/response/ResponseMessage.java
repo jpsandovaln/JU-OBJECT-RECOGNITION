@@ -1,6 +1,6 @@
 package org.jalau.at18.searchobject.controller.response;
 
-// The ResponseMessage is for message to client that we’re gonna use in Rest Controller and Exception Handler.
+// The ResponseMessage is for message to client that we’re going to use in Rest Controller and Exception Handler.
 public class ResponseMessage {
     private String message;
 

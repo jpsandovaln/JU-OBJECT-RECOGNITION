@@ -1,7 +1,7 @@
 /**
  * Copyright (c) 2022 Jala University.
  *
- * This software is the confidential and proprieraty information of Jalasoft
+ * This software is the confidential and property information of Jalasoft
  * ("Confidential Information"). You shall not disclose such Confidential
  * Information and shall use it only in accordance with the terms of the
  * Licence agreement you entered into with Jalasoft
@@ -63,11 +63,7 @@ public class ProcessFrameController {
 
             processMatchService.processMatches(matchInfos, notifierType, recipient);
             return ResponseEntity.status(HttpStatus.OK).body(matchInfos);
-        } catch (UnzipFileException e) {
-            return ResponseEntity.badRequest().body(new ErrorResponse("400",e.getMessage()));
-        } catch (ObjectRecognizerException e) {
-            return ResponseEntity.badRequest().body(new ErrorResponse("400",e.getMessage()));
-        } catch (NotifierTypeException e) {
+        } catch (UnzipFileException | ObjectRecognizerException | NotifierTypeException e) {
             return ResponseEntity.badRequest().body(new ErrorResponse("400",e.getMessage()));
         }
     }

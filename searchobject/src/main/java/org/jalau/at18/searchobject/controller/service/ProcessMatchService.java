@@ -18,7 +18,7 @@ import java.util.List;
 /**
  *
  *
- * @throws NotifierTypeExeption if the notifier type is not one of the available notifiers
+ * @throws NotifierTypeException if the notifier type is not one of the available notifiers
  */
 @Service
 public class ProcessMatchService {

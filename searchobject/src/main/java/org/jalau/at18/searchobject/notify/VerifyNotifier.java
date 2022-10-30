@@ -13,7 +13,7 @@ import org.jalau.at18.searchobject.common.exception.NotifierTypeException;
 /**
  *
  *
- * @throws NotifierTypeExeption if the notifier type is not one of the available notifiers
+ * @throws NotifierTypeException if the notifier type is not one of the available notifiers
  */
 public class VerifyNotifier {
     public Notifier getNotifier(String notifierType) throws NotifierTypeException {
