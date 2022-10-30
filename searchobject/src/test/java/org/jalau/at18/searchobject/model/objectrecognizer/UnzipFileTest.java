@@ -1,5 +1,6 @@
 package org.jalau.at18.searchobject.model.objectrecognizer;
 
+import org.jalau.at18.searchobject.common.exception.UnzipFileException;
 import org.junit.Test;
 
 import java.io.File;
@@ -17,7 +18,7 @@ public class UnzipFileTest {
         assertEquals(UnzipFile.class, unzipFile.getClass());
     }
 
-    @Test(expected = FileNotFoundException.class)
+    @Test(expected = UnzipFileException.class)
     public void shouldGetPathNotFoundExceptionWhenPathNotFound() throws IOException {
         UnzipFile unzipFile = new UnzipFile(new File("invalid_path").toPath());
     }

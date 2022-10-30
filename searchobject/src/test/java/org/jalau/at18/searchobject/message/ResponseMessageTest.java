@@ -1,6 +1,6 @@
 package org.jalau.at18.searchobject.message;
 
-import org.jalau.at18.searchobject.model.response.ResponseMessage;
+import org.jalau.at18.searchobject.controller.response.ResponseMessage;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
