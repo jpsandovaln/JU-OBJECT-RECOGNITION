@@ -1,4 +1,12 @@
 package org.jalau.at18.searchobject.model.objectrecognizer.recognizertypes.rcnn;
+/**
+ * Copyright (c) 2022 Jala University.
+ *
+ * This software is the confidential and property information of Jalasoft
+ * ("Confidential Information"). You shall not disclose such Confidential
+ * Information and shall use it only in accordance with the terms of the
+ * Licence agreement you entered into with Jalasoft
+ */
 
 import ai.djl.Application;
 import ai.djl.Model;
@@ -26,6 +34,7 @@ import ai.djl.translate.TranslatorContext;
 import ai.djl.util.JsonUtils;
 import com.google.gson.annotations.SerializedName;
 
+import org.jalau.at18.searchobject.common.exception.FaceDetectionException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -39,8 +48,11 @@ import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
 
 /**
- * Author Fernanda Aguilar
- **/
+ * Recognizes objects in images accoridng to type of object and score
+ *
+ * @author Fernanda Aguilar
+ * @version 1.0
+ */
 
 public class RcnnDetection {
     private static final Logger logger = LoggerFactory.getLogger(RcnnDetection.class);
@@ -50,11 +62,16 @@ public class RcnnDetection {
     private static double percent;
     static int count = 0;
 
-
-    public RcnnDetection(String inputObj, int score, String path) throws ModelException, TranslateException, IOException {
+    /**
+     * Constructor for Object detection with model Faster Rcnn Inception
+     * @param inputObj determines the object that it will look for
+     * @param prob represents the minimum prob that object must have in order to be considered
+     * @param path image path
+     */
+    public RcnnDetection(String inputObj, int prob, String path) throws ModelException, TranslateException, IOException {
         this.imagePat=path;
         this.objFind=inputObj;
-        this.percent=score;
+        this.percent=prob;
         String fileName = "";
         double probAverage = 0;
         double probTotal = 0;
@@ -74,10 +91,10 @@ public class RcnnDetection {
     }
 
     public static DetectedObjects predict() throws IOException, ModelException, TranslateException {
-        //System.out.println(Engine.getInstance().getEngineName());
-        //if (!"TensorFlow".equals(Engine.getInstance().getEngineName())) {
-        //    return null;
-        //}
+        System.out.println(Engine.getInstance().getEngineName());
+        if (!"TensorFlow".equals(Engine.getInstance().getEngineName())) {
+            return null;
+        }
         Path imageFile = Paths.get(imagePat);
         Image img = ImageFactory.getInstance().fromFile(imageFile);
         String modelUrl =
@@ -212,7 +229,6 @@ public class RcnnDetection {
         }
     }
     public Map<String, Double> getInfoList() {
-
         return infoList;
     }
 
