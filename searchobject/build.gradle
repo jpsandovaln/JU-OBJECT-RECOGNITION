@@ -2,6 +2,7 @@ plugins {
 	id 'org.springframework.boot' version '2.7.4'
 	id 'io.spring.dependency-management' version '1.0.14.RELEASE'
 	id 'java'
+	id 'jacoco'
 }
 
 group = 'org.jalau.at18'
@@ -49,8 +50,24 @@ dependencies {
 	implementation 'org.slf4j:slf4j-api:2.0.3'
 	implementation 'net.lingala.zip4j:zip4j:1.3.3'
 	implementation files(System.getProperty("user.dir") + '\\src\\main\\resources\\libraries\\opencv\\opencv-454.jar')
+	testImplementation 'junit:junit:4.12'
 }
 
-tasks.named('test') {
+test {
+	testLogging {
+		events "failed"
+		exceptionFormat "full"
+	}
+
+	filter {
+		includeTestsMatching "org.jalau.at18.searchobject.*"
+		//excludeTestsMatching("searchobject/src/main/resources")
+	}
+}
+
+test.finalizedBy("jacocoTestReport")
+
+/*tasks.named('test') {
 	useJUnitPlatform()
 }
+ */

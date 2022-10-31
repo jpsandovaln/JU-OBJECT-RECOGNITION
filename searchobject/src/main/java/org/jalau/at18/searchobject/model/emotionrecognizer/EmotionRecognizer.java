@@ -1,7 +1,14 @@
+/**
+ * Copyright (c) 2022 Jala University.
+ *
+ * This software is the confidential and property information of Jalasoft
+ * ("Confidential Information"). You shall not disclose such Confidential
+ * Information and shall use it only in accordance with the terms of the
+ * Licence agreement you entered into with Jalasoft
+ */
 package org.jalau.at18.searchobject.model.emotionrecognizer;
 
 import java.io.File;
-import java.io.IOException;
 
 import java.io.InputStream;
 import java.io.OutputStreamWriter;
@@ -11,7 +18,13 @@ import java.util.Base64;
 import java.util.Scanner;
 
 import org.apache.commons.io.FileUtils;
-import com.google.gson.Gson;
+import org.jalau.at18.searchobject.common.exception.EmotionRecognizerException;
+
+/**
+ *
+ *
+ * @throws EmotionRecognizerException if there is an error reading the file or with the http request
+ */
 
 public class EmotionRecognizer {
     private static final int JOY_POSITION = 12;
@@ -19,20 +32,24 @@ public class EmotionRecognizer {
     private static final int ANGER_POSITION = 10;
     private static final int SURPRISE_POSITION = 9;
     private  String[] result;
-    public EmotionRecognizer(String path, String token) throws IOException {
+    public EmotionRecognizer(String path, String token) throws EmotionRecognizerException {
         String imageBase64 = convertImage(path);
         InputStream inputStream = httpRequest(token, imageBase64);
         result = processStream(inputStream);
 
     }
 
-    private String convertImage(String filePath) throws IOException {
-        byte[] fileContent = FileUtils.readFileToByteArray(new File(filePath));
-        String encodedString = Base64.getEncoder().encodeToString(fileContent);
-        String firstPart = "{\n\"requests\":[\n{\n\"image\":{\n\"content\":\"";
-        String secondPart = "\"\n},\n\"features\":[\n{\n\"maxResults\":10,\n\"type\":\"FACE_DETECTION\"\n}\n]\n}\n]\n}";
-        String imageBase64 = firstPart + encodedString + secondPart;
+    private String convertImage(String filePath) throws EmotionRecognizerException {
+        try {
+            byte[] fileContent = FileUtils.readFileToByteArray(new File(filePath));
+            String encodedString = Base64.getEncoder().encodeToString(fileContent);
+            String firstPart = "{\n\"requests\":[\n{\n\"image\":{\n\"content\":\"";
+            String secondPart = "\"\n},\n\"features\":[\n{\n\"maxResults\":10,\n\"type\":\"FACE_DETECTION\"\n}\n]\n}\n]\n}";
+            String imageBase64 = firstPart + encodedString + secondPart;
         return imageBase64;
+        } catch (Exception e) {
+            throw new EmotionRecognizerException("Error reading the file",e);
+        }
     }
     public String[] getResult() {
         return result;
@@ -54,24 +71,29 @@ public class EmotionRecognizer {
         return emotionsArray;
     }
 
-    private InputStream httpRequest(String token, String encodedString) throws IOException {
-        URL url = new URL("https://vision.googleapis.com/v1/images:annotate");
-        HttpURLConnection httpConn = (HttpURLConnection) url.openConnection();
-        httpConn.setRequestMethod("POST");
+    private InputStream httpRequest(String token, String encodedString) throws EmotionRecognizerException  {
+        try {
+            URL url = new URL("https://vision.googleapis.com/v1/images:annotate");
+            HttpURLConnection httpConn = (HttpURLConnection) url.openConnection();
+            httpConn.setRequestMethod("POST");
 
-        httpConn.setRequestProperty("Authorization", "Bearer " + token);
-        httpConn.setRequestProperty("Content-Type", "application/json");
+            httpConn.setRequestProperty("Authorization", "Bearer " + token);
+            httpConn.setRequestProperty("Content-Type", "application/json");
 
-        httpConn.setDoOutput(true);
-        OutputStreamWriter writer = new OutputStreamWriter(httpConn.getOutputStream());
-        writer.write(encodedString);
-        writer.flush();
-        writer.close();
-        httpConn.getOutputStream().close();
+            httpConn.setDoOutput(true);
+            OutputStreamWriter writer = new OutputStreamWriter(httpConn.getOutputStream());
+            writer.write(encodedString);
+            writer.flush();
+            writer.close();
+            httpConn.getOutputStream().close();
 
-        InputStream responseStream = httpConn.getResponseCode() / 100 == 2
-                ? httpConn.getInputStream()
-                : httpConn.getErrorStream();
-        return responseStream;
+            InputStream responseStream = httpConn.getResponseCode() / 100 == 2
+                    ? httpConn.getInputStream()
+                    : httpConn.getErrorStream();
+            return responseStream;
+        } catch (Exception e) {
+            throw new EmotionRecognizerException("Error with the httpRequest",e);
+        }
+
     }
 }
