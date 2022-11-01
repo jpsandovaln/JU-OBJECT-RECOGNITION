@@ -30,6 +30,7 @@ public class FaceDetect {
     private static String currentDir; //full image path direction
     private static String result; //result of the face detection in a multiple or profile image
     private static int faceDetect;
+    private static boolean status;
     /**
      * Constructor to the face detection
      * @param file the image that it's going to be in the process of detection
@@ -81,8 +82,9 @@ public class FaceDetect {
             //Save the image already processed with the face detection
             Imgcodecs.imwrite(currentDir + "\\src\\main\\resources\\images\\" + finalFile, src);            //logger: info that everything it right
             log.info("It's only one person in the image");
+            status = true; //status of the face detection
             //result if the image it's a profile
-            result = "profile detected";//"";
+            result = "it's a person: " + status;//"";
 
         }  else if (type.equals("multiple") && faceDetection.toArray().length > 1 ) { //
             for(Rect rect: faceDetection.toArray()) {
@@ -94,10 +96,12 @@ public class FaceDetect {
             faceDetect=faceDetection.toArray().length;
             //logger: info that everything it right
             log.info("multiple people in the image");
+            status = true;
             //final result of the process
-            result ="multiple person detected" +" "+ "\n" + "Quantity of face detect: " + String.valueOf(faceDetect);
+            result ="it's a person: " + status + "\n" + "Quantity of face detect: " + String.valueOf(faceDetect);
         } else {
-            throw new FaceDetectionException("It's a problem in the file or in the type");
+            status = false;
+            throw new FaceDetectionException("No person detected, " + "status: " + status );
         }
     }
 
