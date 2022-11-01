@@ -1,20 +1,20 @@
-nov. 01, 2022 10:01:20 A. M. org.apache.coyote.AbstractProtocol start
+nov. 01, 2022 2:48:00 P. M. org.apache.coyote.AbstractProtocol start
 INFO: Starting ProtocolHandler ["http-nio-5000"]
-nov. 01, 2022 10:01:23 A. M. org.apache.catalina.core.ApplicationContext log
+nov. 01, 2022 2:49:06 P. M. org.apache.catalina.core.ApplicationContext log
 INFO: Initializing Spring DispatcherServlet 'dispatcherServlet'
-nov. 01, 2022 10:01:23 A. M. org.jalau.at18.searchobject.middleware.FaceDetectionControllerMiddleware doFilter
+nov. 01, 2022 2:49:06 P. M. org.jalau.at18.searchobject.middleware.FaceDetectionControllerMiddleware doFilter
 INFO:  MODEL FACE DETECTION  
-nov. 01, 2022 10:01:23 A. M. org.jalau.at18.searchobject.middleware.FaceDetectionControllerMiddleware doFilter
+nov. 01, 2022 2:49:06 P. M. org.jalau.at18.searchobject.middleware.FaceDetectionControllerMiddleware doFilter
 INFO:  ACCEPT THE IMAGE 
-nov. 01, 2022 10:01:23 A. M. org.jalau.at18.searchobject.middleware.FaceDetectionControllerMiddleware doFilter
+nov. 01, 2022 2:49:06 P. M. org.jalau.at18.searchobject.middleware.FaceDetectionControllerMiddleware doFilter
 INFO: FACE DETECTION ---- RUNNING -------
-nov. 01, 2022 10:01:25 A. M. org.jalau.at18.searchobject.model.facedetector.FaceDetect faceDetection
+nov. 01, 2022 2:49:19 P. M. org.jalau.at18.searchobject.middleware.FaceDetectionControllerMiddleware doFilter
+INFO:  MODEL FACE DETECTION  
+nov. 01, 2022 2:49:19 P. M. org.jalau.at18.searchobject.middleware.FaceDetectionControllerMiddleware doFilter
+INFO:  ACCEPT THE IMAGE 
+nov. 01, 2022 2:49:19 P. M. org.jalau.at18.searchobject.middleware.FaceDetectionControllerMiddleware doFilter
+INFO: FACE DETECTION ---- RUNNING -------
+nov. 01, 2022 2:49:19 P. M. org.jalau.at18.searchobject.model.facedetector.FaceDetect faceDetection
 INFO: multiple people in the image
-nov. 01, 2022 10:01:26 A. M. org.jalau.at18.searchobject.model.facedetector.FaceDetect getCommand
+nov. 01, 2022 2:49:19 P. M. org.jalau.at18.searchobject.model.facedetector.FaceDetect getCommand
 INFO: the proccess go successfully
-nov. 01, 2022 10:01:42 A. M. org.jalau.at18.searchobject.middleware.FaceDetectionControllerMiddleware doFilter
-INFO:  MODEL FACE DETECTION  
-nov. 01, 2022 10:01:42 A. M. org.jalau.at18.searchobject.middleware.FaceDetectionControllerMiddleware doFilter
-INFO:  ACCEPT THE IMAGE 
-nov. 01, 2022 10:01:42 A. M. org.jalau.at18.searchobject.middleware.FaceDetectionControllerMiddleware doFilter
-INFO: FACE DETECTION ---- RUNNING -------
