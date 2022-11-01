@@ -1,94 +1,78 @@
-oct. 31, 2022 9:56:11 P. M. org.apache.coyote.AbstractProtocol start
+oct. 31, 2022 11:38:40 P. M. org.apache.coyote.AbstractProtocol start
 INFO: Starting ProtocolHandler ["http-nio-5000"]
-oct. 31, 2022 9:56:18 P. M. org.apache.catalina.core.ApplicationContext log
+oct. 31, 2022 11:38:42 P. M. org.apache.catalina.core.ApplicationContext log
 INFO: Initializing Spring DispatcherServlet 'dispatcherServlet'
-oct. 31, 2022 9:56:18 P. M. org.jalau.at18.searchobject.middleware.ProcessFrameControllerMidleware doFilter
+oct. 31, 2022 11:38:42 P. M. org.jalau.at18.searchobject.middleware.token.GenerateToken generateToken
+INFO: There is a pending token to be used
+oct. 31, 2022 11:38:59 P. M. org.jalau.at18.searchobject.middleware.ProcessFrameControllerMidleware doFilter
 INFO: MODEL PROCESS FRAME CONTROLLER
-oct. 31, 2022 9:56:18 P. M. org.jalau.at18.searchobject.middleware.ProcessFrameControllerMidleware doFilter
-WARNING:  THE FILE IS EMPTY OR NOT A .zip FILE 
-oct. 31, 2022 9:56:18 P. M. org.jalau.at18.searchobject.middleware.ProcessFrameControllerMidleware doFilter
-WARNING:  ERROR LOADING THE MODEL org.jalau.at18.searchobject.common.exception.MiddlewareException:     THE FILE IS EMPTY OR NOT A .zip FILE 
-oct. 31, 2022 9:56:34 P. M. org.jalau.at18.searchobject.middleware.ProcessFrameControllerMidleware doFilter
-INFO: MODEL PROCESS FRAME CONTROLLER
-oct. 31, 2022 9:56:34 P. M. org.jalau.at18.searchobject.middleware.ProcessFrameControllerMidleware doFilter
-WARNING:  THE FILE IS EMPTY OR NOT A .zip FILE 
-oct. 31, 2022 9:56:34 P. M. org.jalau.at18.searchobject.middleware.ProcessFrameControllerMidleware doFilter
-WARNING:  ERROR LOADING THE MODEL org.jalau.at18.searchobject.common.exception.MiddlewareException:     THE FILE IS EMPTY OR NOT A .zip FILE 
-oct. 31, 2022 9:56:40 P. M. org.jalau.at18.searchobject.middleware.FaceDetectionControllerMiddleware doFilter
-INFO:  MODEL FACE DETECTION  
-oct. 31, 2022 9:56:40 P. M. org.jalau.at18.searchobject.middleware.FaceDetectionControllerMiddleware doFilter
-WARNING:  ENTER AN IMAGE 
-oct. 31, 2022 9:56:40 P. M. org.jalau.at18.searchobject.middleware.FaceDetectionControllerMiddleware doFilter
-WARNING:  ERROR LOADING THE MODEL org.jalau.at18.searchobject.common.exception.MiddlewareException:     Enter a image 
-oct. 31, 2022 9:56:54 P. M. org.jalau.at18.searchobject.middleware.FaceDetectionControllerMiddleware doFilter
-INFO:  MODEL FACE DETECTION  
-oct. 31, 2022 9:56:54 P. M. org.jalau.at18.searchobject.middleware.FaceDetectionControllerMiddleware doFilter
-INFO:  ACCEPT THE IMAGE 
-oct. 31, 2022 9:56:54 P. M. org.jalau.at18.searchobject.middleware.FaceDetectionControllerMiddleware doFilter
-INFO: FACE DETECTION ---- RUNNING -------
-oct. 31, 2022 9:57:05 P. M. org.jalau.at18.searchobject.middleware.EmotionRecognitionMiddleware doFilter
-INFO: MODEL EMOTION RECOGNITION
-oct. 31, 2022 9:57:05 P. M. org.jalau.at18.searchobject.middleware.EmotionRecognitionMiddleware doFilter
-INFO:  ACCEPT THE IMAGE 
-oct. 31, 2022 9:57:05 P. M. org.jalau.at18.searchobject.middleware.EmotionRecognitionMiddleware doFilter
-INFO: EMOTION RECOGNITION ---- RUNNING -------
-oct. 31, 2022 9:57:19 P. M. org.jalau.at18.searchobject.middleware.EmotionRecognitionMiddleware doFilter
-INFO: MODEL EMOTION RECOGNITION
-oct. 31, 2022 9:57:19 P. M. org.jalau.at18.searchobject.middleware.EmotionRecognitionMiddleware doFilter
-INFO:  ACCEPT THE IMAGE 
-oct. 31, 2022 9:57:19 P. M. org.jalau.at18.searchobject.middleware.EmotionRecognitionMiddleware doFilter
-WARNING:  ENTER AN TOKEN 
-oct. 31, 2022 9:57:19 P. M. org.jalau.at18.searchobject.middleware.EmotionRecognitionMiddleware doFilter
-WARNING:  ERROR LOADING THE MODEL org.jalau.at18.searchobject.common.exception.MiddlewareException:     Enter an token 
-oct. 31, 2022 9:57:24 P. M. org.jalau.at18.searchobject.middleware.EmotionRecognitionMiddleware doFilter
-INFO: MODEL EMOTION RECOGNITION
-oct. 31, 2022 9:57:24 P. M. org.jalau.at18.searchobject.middleware.EmotionRecognitionMiddleware doFilter
-WARNING:  ENTER AN IMAGE 
-oct. 31, 2022 9:57:24 P. M. org.jalau.at18.searchobject.middleware.EmotionRecognitionMiddleware doFilter
-WARNING:  ERROR LOADING THE MODEL org.jalau.at18.searchobject.common.exception.MiddlewareException:     Enter a image 
-oct. 31, 2022 9:57:38 P. M. org.jalau.at18.searchobject.middleware.EmotionRecognitionMiddleware doFilter
-INFO: MODEL EMOTION RECOGNITION
-oct. 31, 2022 9:57:38 P. M. org.jalau.at18.searchobject.middleware.EmotionRecognitionMiddleware doFilter
-INFO:  ACCEPT THE IMAGE 
-oct. 31, 2022 9:57:38 P. M. org.jalau.at18.searchobject.middleware.EmotionRecognitionMiddleware doFilter
-WARNING:  ENTER AN TOKEN 
-oct. 31, 2022 9:57:38 P. M. org.jalau.at18.searchobject.middleware.EmotionRecognitionMiddleware doFilter
-WARNING:  ERROR LOADING THE MODEL org.jalau.at18.searchobject.common.exception.MiddlewareException:     Enter an token 
-oct. 31, 2022 9:57:56 P. M. org.jalau.at18.searchobject.middleware.FaceDetectionControllerMiddleware doFilter
-INFO:  MODEL FACE DETECTION  
-oct. 31, 2022 9:57:56 P. M. org.jalau.at18.searchobject.middleware.FaceDetectionControllerMiddleware doFilter
-INFO:  ACCEPT THE IMAGE 
-oct. 31, 2022 9:57:56 P. M. org.jalau.at18.searchobject.middleware.FaceDetectionControllerMiddleware doFilter
-WARNING:  THE TYPE FIELD IS EMPTY 
-oct. 31, 2022 9:57:56 P. M. org.jalau.at18.searchobject.middleware.FaceDetectionControllerMiddleware doFilter
-WARNING:  ERROR LOADING THE MODEL org.jalau.at18.searchobject.common.exception.MiddlewareException:     The type field is empty 
-oct. 31, 2022 9:58:09 P. M. org.jalau.at18.searchobject.middleware.FaceDetectionControllerMiddleware doFilter
-INFO:  MODEL FACE DETECTION  
-oct. 31, 2022 9:58:09 P. M. org.jalau.at18.searchobject.middleware.FaceDetectionControllerMiddleware doFilter
-INFO:  ACCEPT THE IMAGE 
-oct. 31, 2022 9:58:09 P. M. org.jalau.at18.searchobject.middleware.FaceDetectionControllerMiddleware doFilter
-INFO: FACE DETECTION ---- RUNNING -------
-oct. 31, 2022 9:58:43 P. M. org.jalau.at18.searchobject.middleware.ProcessFrameControllerMidleware doFilter
-INFO: MODEL PROCESS FRAME CONTROLLER
-oct. 31, 2022 9:58:43 P. M. org.jalau.at18.searchobject.middleware.ProcessFrameControllerMidleware doFilter
+oct. 31, 2022 11:38:59 P. M. org.jalau.at18.searchobject.middleware.ProcessFrameControllerMidleware doFilter
+INFO: Remaining token uses: 0
+oct. 31, 2022 11:38:59 P. M. org.jalau.at18.searchobject.middleware.ProcessFrameControllerMidleware doFilter
 INFO:  ACCEPT THE FILE 
-oct. 31, 2022 9:58:43 P. M. org.jalau.at18.searchobject.middleware.ProcessFrameControllerMidleware doFilter
-WARNING:  THE FIELDS ARE EMPTY 
-oct. 31, 2022 9:58:43 P. M. org.jalau.at18.searchobject.middleware.ProcessFrameControllerMidleware doFilter
-WARNING:  ERROR LOADING THE MODEL org.jalau.at18.searchobject.common.exception.MiddlewareException:  THE FIELDS ARE EMPTY
-oct. 31, 2022 9:59:01 P. M. org.jalau.at18.searchobject.middleware.ProcessFrameControllerMidleware doFilter
-INFO: MODEL PROCESS FRAME CONTROLLER
-oct. 31, 2022 9:59:01 P. M. org.jalau.at18.searchobject.middleware.ProcessFrameControllerMidleware doFilter
-INFO:  ACCEPT THE FILE 
-oct. 31, 2022 9:59:01 P. M. org.jalau.at18.searchobject.middleware.ProcessFrameControllerMidleware doFilter
-WARNING:  THE FIELDS ARE EMPTY 
-oct. 31, 2022 9:59:01 P. M. org.jalau.at18.searchobject.middleware.ProcessFrameControllerMidleware doFilter
-WARNING:  ERROR LOADING THE MODEL org.jalau.at18.searchobject.common.exception.MiddlewareException:  THE FIELDS ARE EMPTY
-oct. 31, 2022 9:59:10 P. M. org.jalau.at18.searchobject.middleware.ProcessFrameControllerMidleware doFilter
-INFO: MODEL PROCESS FRAME CONTROLLER
-oct. 31, 2022 9:59:10 P. M. org.jalau.at18.searchobject.middleware.ProcessFrameControllerMidleware doFilter
-INFO:  ACCEPT THE FILE 
-oct. 31, 2022 9:59:10 P. M. org.jalau.at18.searchobject.middleware.ProcessFrameControllerMidleware doFilter
+oct. 31, 2022 11:38:59 P. M. org.jalau.at18.searchobject.middleware.ProcessFrameControllerMidleware doFilter
 INFO: PROCESS FRAME CONTROLLER ------ RUNNING ------
-oct. 31, 2022 9:59:10 P. M. org.jalau.at18.searchobject.model.objectrecognizer.recognizer.VerifyModelRecognizer getModelRecognizer
-INFO: Model selected: OBJECTDETECTION
+oct. 31, 2022 11:38:59 P. M. org.jalau.at18.searchobject.model.objectrecognizer.recognizer.VerifyModelRecognizer getModelRecognizer
+INFO: Model selected: SSD
+oct. 31, 2022 11:39:25 P. M. org.jalau.at18.searchobject.middleware.FaceDetectionControllerMiddleware doFilter
+INFO:  MODEL FACE DETECTION  
+oct. 31, 2022 11:39:25 P. M. org.jalau.at18.searchobject.middleware.FaceDetectionControllerMiddleware doFilter
+INFO: TOKEN HAS NO MORE USES, PLEASE REQUEST ANOTHER ONE
+oct. 31, 2022 11:39:25 P. M. org.jalau.at18.searchobject.middleware.FaceDetectionControllerMiddleware doFilter
+WARNING:  ERROR LOADING THE MODEL org.jalau.at18.searchobject.common.exception.MiddlewareException:     Token has no more uses, please request another one
+oct. 31, 2022 11:39:34 P. M. org.apache.catalina.core.StandardWrapperValve invoke
+SEVERE: Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception
+java.util.NoSuchElementException: No line found
+	at java.base/java.util.Scanner.nextLine(Scanner.java:1651)
+	at org.jalau.at18.searchobject.middleware.ProcessFrameControllerMidleware.doFilter(ProcessFrameControllerMidleware.java:52)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:360)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:890)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1789)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+
+oct. 31, 2022 11:39:51 P. M. org.jalau.at18.searchobject.middleware.FaceDetectionControllerMiddleware doFilter
+INFO:  MODEL FACE DETECTION  
+oct. 31, 2022 11:39:51 P. M. org.jalau.at18.searchobject.middleware.FaceDetectionControllerMiddleware doFilter
+INFO: Remaining token uses: 4
+oct. 31, 2022 11:39:51 P. M. org.jalau.at18.searchobject.middleware.FaceDetectionControllerMiddleware doFilter
+INFO:  ACCEPT THE IMAGE 
+oct. 31, 2022 11:39:51 P. M. org.jalau.at18.searchobject.middleware.FaceDetectionControllerMiddleware doFilter
+INFO: FACE DETECTION ---- RUNNING -------
+oct. 31, 2022 11:40:01 P. M. org.jalau.at18.searchobject.middleware.FaceDetectionControllerMiddleware doFilter
+INFO:  MODEL FACE DETECTION  
+oct. 31, 2022 11:40:01 P. M. org.jalau.at18.searchobject.middleware.FaceDetectionControllerMiddleware doFilter
+INFO: Remaining token uses: 3
+oct. 31, 2022 11:40:01 P. M. org.jalau.at18.searchobject.middleware.FaceDetectionControllerMiddleware doFilter
+INFO:  ACCEPT THE IMAGE 
+oct. 31, 2022 11:40:01 P. M. org.jalau.at18.searchobject.middleware.FaceDetectionControllerMiddleware doFilter
+INFO: FACE DETECTION ---- RUNNING -------
+oct. 31, 2022 11:40:01 P. M. org.jalau.at18.searchobject.model.facedetector.FaceDetect faceDetection
+INFO: It's only one person in the image
+oct. 31, 2022 11:40:01 P. M. org.jalau.at18.searchobject.model.facedetector.FaceDetect getCommand
+INFO: the proccess go successfully
