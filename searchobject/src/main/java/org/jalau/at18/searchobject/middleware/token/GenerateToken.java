@@ -5,12 +5,12 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 import java.io.File;
 import java.io.FileWriter;
-        import java.io.IOException;
-        import java.time.Instant;
-        import java.util.Scanner;
-        import java.util.UUID;
-        import java.util.function.Supplier;
-        import java.util.logging.Logger;
+import java.io.IOException;
+import java.time.Instant;
+import java.util.Scanner;
+import java.util.UUID;
+import java.util.function.Supplier;
+import java.util.logging.Logger;
 
 @RestController
 public class GenerateToken {
@@ -18,7 +18,6 @@ public class GenerateToken {
 
     @GetMapping("/getToken")
     public StringBuilder generateToken() throws IOException {
-        //D:\jala\progra102\ORIGINAL OBJECT RECOGNITION\JU-OBJECT-RECOGNITION\searchobject\src\main\java\org\jalau\at18\searchobject\middleware\token
         String Path = System.getProperty("user.dir") + "\\src\\main\\java\\org\\jalau\\at18\\searchobject\\middleware\\token\\token.txt";
         File myObj = new File(Path);
         Scanner myReader = new Scanner(myObj);
