@@ -33,8 +33,6 @@ import ai.djl.translate.Translator;
 import ai.djl.translate.TranslatorContext;
 import ai.djl.util.JsonUtils;
 import com.google.gson.annotations.SerializedName;
-
-import org.jalau.at18.searchobject.common.exception.FaceDetectionException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -48,7 +46,7 @@ import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
 
 /**
- * Recognizes objects in images accoridng to type of object and score
+ * Recognizes objects in images according to the type of object and desired score
  *
  * @author Fernanda Aguilar
  * @version 1.0
@@ -91,7 +89,6 @@ public class RcnnDetection {
     }
 
     public static DetectedObjects predict() throws IOException, ModelException, TranslateException {
-        System.out.println(Engine.getInstance().getEngineName());
         if (!"TensorFlow".equals(Engine.getInstance().getEngineName())) {
             return null;
         }
