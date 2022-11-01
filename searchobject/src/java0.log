@@ -20,3 +20,6 @@ nov. 01, 2022 10:16:08 A. M. org.jalau.at18.searchobject.middleware.ProcessFrame
 WARNING:  THE FILE IS EMPTY OR NOT A .zip FILE 
 nov. 01, 2022 10:16:08 A. M. org.jalau.at18.searchobject.middleware.ProcessFrameControllerMidleware doFilter
 WARNING:  ERROR LOADING THE MODEL org.jalau.at18.searchobject.common.exception.MiddlewareException:     THE FILE IS EMPTY OR NOT A .zip FILE 
+Oct 31, 2022 4:22:55 PM org.apache.coyote.AbstractProtocol start
+INFO: Starting ProtocolHandler ["http-nio-5000"]
+

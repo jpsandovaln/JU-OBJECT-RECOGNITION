@@ -43,11 +43,11 @@ public class ProcessFrameController {
 
     @PostMapping("/processFrame")
     public ResponseEntity readDataCriteriaFrame(@RequestParam("file") MultipartFile file,
-                                                                 @RequestParam String searchCriteria,
-                                                                 @RequestParam int occurrencyPercentage,
-                                                                 @RequestParam String modelObjectRecognizer,
-                                                                 @RequestParam String notifierType,
-                                                                 @RequestParam String recipient)  {
+                                                @RequestParam String searchCriteria,
+                                                @RequestParam int occurrencyPercentage,
+                                                @RequestParam String modelObjectRecognizer,
+                                                @RequestParam String notifierType,
+                                                @RequestParam String recipient)  {
 
         try {
             // save file, it is saving the zip file and getting the path

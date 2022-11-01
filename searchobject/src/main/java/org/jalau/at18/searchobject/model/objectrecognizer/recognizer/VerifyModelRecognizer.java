@@ -31,6 +31,10 @@ public class VerifyModelRecognizer {
             log.info("Model selected: OBJECTDETECTION");
             return new ObjectDetection();
         }
+        if (modelRecognizer.equals(TypeModelRecognizer.RCNN.getModel())) {
+            log.info("Model selected: RCNN");
+            return new RCNN();
+        }
         throw new ObjectRecognizerException("The model recognizer type is not avaiable");
     }
 }
