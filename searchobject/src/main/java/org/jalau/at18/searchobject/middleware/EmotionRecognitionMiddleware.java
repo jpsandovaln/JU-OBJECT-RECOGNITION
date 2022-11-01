@@ -18,9 +18,11 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.Scanner;
 import java.util.logging.Logger;
-import javax.servlet.*;
 import javax.servlet.annotation.WebFilter;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.ServletResponse;
+import javax.servlet.ServletRequest;
+import javax.servlet.Filter;
 
 /**
  * Filters are Java classes that implement the javax.servlet.Filter interface,
@@ -55,7 +57,7 @@ public class EmotionRecognitionMiddleware implements Filter {
         String token = myReader.nextLine(); //Read the txt file
         int tokenCounter = Integer.parseInt(myReader.nextLine()); //Read the txt file
 
-        try{
+        try {
             LOG.info("MODEL EMOTION RECOGNITION");
 
             //Verity if have a valid token
@@ -70,17 +72,17 @@ public class EmotionRecognitionMiddleware implements Filter {
                 myReader.close();
 
                 //Verify that an empty or null file isn't entered
-                if(req.getPart("file").getSize() != 0L && req.getPart("file").getSize() > 100 && req.getPart("file").getContentType() != null) {
+                if (req.getPart("file").getSize() != 0L && req.getPart("file").getSize() > 100 && req.getPart("file").getContentType() != null) {
                     LOG.info(" ACCEPT THE IMAGE ");
                     //Verify that a field isn't empty
-                    if(!req.getParameter("token").isEmpty()) {
+                    if (!req.getParameter("token").isEmpty()) {
                         LOG.info("EMOTION RECOGNITION ---- RUNNING -------");
                         chain.doFilter(request, response);
                     } else {
                         LOG.warning(" ENTER AN TOKEN ");
                         throw new MiddlewareException("    Enter an token ");
                     }
-                }  else {
+                } else {
                         LOG.warning(" ENTER AN IMAGE ");
                         throw new MiddlewareException("    Enter a image ");
                 }
@@ -98,12 +100,12 @@ public class EmotionRecognitionMiddleware implements Filter {
                 throw new MiddlewareException("    Generated token ");
             }
         } catch (InstantiationError | MiddlewareException e) {
-                    LOG.warning(" ERROR LOADING THE MODEL " + e);
-                    e.printStackTrace();
-                    PrintWriter out = response.getWriter();
-                    res.setStatus(400);
-                    out.println ("    Status :    " + res.getStatus());
-                    out.println (e.getMessage());
+            LOG.warning(" ERROR LOADING THE MODEL " + e);
+            e.printStackTrace();
+            PrintWriter out = response.getWriter();
+            res.setStatus(400);
+            out.println ("    Status :    " + res.getStatus());
+            out.println (e.getMessage());
         }
     }
 }

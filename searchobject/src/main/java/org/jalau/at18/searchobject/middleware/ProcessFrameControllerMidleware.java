@@ -9,7 +9,6 @@ package org.jalau.at18.searchobject.middleware;
  */
 import org.jalau.at18.searchobject.common.exception.MiddlewareException;
 import org.jalau.at18.searchobject.common.logger.At18Logger;
-import javax.servlet.FilterChain;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import java.io.File;
@@ -18,7 +17,10 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.Scanner;
 import java.util.logging.Logger;
-import javax.servlet.*;
+import javax.servlet.ServletResponse;
+import javax.servlet.ServletRequest;
+import javax.servlet.FilterChain;
+import javax.servlet.Filter;
 import javax.servlet.annotation.WebFilter;
 import javax.servlet.http.HttpServletResponse;
 
@@ -52,7 +54,7 @@ public class ProcessFrameControllerMidleware implements Filter {
         String token = myReader.nextLine(); //Read the file txt
         int tokenCounter = Integer.parseInt(myReader.nextLine()); //Read the file txt
 
-        try{
+        try {
             LOG.info("MODEL PROCESS FRAME CONTROLLER");
 
             //Verity if have a valid token
@@ -67,17 +69,17 @@ public class ProcessFrameControllerMidleware implements Filter {
                 myReader.close();
 
                 //Verify that an empty or null file isn't entered
-                if(req.getPart("file").getSize() != 0L && req.getPart("file").getSize() > 100 && req.getPart("file").getContentType() != null  &&  req.getPart("file").getContentType().contains("zip")) {
+                if (req.getPart("file").getSize() != 0L && req.getPart("file").getSize() > 100 && req.getPart("file").getContentType() != null  &&  req.getPart("file").getContentType().contains("zip")) {
                     LOG.info(" ACCEPT THE FILE ");
                     //Verify that a field isn't empty
-                    if(!req.getParameter("searchCriteria").isEmpty() && !req.getParameter("occurrencyPercentage").isEmpty() && !req.getParameter("modelObjectRecognizer").isEmpty() && !req.getParameter("notifierType").isEmpty()) {
+                    if (!req.getParameter("searchCriteria").isEmpty() && !req.getParameter("occurrencyPercentage").isEmpty() && !req.getParameter("modelObjectRecognizer").isEmpty() && !req.getParameter("notifierType").isEmpty()) {
                         LOG.info("PROCESS FRAME CONTROLLER ------ RUNNING ------");
                         chain.doFilter(request, response);
                     } else {
                         LOG.warning(" THE FIELDS ARE EMPTY ");
                         throw new MiddlewareException(" THE FIELDS ARE EMPTY");
                     }
-                }  else {
+                } else {
                     LOG.warning(" THE FILE IS EMPTY OR NOT A .zip FILE ");
                     throw new MiddlewareException("    THE FILE IS EMPTY OR NOT A .zip FILE ");
                 }
