@@ -1,14 +1,2 @@
-nov. 01, 2022 10:08:54 P. M. org.apache.coyote.AbstractProtocol start
+nov. 01, 2022 11:50:52 P. M. org.apache.coyote.AbstractProtocol start
 INFO: Starting ProtocolHandler ["http-nio-5000"]
-nov. 01, 2022 10:09:08 P. M. org.apache.catalina.core.ApplicationContext log
-INFO: Initializing Spring DispatcherServlet 'dispatcherServlet'
-nov. 01, 2022 10:09:08 P. M. org.jalau.at18.searchobject.middleware.ProcessFrameControllerMidleware doFilter
-INFO: MODEL PROCESS FRAME CONTROLLER
-nov. 01, 2022 10:09:08 P. M. org.jalau.at18.searchobject.middleware.ProcessFrameControllerMidleware doFilter
-INFO: Remaining token uses: 2
-nov. 01, 2022 10:09:08 P. M. org.jalau.at18.searchobject.middleware.ProcessFrameControllerMidleware doFilter
-INFO:  ACCEPT THE FILE 
-nov. 01, 2022 10:09:08 P. M. org.jalau.at18.searchobject.middleware.ProcessFrameControllerMidleware doFilter
-INFO: PROCESS FRAME CONTROLLER ------ RUNNING ------
-nov. 01, 2022 10:09:08 P. M. org.jalau.at18.searchobject.model.objectrecognizer.recognizer.VerifyModelRecognizer getModelRecognizer
-INFO: Model selected: SSD
