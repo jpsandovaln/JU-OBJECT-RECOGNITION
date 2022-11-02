@@ -62,3 +62,6 @@ nov. 02, 2022 12:20:21 P. M. org.jalau.at18.searchobject.model.facedetector.Face
 INFO: multiple people in the image
 nov. 02, 2022 12:20:21 P. M. org.jalau.at18.searchobject.model.facedetector.FaceDetect getCommand
 INFO: the proccess go successfullytrue
+nov. 01, 2022 11:50:52 P. M. org.apache.coyote.AbstractProtocol start
+INFO: Starting ProtocolHandler ["http-nio-5000"]
+7c201b18de4ec4af746e99fccec28db889d023b9
