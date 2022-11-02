@@ -75,6 +75,7 @@ public class FaceDetect {
         //Condition to detect if the input image its a profile or its more people
         if (type.equals( "profile") && faceDetection.toArray().length == 1 ) {
             for(Rect rect: faceDetection.toArray()) {
+                //process to add the square in the face detect
                 Imgproc.rectangle(src, new Point(rect.x, rect.y),
                         new Point(rect.x + rect.width, rect.y + rect.height) , new Scalar(0, 0, 255), 3);
             }
