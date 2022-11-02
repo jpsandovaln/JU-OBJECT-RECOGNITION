@@ -23,8 +23,9 @@ public class NotifierWhatsApp implements Notifier {
         final String ACCOUNT_SID = "AC4b8788d8384f76211ab4ec6b971995eb";
         final String AUTH_TOKEN = "90f649205b5c5289186ad57ff2171283";
         Twilio.init(ACCOUNT_SID, AUTH_TOKEN);
+        // the string of phone numbers is we separate with split to add them to the array
         String[] numbers = recipient.split(",");
-
+        //traverse the array phone numbers to send a notification to each one
         for(int index = 0; index < numbers.length ; index++) {
             Message message = Message.creator(new PhoneNumber("whatsapp:" + numbers[index]),
                     new PhoneNumber("whatsapp:+14155238886"),
