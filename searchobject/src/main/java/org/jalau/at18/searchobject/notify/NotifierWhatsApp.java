@@ -7,12 +7,15 @@ import com.twilio.type.PhoneNumber;
 import java.util.List;
 
 import org.jalau.at18.searchobject.model.objectrecognizer.recognizertypes.MatchInfo;
+// codigo   =>              join special-slip
+// numero de whatsaap al cual enviar el codigo =>      14155238886
 
+//https://api.whatsapp.com/send?phone=14155238886&text=join%20special-slip
 public class NotifierWhatsApp implements Notifier {
     @Override
     public void notify(List<MatchInfo> matches, String recipient) {
-        final String ACCOUNT_SID = "AC59ac8b807b4d14fc0983682b5b784a04";
-        final String AUTH_TOKEN = "2508a77a4584fe7119a03c936c9d1201";
+        final String ACCOUNT_SID = "AC4b8788d8384f76211ab4ec6b971995eb";
+        final String AUTH_TOKEN = "90f649205b5c5289186ad57ff2171283";
 
         Twilio.init(ACCOUNT_SID, AUTH_TOKEN);
         Message message = Message.creator(new PhoneNumber("whatsapp:" + recipient),
