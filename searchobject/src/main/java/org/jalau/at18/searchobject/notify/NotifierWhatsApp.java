@@ -1,13 +1,22 @@
 package org.jalau.at18.searchobject.notify;
-
+/**
+ * Copyright (c) 2022 Jala University.
+ *
+ * This software is the confidential and property information of Jalasoft
+ * ("Confidential Information"). You shall not disclose such Confidential
+ * Information and shall use it only in accordance with the terms of the
+ * Licence agreement you entered into with Jalasoft
+ */
 import com.twilio.Twilio;
 import com.twilio.rest.api.v2010.account.Message;
 import com.twilio.type.PhoneNumber;
 import java.util.List;
 import org.jalau.at18.searchobject.model.objectrecognizer.recognizertypes.MatchInfo;
-
-//https://api.whatsapp.com/send?phone=14155238886&text=join%20special-slip
-
+/**
+ * Send notifications of the result according to the request to phone numbers.
+ * @author Maria Hurtado
+ * @version 1.0
+ */
 public class NotifierWhatsApp implements Notifier {
     @Override
     public void notify(List<MatchInfo> matches, String recipient) {
