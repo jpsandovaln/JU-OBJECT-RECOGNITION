@@ -1,6 +1,2 @@
-nov. 02, 2022 2:49:27 P. M. org.apache.coyote.AbstractProtocol start
+nov. 02, 2022 2:52:38 P. M. org.apache.coyote.AbstractProtocol start
 INFO: Starting ProtocolHandler ["http-nio-5000"]
-nov. 02, 2022 2:49:41 P. M. org.apache.catalina.core.ApplicationContext log
-INFO: Initializing Spring DispatcherServlet 'dispatcherServlet'
-nov. 02, 2022 2:49:41 P. M. org.jalau.at18.searchobject.middleware.token.GenerateToken generateToken
-INFO: There is a pending token to be used
