@@ -1,4 +1,5 @@
 nov. 03, 2022 2:24:27 P. M. org.apache.coyote.AbstractProtocol start
+Nov 02, 2022 9:40:40 PM org.apache.coyote.AbstractProtocol start
 INFO: Starting ProtocolHandler ["http-nio-5000"]
 nov. 03, 2022 2:37:31 P. M. org.apache.catalina.core.ApplicationContext log
 INFO: Initializing Spring DispatcherServlet 'dispatcherServlet'

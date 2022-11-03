@@ -7,9 +7,10 @@ package org.jalau.at18.searchobject.model.objectrecognizer.recognizer;
  * Information and shall use it only in accordance with the terms of the
  * Licence agreement you entered into with Jalasoft
  */
+
 import org.jalau.at18.searchobject.common.exception.ObjectRecognizerException;
+
 import org.jalau.at18.searchobject.model.objectrecognizer.recognizertypes.MatchInfo;
-import org.springframework.web.multipart.MultipartFile;
 
 import java.nio.file.Path;
 import java.util.List;

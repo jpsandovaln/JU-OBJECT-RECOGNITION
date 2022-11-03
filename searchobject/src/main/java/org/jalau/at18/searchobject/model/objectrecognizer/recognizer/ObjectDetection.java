@@ -13,10 +13,7 @@ import org.jalau.at18.searchobject.model.objectrecognizer.recognizertypes.zoo.Ob
 import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
-import ai.djl.ModelException;
-import ai.djl.translate.TranslateException;
 
-import java.io.IOException;
 import java.io.File;
 /**
  * It is responsible for save the matching from the process of the model.

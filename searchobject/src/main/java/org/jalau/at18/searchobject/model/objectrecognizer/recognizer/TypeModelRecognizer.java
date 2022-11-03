@@ -8,12 +8,15 @@ package org.jalau.at18.searchobject.model.objectrecognizer.recognizer;
  * Licence agreement you entered into with Jalasoft
  */
 
+
 /**
  * Enum class with the model available, it can be add more model in the future
  *
  * @author Maria Hurtado
  * @version 1.0
  */
+
+
 public enum TypeModelRecognizer {
     YOLO("yolo"),
     SSD("ssd"),

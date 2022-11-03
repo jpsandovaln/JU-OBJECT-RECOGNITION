@@ -15,15 +15,23 @@ import java.util.logging.Logger;
  *
  * @author Maria Hurtado
  * @version 1.0
+
+ * Method identifies the type of model chosen to detect an object
+ * @throws ObjectRecognizerException if the model recognizer type is not one of the available recognizers
  */
 
 public class VerifyModelRecognizer {
+
     Logger log = At18Logger.getLogger(); //show the message in console
 
     /**
      * get the model and start the process of recognition
      * @param modelRecognizer the model input by user it's one of the selected
      * @throws ObjectRecognizerException if the model recognizer type is not one of the available recognizers
+
+    Logger log = At18Logger.getLogger();
+    /**
+     * @param modelRecognizer is the chosen model to execute the object detection
      */
     public ModelRecognizer getModelRecognizer(String modelRecognizer) throws ObjectRecognizerException {
         //if model it's same as Yolo model

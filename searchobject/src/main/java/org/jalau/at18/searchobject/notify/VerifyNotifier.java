@@ -13,6 +13,8 @@ import org.jalau.at18.searchobject.common.exception.NotifierTypeException;
  * Send notifications of the result according to the request to phone numbers.
  * @author Maria Hurtado
  * @version 1.0
+ *
+ * @throws NotifierTypeException if the notifier type is not one of the available notifiers
  */
 public class VerifyNotifier {
     /**
@@ -24,6 +26,6 @@ public class VerifyNotifier {
         if(notifierType.equals(TypeNotifier.WHATSAPP.getNotifier())) {
             return new NotifierWhatsApp();
         }
-        throw new NotifierTypeException("The notifier type is not avaiable");
+        throw new NotifierTypeException("The notifier type is not available");
     }
 }

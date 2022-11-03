@@ -45,12 +45,17 @@ public class EmotionRecognizer {
         result = processStream(inputStream);
 
     }
+
     /**
      * method to decode the image
      * @param filePath
      * @throws EmotionRecognizerException if there is an error reading the file or with the http request
      */
     private String convertImage(String filePath) throws EmotionRecognizerException {
+
+
+    String convertImage(String filePath) throws EmotionRecognizerException {
+
         try {
             byte[] fileContent = FileUtils.readFileToByteArray(new File(filePath));
             String encodedString = Base64.getEncoder().encodeToString(fileContent);
