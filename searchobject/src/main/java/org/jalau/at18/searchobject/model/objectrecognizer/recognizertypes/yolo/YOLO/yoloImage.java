@@ -127,7 +127,9 @@ public class yoloImage {
     private void setLayerNames() {
         layer_names = network.getLayerNames();
     }
-
+    /**
+     * In charge of loading the Image and resizing
+     */
     private void loadImage() {
         Mat img = Imgcodecs.imread(input_path);
         Mat resizedImage = new Mat();
@@ -204,7 +206,10 @@ public class yoloImage {
             }
         }
     }
-
+    /**
+     * In charge of loading the pipeline which is the end-to-end construct that orchestrates the flow of data
+     * into, and output from, a machine learning model
+     */
     public void loadPipeline() {
         try {
             setNetwork();

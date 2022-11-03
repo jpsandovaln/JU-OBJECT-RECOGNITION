@@ -33,7 +33,9 @@ public class YOLOclasstrain {
         scores = new ArrayList<Double>();
         matchImage = new ArrayList<String>();
     }
-
+    /**
+     * Method returns an Array of scores and image that matched with object as a list
+     */
     public List<ArrayList<? extends Serializable>> getImageAndScore(){
         for (int i = 0; i < pathFolder.getNameCount(); i++){
             String image = pathFolder + "\\" + String.format("00-00-0%s.png", i);
