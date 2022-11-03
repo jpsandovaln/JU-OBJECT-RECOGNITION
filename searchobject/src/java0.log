@@ -1,25 +1,2 @@
-nov. 01, 2022 10:14:42 A. M. org.apache.coyote.AbstractProtocol start
+nov. 02, 2022 2:52:38 P. M. org.apache.coyote.AbstractProtocol start
 INFO: Starting ProtocolHandler ["http-nio-5000"]
-nov. 01, 2022 10:15:08 A. M. org.apache.catalina.core.ApplicationContext log
-INFO: Initializing Spring DispatcherServlet 'dispatcherServlet'
-nov. 01, 2022 10:15:08 A. M. org.jalau.at18.searchobject.middleware.ProcessFrameControllerMidleware doFilter
-INFO: MODEL PROCESS FRAME CONTROLLER
-nov. 01, 2022 10:15:08 A. M. org.jalau.at18.searchobject.middleware.ProcessFrameControllerMidleware doFilter
-INFO: Remaining token uses: 1
-nov. 01, 2022 10:15:08 A. M. org.jalau.at18.searchobject.middleware.ProcessFrameControllerMidleware doFilter
-INFO:  ACCEPT THE FILE 
-nov. 01, 2022 10:15:08 A. M. org.jalau.at18.searchobject.middleware.ProcessFrameControllerMidleware doFilter
-INFO: PROCESS FRAME CONTROLLER ------ RUNNING ------
-nov. 01, 2022 10:15:08 A. M. org.jalau.at18.searchobject.model.objectrecognizer.recognizer.VerifyModelRecognizer getModelRecognizer
-INFO: Model selected: SSD
-nov. 01, 2022 10:16:06 A. M. org.jalau.at18.searchobject.middleware.ProcessFrameControllerMidleware doFilter
-INFO: MODEL PROCESS FRAME CONTROLLER
-nov. 01, 2022 10:16:06 A. M. org.jalau.at18.searchobject.middleware.ProcessFrameControllerMidleware doFilter
-INFO: Remaining token uses: 0
-nov. 01, 2022 10:16:08 A. M. org.jalau.at18.searchobject.middleware.ProcessFrameControllerMidleware doFilter
-WARNING:  THE FILE IS EMPTY OR NOT A .zip FILE 
-nov. 01, 2022 10:16:08 A. M. org.jalau.at18.searchobject.middleware.ProcessFrameControllerMidleware doFilter
-WARNING:  ERROR LOADING THE MODEL org.jalau.at18.searchobject.common.exception.MiddlewareException:     THE FILE IS EMPTY OR NOT A .zip FILE 
-Oct 31, 2022 4:22:55 PM org.apache.coyote.AbstractProtocol start
-INFO: Starting ProtocolHandler ["http-nio-5000"]
-

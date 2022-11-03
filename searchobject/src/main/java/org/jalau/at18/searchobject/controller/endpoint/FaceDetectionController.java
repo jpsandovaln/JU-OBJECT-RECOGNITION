@@ -41,21 +41,14 @@ public class FaceDetectionController{
     FilesStorageService storageService;
 
     /**
-
      * Method that will send the data that will be needed to set in the postman by the user
-
      * @return The result after the analyze of the image after calling the class Face Detect
-
      */
-
     /**
 
      * PostMapping
-
      * @param file it's the image that user will upload to analyze
-     *
      * @param type the type of face that we want to detect
-
      */
     @PostMapping("/faceDetection")  //direction of the localhost where we are going to set the info
     public ResponseEntity readData(@RequestParam("file") MultipartFile file,
