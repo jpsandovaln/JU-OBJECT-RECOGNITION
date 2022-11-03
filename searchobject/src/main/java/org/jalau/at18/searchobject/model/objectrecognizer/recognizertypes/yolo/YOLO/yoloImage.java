@@ -1,5 +1,12 @@
 package org.jalau.at18.searchobject.model.objectrecognizer.recognizertypes.yolo.YOLO;
-
+/**
+ * Copyright (c) 2022 Jala University.
+ *
+ * This software is the confidential and property information of Jalasoft
+ * ("Confidential Information"). You shall not disclose such Confidential
+ * Information and shall use it only in accordance with the terms of the
+ * Licence agreement you entered into with Jalasoft
+ */
 import org.jalau.at18.searchobject.model.objectrecognizer.recognizertypes.yolo.TransformTXT.Transform;
 // Source to review the code: https://gurzu.com/blog/YOLO_v3_From_Python_To_Java/
 import org.opencv.core.*;
@@ -14,6 +21,14 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.Scanner;
+/**
+ *
+ * Receives an image (608*424 o 608*608) and returns the probability of the object existing
+ * By using the YOLO Model
+ *
+ * @author Mauricio Aliendre
+ * @version 1.0
+ */
 
 public class yoloImage {
     // Defining some global variables
@@ -44,6 +59,12 @@ public class yoloImage {
     private Transform arrayClasses;
     private int image_size = 608;
     private double score;
+
+    /**
+     * Constructor for Object detection with model Faster Rcnn Inception
+     * @param inputPath represents the path of the file
+     * @param ocurrencyPercentage represents the minimum prob that object must have in order to be considered
+     */
 
     public yoloImage (String inputPath, int ocurrencyPercentage) {
         current_dir = System.getProperty("user.dir");
@@ -106,7 +127,9 @@ public class yoloImage {
     private void setLayerNames() {
         layer_names = network.getLayerNames();
     }
-
+    /**
+     * In charge of loading the Image and resizing
+     */
     private void loadImage() {
         Mat img = Imgcodecs.imread(input_path);
         Mat resizedImage = new Mat();
@@ -125,7 +148,9 @@ public class yoloImage {
         network.forward(outputs, output_layers);
         blob = blob_from_image;
     }
-
+    /**
+     * Determines the box Dimensions for the object found in the image
+     */
     private void getBoxDimensions() {
         for (Mat output : outputs) {
 
@@ -152,6 +177,9 @@ public class yoloImage {
         }
     }
 
+    /**
+     * In charge of drawing the labels onto the object found
+     */
     private void drawLabels() {
         double[] rgb = new double[]{255, 255, 0};
         Scalar color = new Scalar(rgb);
@@ -178,7 +206,10 @@ public class yoloImage {
             }
         }
     }
-
+    /**
+     * In charge of loading the pipeline which is the end-to-end construct that orchestrates the flow of data
+     * into, and output from, a machine learning model
+     */
     public void loadPipeline() {
         try {
             setNetwork();

@@ -1,5 +1,12 @@
 package org.jalau.at18.searchobject.model.objectrecognizer.recognizertypes.ssd;
-
+/**
+ * Copyright (c) 2022 Jala University.
+ *
+ * This software is the confidential and property information of Jalasoft
+ * ("Confidential Information"). You shall not disclose such Confidential
+ * Information and shall use it only in accordance with the terms of the
+ * Licence agreement you entered into with Jalasoft
+ */
 import net.lingala.zip4j.core.ZipFile;
 import net.lingala.zip4j.exception.ZipException;
 
@@ -18,7 +25,11 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
-
+/**
+ * Detects objects in images using the SSD Inception Model
+ * @author Libertad Tolaba
+ * @version 1.0
+ */
 public class ObjectDetector implements AutoCloseable {
     private static final String MODEL_FOLDER_NAME = "ssd_inception_v2_coco";
     private static final Logger logger = LoggerFactory.getLogger(ObjectDetector.class);
@@ -27,6 +38,10 @@ public class ObjectDetector implements AutoCloseable {
     private SavedModelBundle model;
     public ObjectDetector() {
     }
+
+    /**
+     * Detects the objects in the image
+     */
     public List<DetectedObj> detectObjects(BufferedImage img) throws IOException {
         logger.info("Begin detecting objects from image ...");
         List<DetectedObj> result = new ArrayList<>();
@@ -61,6 +76,10 @@ public class ObjectDetector implements AutoCloseable {
         logger.info("object detection completed on image");
         return result;
     }
+
+    /**
+     * Method loads the SSD model that will be used to detect Objects
+     */
     public void loadModel() throws Exception {
         exportModel();
         labels = LabelUtils.loadLabels();
@@ -70,6 +89,10 @@ public class ObjectDetector implements AutoCloseable {
         this.model = SavedModelBundle.load(modelDirPath, "serve");
         logger.info("model loaded");
     }
+
+    /**
+     * Method exports the SSD model that will be used to detect Objects and unzips the model Zip
+     */
     private void exportModel() {
         File modelParentDir = new File(modelParentDirPath);
         if(!modelParentDir.exists()){
@@ -106,7 +129,9 @@ public class ObjectDetector implements AutoCloseable {
             logger.error("Failed to unzip " + zipFileName, e);
         }
     }
-
+    /**
+     * Closes the model stream that was opened previously
+     */
     @Override
     public void close() throws Exception {
         if(model != null) {

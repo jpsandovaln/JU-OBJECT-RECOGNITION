@@ -30,4 +30,9 @@ public class TypeModelRecognizerTest {
         String expected = "objectdetection";
         assertEquals(expected, TypeModelRecognizer.OBJECTDETECTION.getModel());
     }
+    @Test
+    public void shouldGetEnumTypeRcnn() {
+        String expected = "rcnn";
+        assertEquals(expected, TypeModelRecognizer.RCNN.getModel());
+    }
 }
