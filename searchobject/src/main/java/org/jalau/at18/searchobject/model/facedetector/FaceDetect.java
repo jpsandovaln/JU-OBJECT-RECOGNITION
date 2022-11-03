@@ -56,7 +56,7 @@ public class FaceDetect {
 
         //imgFile it's the file we want to analyze if there it's a person in the photo
         String imgFile = currentDir +"\\"+ file;
-
+        System.out.println("result " + imgFile);
         //Decodes the images
         Mat src = Imgcodecs.imread(imgFile);
 
@@ -87,7 +87,7 @@ public class FaceDetect {
             //face detect true
             status = true;
             //result if the image it's a profile
-            result = "It's a person: " + status;
+            result = "It's a person: "+ status ;
 
         }  else if (type.equals("multiple") && faceDetection.toArray().length > 1 ) { //
             for(Rect rect: faceDetection.toArray()) {

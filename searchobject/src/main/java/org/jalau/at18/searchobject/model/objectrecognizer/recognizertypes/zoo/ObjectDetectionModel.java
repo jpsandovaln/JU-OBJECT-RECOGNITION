@@ -36,6 +36,10 @@ import java.util.Map;
  *
  * @author Jose Romay
  * @version 1.0
+ *
+ * End the model to integrate with all the models and the spring
+ * @author Rodrigo Valda
+ *  * @version 2.0
  */
 public class ObjectDetectionModel {
 

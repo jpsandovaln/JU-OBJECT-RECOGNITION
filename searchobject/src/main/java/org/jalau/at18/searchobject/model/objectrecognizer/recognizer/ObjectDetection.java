@@ -21,7 +21,7 @@ import java.io.File;
 /**
  * It is responsible for save the matching from the process of the model.
  *
- * @author Jose romay
+ * @author Rodrigo Valda
  * @version 1.0
  */
 public class ObjectDetection implements ModelRecognizer {
