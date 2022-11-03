@@ -2,7 +2,7 @@ package org.jalau.at18.searchobject.notify;
 /**
  * Copyright (c) 2022 Jala University.
  *
- * This software is the confidential and proprietary information of Jala University
+ * This software is the confidential and property information of Jala University
  * ("Confidential Information"). You shall not disclose such Confidential
  * Information and shall use it only in accordance with the terms of the
  * license agreement you entered into with Jala University

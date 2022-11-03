@@ -56,7 +56,7 @@ public class FaceDetect {
 
         //imgFile it's the file we want to analyze if there it's a person in the photo
         String imgFile = currentDir +"\\"+ file;
-        System.out.println("result " + imgFile);
+
         //Decodes the images
         Mat src = Imgcodecs.imread(imgFile);
 

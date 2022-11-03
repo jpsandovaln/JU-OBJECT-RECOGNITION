@@ -17,7 +17,7 @@ import java.util.zip.ZipInputStream;
 import java.nio.file.Path;
 
 /**
- * It is responsible for analyze an image and detect if there it's a face or not.
+ * It is responsible for take out all the files from the zip folder
  *
  * @author Hugo Solares
  * @version 1.0
