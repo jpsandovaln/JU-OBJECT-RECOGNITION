@@ -12,11 +12,14 @@ import org.jalau.at18.searchobject.common.logger.At18Logger;
 import java.util.logging.Logger;
 
 /**
- *
+ * Method identifies the type of model chosen to detect an object
  * @throws ObjectRecognizerException if the model recognizer type is not one of the available recognizers
  */
 public class VerifyModelRecognizer {
     Logger log = At18Logger.getLogger();
+    /**
+     * @param modelRecognizer is the chosen model to execute the object detection
+     */
     public ModelRecognizer getModelRecognizer(String modelRecognizer) throws ObjectRecognizerException {
         if (modelRecognizer.equals(TypeModelRecognizer.YOLO.getModel())) {
             log.info("Model selected: YOLO");
