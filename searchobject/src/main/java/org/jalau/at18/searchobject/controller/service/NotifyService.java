@@ -15,17 +15,24 @@ import org.jalau.at18.searchobject.notify.VerifyNotifier;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-
 /**
+ * It is responsable of the notify service
  *
- *
- * @throws NotifierTypeException if the notifier type is not one of the available notifiers
+ * @author Maria Hurtado
+ * @version 1.0
  */
+
 @Service
 public class NotifyService {
+    /**
+     * @param matches list of matches of search criteria and images
+     * @param notifierType type of notification (whatsapp)
+     * @param recipient the cellphone number
+     * @throws NotifierTypeException if the notifier type is not one of the available notifiers
+     */
     public void notifyService(List<MatchInfo> matches, String notifierType, String recipient) throws NotifierTypeException {
         VerifyNotifier verifyNotifier = new VerifyNotifier();
-        Notifier notifier = verifyNotifier.getNotifier(notifierType);
-        notifier.notify(matches, recipient);
+        Notifier notifier = verifyNotifier.getNotifier(notifierType); //get notification
+        notifier.notify(matches, recipient); //matches of search and images and recipiento the cellphone number
     }
 }

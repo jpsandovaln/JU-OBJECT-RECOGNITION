@@ -28,19 +28,34 @@ import org.springframework.web.multipart.MultipartFile;
 
 import java.nio.file.Path;
 import java.util.List;
-
+/**
+ * Send the parameters in POSTMAN and with the data start the process of model recognition
+ *
+ * @author Maria Hurtado
+ * @version 1.0
+ */
 @RestController
 public class ProcessFrameController {
 
-    //private static final Logger LOG = At18Logger.getLogger();
-
+    //storage the file
     @Autowired
     FilesStorageService storageService;
+    //process frame with match result
     @Autowired
     ProcessFrameService processFrameService;
+    //process match service
     @Autowired
     ProcessMatchService processMatchService;
-
+    /**
+     *
+     *method to process the matches result
+     *@param file file upload by user
+     *@param searchCriteria object to search
+     *@param occurrencyPercentage score match
+     *@param modelObjectRecognizer type of model recognizer
+     *@param notifierType whatsapp
+     *@param recipient cellphone number
+     */
     @PostMapping("/processFrame")
     public ResponseEntity readDataCriteriaFrame(@RequestParam("file") MultipartFile file,
                                                 @RequestParam String searchCriteria,
@@ -57,10 +72,12 @@ public class ProcessFrameController {
 
             // get the route file
             UnzipFile unzip = new UnzipFile(path);
+            //save the result in the list marchinfos
             List<MatchInfo> matchInfos = processFrameService.processFrameAccordingCriteria(unzip.getPath(), searchCriteria,
                     occurrencyPercentage,
                     modelObjectRecognizer);
 
+            //process to send the notification
             processMatchService.processMatches(matchInfos, notifierType, recipient);
             return ResponseEntity.status(HttpStatus.OK).body(matchInfos);
         } catch (UnzipFileException | ObjectRecognizerException | NotifierTypeException e) {
