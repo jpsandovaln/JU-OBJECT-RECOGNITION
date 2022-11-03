@@ -8,7 +8,7 @@ public class EmotionRecognizerTest {
     @Test (expected = EmotionRecognizerException.class)
     public void shouldReturnNullPathException() throws EmotionRecognizerException {
         EmotionRecognizer emotionRecognizer = new EmotionRecognizer(null, "1234567887");
-        emotionRecognizer.convertImage(null);
+
     }
     @Test (expected = EmotionRecognizerException.class)
     public void shouldReturnNullEmotionExceptionBothNull() throws EmotionRecognizerException {
@@ -23,6 +23,6 @@ public class EmotionRecognizerTest {
     @Test (expected = EmotionRecognizerException.class)
     public void shouldReturnNonexistentException() throws EmotionRecognizerException {
         EmotionRecognizer emotionRecognizer = new EmotionRecognizer("java/ttttestemotionfaces/angry.jpg" , "4564646465646");
-        emotionRecognizer.convertImage("java/ttttestemotionfaces/angry.jpg");
+       
     }
 }

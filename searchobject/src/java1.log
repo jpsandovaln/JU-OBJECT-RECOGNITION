@@ -1,8 +1,10 @@
-nov. 03, 2022 4:12:59 P. M. org.jalau.at18.searchobject.model.facedetector.FaceDetect faceDetection
-INFO: It's only one person in the image
-nov. 03, 2022 4:12:59 P. M. org.jalau.at18.searchobject.model.facedetector.FaceDetect getCommand
-INFO: the proccess go successfullytrue
-nov. 03, 2022 4:12:59 P. M. org.jalau.at18.searchobject.model.facedetector.FaceDetect faceDetection
-INFO: multiple people in the image
-nov. 03, 2022 4:12:59 P. M. org.jalau.at18.searchobject.model.facedetector.FaceDetect getCommand
-INFO: the proccess go successfullytrue
+nov. 03, 2022 5:05:44 P. M. org.apache.coyote.AbstractProtocol start
+INFO: Starting ProtocolHandler ["http-nio-5000"]
+nov. 03, 2022 5:05:44 P. M. org.apache.coyote.AbstractProtocol pause
+INFO: Pausing ProtocolHandler ["http-nio-5000"]
+nov. 03, 2022 5:05:44 P. M. org.apache.catalina.core.StandardService stopInternal
+INFO: Stopping service [Tomcat]
+nov. 03, 2022 5:05:44 P. M. org.apache.coyote.AbstractProtocol stop
+INFO: Stopping ProtocolHandler ["http-nio-5000"]
+nov. 03, 2022 5:05:44 P. M. org.apache.coyote.AbstractProtocol destroy
+INFO: Destroying ProtocolHandler ["http-nio-5000"]
