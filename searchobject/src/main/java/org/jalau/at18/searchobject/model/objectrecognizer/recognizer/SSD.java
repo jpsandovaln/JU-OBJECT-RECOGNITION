@@ -1,5 +1,12 @@
 package org.jalau.at18.searchobject.model.objectrecognizer.recognizer;
-
+/**
+ * Copyright (c) 2022 Jala University.
+ *
+ * This software is the confidential and property information of Jalasoft
+ * ("Confidential Information"). You shall not disclose such Confidential
+ * Information and shall use it only in accordance with the terms of the
+ * Licence agreement you entered into with Jalasoft
+ */
 import org.jalau.at18.searchobject.model.objectrecognizer.recognizertypes.MatchInfo;
 import org.jalau.at18.searchobject.model.objectrecognizer.recognizertypes.ssd.DetectedObj;
 import org.jalau.at18.searchobject.model.objectrecognizer.recognizertypes.ssd.ObjectDetector;
@@ -10,7 +17,11 @@ import java.io.File;
 import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
-
+/**
+ * This class obtains matches found according to the SSD Model
+ * @author Libertad Tolaba
+ * @version 1.0
+ */
 public class SSD implements ModelRecognizer {
     @Override
     public List<MatchInfo> matching(Path pathFolder, String searchCriteria, int occurrencyPercentage) {
@@ -37,7 +48,10 @@ public class SSD implements ModelRecognizer {
         }
         return listObject;
     }
-
+    /**
+     * Method is in charge of validating the detected objects found according to the percentage and search criteria
+     * @return it returns the Image score average
+     */
     private double validateObject(List<DetectedObj> result, String searchCriteria, int occurrencyPercentage) {
         double scoreOfImage = 0;
         int counter = 0;

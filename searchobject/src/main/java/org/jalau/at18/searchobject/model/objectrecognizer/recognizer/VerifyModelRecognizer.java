@@ -13,7 +13,6 @@ import java.util.logging.Logger;
 
 /**
  *
- *
  * @throws ObjectRecognizerException if the model recognizer type is not one of the available recognizers
  */
 public class VerifyModelRecognizer {

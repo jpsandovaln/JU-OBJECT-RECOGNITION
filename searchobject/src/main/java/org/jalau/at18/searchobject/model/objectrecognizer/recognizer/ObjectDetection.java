@@ -1,15 +1,19 @@
 package org.jalau.at18.searchobject.model.objectrecognizer.recognizer;
-
+/**
+ * Copyright (c) 2022 Jala University.
+ *
+ * This software is the confidential and property information of Jalasoft
+ * ("Confidential Information"). You shall not disclose such Confidential
+ * Information and shall use it only in accordance with the terms of the
+ * Licence agreement you entered into with Jalasoft
+ */
 import org.jalau.at18.searchobject.model.objectrecognizer.recognizertypes.MatchInfo;
 import org.jalau.at18.searchobject.model.objectrecognizer.recognizertypes.zoo.ObjectDetectionModel;
 
 import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
-import ai.djl.ModelException;
-import ai.djl.translate.TranslateException;
 
-import java.io.IOException;
 import java.io.File;
 
 public class ObjectDetection implements ModelRecognizer {
