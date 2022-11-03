@@ -39,7 +39,7 @@ public class EmotionRecognizer {
 
     }
 
-    private String convertImage(String filePath) throws EmotionRecognizerException {
+    String convertImage(String filePath) throws EmotionRecognizerException {
         try {
             byte[] fileContent = FileUtils.readFileToByteArray(new File(filePath));
             String encodedString = Base64.getEncoder().encodeToString(fileContent);
