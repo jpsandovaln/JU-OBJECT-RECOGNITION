@@ -15,22 +15,32 @@ import org.jalau.at18.searchobject.model.objectrecognizer.recognizertypes.MatchI
 import org.springframework.stereotype.Service;
 import java.nio.file.Path;
 import java.util.List;
-
 /**
+ * It is responsable of process the service
  *
- *
- * @throws ObjectRecognizerException if the model recognizer type is not one of the available recognizers
+ * @author Maria Hurtado
+ * @version 1.0
  */
 
 @Service
 public class ProcessFrameService {
+    /**
+     *
+     *method to process the matches result saved in the list
+     *@param zipFilePath path zip folder
+     *@param searchCriteria object to search
+     *@param occurrencyPercentage score match
+     * @throws ObjectRecognizerException if the model recognizer type is not one of the available recognizers
+     */
     public List<MatchInfo> processFrameAccordingCriteria(Path zipFilePath,
                                                          String searchCriteria,
                                                          int occurrencyPercentage,
                                                          String modelObjectRecognizer) throws ObjectRecognizerException {
         // Verifying the model
         VerifyModelRecognizer verifyModelRecognizer = new VerifyModelRecognizer();
+        //recognize the model and start the process
         ModelRecognizer modelRecognizer = verifyModelRecognizer.getModelRecognizer(modelObjectRecognizer);
+        //saved info result
         List<MatchInfo> matchInfos = modelRecognizer.matching(zipFilePath, searchCriteria, occurrencyPercentage);
         return matchInfos;
     }

@@ -1,6 +1,8 @@
-oct. 31, 2022 12:19:50 P. M. org.jalau.at18.searchobject.model.objectrecognizer.recognizer.VerifyModelRecognizer getModelRecognizer
-INFO: Model selected: OBJECTDETECTION
-oct. 31, 2022 12:19:51 P. M. org.jalau.at18.searchobject.model.objectrecognizer.recognizer.VerifyModelRecognizer getModelRecognizer
-INFO: Model selected: SSD
-oct. 31, 2022 12:19:51 P. M. org.jalau.at18.searchobject.model.objectrecognizer.recognizer.VerifyModelRecognizer getModelRecognizer
-INFO: Model selected: YOLO
+nov. 03, 2022 4:12:59 P. M. org.jalau.at18.searchobject.model.facedetector.FaceDetect faceDetection
+INFO: It's only one person in the image
+nov. 03, 2022 4:12:59 P. M. org.jalau.at18.searchobject.model.facedetector.FaceDetect getCommand
+INFO: the proccess go successfullytrue
+nov. 03, 2022 4:12:59 P. M. org.jalau.at18.searchobject.model.facedetector.FaceDetect faceDetection
+INFO: multiple people in the image
+nov. 03, 2022 4:12:59 P. M. org.jalau.at18.searchobject.model.facedetector.FaceDetect getCommand
+INFO: the proccess go successfullytrue

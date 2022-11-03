@@ -20,7 +20,12 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.nio.file.Path;
-
+/**
+ *
+ *
+ * @author Alvaro Sivila
+ * @version 1.0
+ */
 @RestController
 public class EmotionRecognitionController{
     @Autowired
