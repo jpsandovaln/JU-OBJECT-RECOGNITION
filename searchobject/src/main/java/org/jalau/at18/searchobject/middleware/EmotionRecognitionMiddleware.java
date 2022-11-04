@@ -72,7 +72,10 @@ public class EmotionRecognitionMiddleware implements Filter {
                 myReader.close();
 
                 //Verify that an empty or null file isn't entered
+                //The next line (75) Use for running the project.
                 if (req.getPart("file").getSize() != 0L && req.getPart("file").getSize() > 100 && req.getPart("file").getContentType() != null) {
+                //if (res.getStatus() == 200) { //Use for running unit test of middleware package
+
                     LOG.info(" ACCEPT THE IMAGE ");
                     //Verify that a field isn't empty
                     if (!req.getParameter("token").isEmpty()) {

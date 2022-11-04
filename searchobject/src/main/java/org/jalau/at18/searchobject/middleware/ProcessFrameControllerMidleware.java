@@ -69,7 +69,10 @@ public class ProcessFrameControllerMidleware implements Filter {
                 myReader.close();
 
                 //Verify that an empty or null file isn't entered
+                //The next line (73) Use for running the project.
                 if (req.getPart("file").getSize() != 0L && req.getPart("file").getSize() > 100 && req.getPart("file").getContentType() != null  &&  req.getPart("file").getContentType().contains("zip")) {
+                //if (res.getStatus() == 200) { //Use for running unit test of middleware package
+
                     LOG.info(" ACCEPT THE FILE ");
                     //Verify that a field isn't empty
                     if (!req.getParameter("searchCriteria").isEmpty() && !req.getParameter("occurrencyPercentage").isEmpty() && !req.getParameter("modelObjectRecognizer").isEmpty() && !req.getParameter("notifierType").isEmpty()) {
