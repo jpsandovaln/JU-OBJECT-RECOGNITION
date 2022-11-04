@@ -1,18 +1,16 @@
-nov. 03, 2022 9:33:26 P. M. org.jalau.at18.searchobject.middleware.ProcessFrameControllerMidleware doFilter
+nov. 04, 2022 12:32:38 A. M. org.jalau.at18.searchobject.middleware.ProcessFrameControllerMidleware doFilter
 INFO: MODEL PROCESS FRAME CONTROLLER
-nov. 03, 2022 9:33:26 P. M. org.jalau.at18.searchobject.middleware.ProcessFrameControllerMidleware doFilter
-INFO: Remaining token uses: 5
-nov. 03, 2022 9:33:26 P. M. org.jalau.at18.searchobject.middleware.ProcessFrameControllerMidleware doFilter
-INFO:  ACCEPT THE FILE 
-nov. 03, 2022 9:33:26 P. M. org.jalau.at18.searchobject.middleware.ProcessFrameControllerMidleware doFilter
-INFO: PROCESS FRAME CONTROLLER ------ RUNNING ------
-nov. 03, 2022 9:33:26 P. M. org.jalau.at18.searchobject.middleware.ProcessFrameControllerMidleware doFilter
+nov. 04, 2022 12:32:38 A. M. org.jalau.at18.searchobject.middleware.ProcessFrameControllerMidleware doFilter
+INFO: TOKEN HAS NO MORE USES, PLEASE REQUEST ANOTHER ONE
+nov. 04, 2022 12:32:38 A. M. org.jalau.at18.searchobject.middleware.ProcessFrameControllerMidleware doFilter
+WARNING:  ERROR LOADING THE MODEL org.jalau.at18.searchobject.common.exception.MiddlewareException:     Token has no more uses, please request another one
+nov. 04, 2022 12:32:58 A. M. org.jalau.at18.searchobject.middleware.ProcessFrameControllerMidleware doFilter
 INFO: MODEL PROCESS FRAME CONTROLLER
-nov. 03, 2022 9:33:26 P. M. org.jalau.at18.searchobject.middleware.ProcessFrameControllerMidleware doFilter
+nov. 04, 2022 12:32:58 A. M. org.jalau.at18.searchobject.middleware.ProcessFrameControllerMidleware doFilter
 INFO: Remaining token uses: 4
-nov. 03, 2022 9:33:26 P. M. org.jalau.at18.searchobject.middleware.ProcessFrameControllerMidleware doFilter
+nov. 04, 2022 12:32:58 A. M. org.jalau.at18.searchobject.middleware.ProcessFrameControllerMidleware doFilter
 INFO:  ACCEPT THE FILE 
-nov. 03, 2022 9:33:26 P. M. org.jalau.at18.searchobject.middleware.ProcessFrameControllerMidleware doFilter
-WARNING:  THE FIELDS ARE EMPTY 
-nov. 03, 2022 9:33:26 P. M. org.jalau.at18.searchobject.middleware.ProcessFrameControllerMidleware doFilter
-WARNING:  ERROR LOADING THE MODEL org.jalau.at18.searchobject.common.exception.MiddlewareException:  THE FIELDS ARE EMPTY
+nov. 04, 2022 12:32:58 A. M. org.jalau.at18.searchobject.middleware.ProcessFrameControllerMidleware doFilter
+INFO: PROCESS FRAME CONTROLLER ------ RUNNING ------
+nov. 04, 2022 12:32:59 A. M. org.jalau.at18.searchobject.model.objectrecognizer.recognizer.VerifyModelRecognizer getModelRecognizer
+INFO: Model selected: SSD
