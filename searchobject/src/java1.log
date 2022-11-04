@@ -7,4 +7,13 @@ INFO: Stopping service [Tomcat]
 nov. 03, 2022 3:04:55 P. M. org.apache.coyote.AbstractProtocol stop
 INFO: Stopping ProtocolHandler ["http-nio-5000"]
 nov. 03, 2022 3:04:55 P. M. org.apache.coyote.AbstractProtocol destroy
+nov. 03, 2022 5:05:44 P. M. org.apache.coyote.AbstractProtocol start
+INFO: Starting ProtocolHandler ["http-nio-5000"]
+nov. 03, 2022 5:05:44 P. M. org.apache.coyote.AbstractProtocol pause
+INFO: Pausing ProtocolHandler ["http-nio-5000"]
+nov. 03, 2022 5:05:44 P. M. org.apache.catalina.core.StandardService stopInternal
+INFO: Stopping service [Tomcat]
+nov. 03, 2022 5:05:44 P. M. org.apache.coyote.AbstractProtocol stop
+INFO: Stopping ProtocolHandler ["http-nio-5000"]
+nov. 03, 2022 5:05:44 P. M. org.apache.coyote.AbstractProtocol destroy
 INFO: Destroying ProtocolHandler ["http-nio-5000"]

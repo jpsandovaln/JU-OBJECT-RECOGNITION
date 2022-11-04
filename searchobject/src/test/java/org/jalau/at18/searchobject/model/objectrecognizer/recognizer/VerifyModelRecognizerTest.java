@@ -8,6 +8,7 @@
 package org.jalau.at18.searchobject.model.objectrecognizer.recognizer;
 
 import org.jalau.at18.searchobject.common.exception.ObjectRecognizerException;
+import org.jalau.at18.searchobject.model.objectrecognizer.recognizertypes.rcnn.RcnnDetection;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
@@ -33,6 +34,12 @@ public class VerifyModelRecognizerTest {
         VerifyModelRecognizer verifyModelRecognizer = new VerifyModelRecognizer();
         String objectDetection = "objectdetection";
         assertEquals(ObjectDetection.class, verifyModelRecognizer.getModelRecognizer(objectDetection).getClass());
+    }
+    @Test
+    public void shouldGetRcnnModelRecognizer() throws ObjectRecognizerException {
+        VerifyModelRecognizer verifyModelRecognizer = new VerifyModelRecognizer();
+        String rcnn = "rcnn";
+        assertEquals(RcnnDetection.class, verifyModelRecognizer.getModelRecognizer(rcnn).getClass());
     }
 
     @Test (expected = ObjectRecognizerException.class)

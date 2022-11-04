@@ -87,7 +87,7 @@ public class FaceDetect {
             //face detect true
             status = true;
             //result if the image it's a profile
-            result = "It's a person: " + status;
+            result = "It's a person: "+ status ;
 
         }  else if (type.equals("multiple") && faceDetection.toArray().length > 1 ) { //
             for(Rect rect: faceDetection.toArray()) {

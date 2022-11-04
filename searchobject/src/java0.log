@@ -14,3 +14,5 @@ nov. 04, 2022 12:32:58 A. M. org.jalau.at18.searchobject.middleware.ProcessFrame
 INFO: PROCESS FRAME CONTROLLER ------ RUNNING ------
 nov. 04, 2022 12:32:59 A. M. org.jalau.at18.searchobject.model.objectrecognizer.recognizer.VerifyModelRecognizer getModelRecognizer
 INFO: Model selected: SSD
+nov. 03, 2022 8:57:26 P. M. org.apache.coyote.AbstractProtocol start
+INFO: Starting ProtocolHandler ["http-nio-5000"]

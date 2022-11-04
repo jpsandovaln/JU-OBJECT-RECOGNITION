@@ -15,6 +15,13 @@ import java.io.FileOutputStream;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipInputStream;
 import java.nio.file.Path;
+
+/**
+ * It is responsible for take out all the files from the zip folder
+ *
+ * @author Hugo Solares
+ * @version 1.0
+ */
 public class UnzipFile {
     Path dir;
     public UnzipFile(Path path) throws UnzipFileException {
@@ -23,20 +30,23 @@ public class UnzipFile {
     private void unzip(Path path) throws UnzipFileException {
         try {
             Path fileZip = path;
-            File destDir = new File(getFolder(fileZip.toString()));
-            byte[] buffer = new byte[1024];
+            File destDir = new File(getFolder(fileZip.toString()));  //direction path
+            byte[] buffer = new byte[1024]; //save the path
+            //tool from java
             ZipInputStream zis= new ZipInputStream(new FileInputStream(fileZip.toString()));
+            //tool from java
             ZipEntry zipEntry = zis.getNextEntry();
-            while (zipEntry != null) {
-                File newFile = newFile(destDir, zipEntry);
+            while (zipEntry != null) { //if file zip is valid
+                File newFile = newFile(destDir, zipEntry); //every single file from the zip it's read
                 dir = Path.of(newFile.getParent());
-                if (zipEntry.isDirectory()) {
+                if (zipEntry.isDirectory()) { //
                     if (!newFile.isDirectory() && !newFile.mkdirs()) {
                         throw new UnzipFileException("Failed to create directory " + newFile);
                     }
                 } else {
                     // fix for Windows-created archives
                     File parent = newFile.getParentFile();
+                    //error if file zip it's wrong create it
                     if (!parent.isDirectory() && !parent.mkdirs()) {
                         throw new UnzipFileException("Failed to create directory " + parent);
                     }
@@ -57,6 +67,10 @@ public class UnzipFile {
         }
 
     }
+    /**
+     *
+     *
+     */
     private File newFile(File destinationDir, ZipEntry zipEntry) throws UnzipFileException {
         try {
             File destFile = new File(destinationDir, zipEntry.getName());
