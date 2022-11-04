@@ -14,7 +14,7 @@ import org.springframework.stereotype.Service;
 
 import java.nio.file.Path;
 /**
- * It is responsable of storage the service
+ * the objective it's of storage the service
  *
  * @author Alvaro Sivila
  * @version 1.0
