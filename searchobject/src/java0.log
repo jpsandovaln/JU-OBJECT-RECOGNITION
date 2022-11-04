@@ -1,16 +1,2 @@
-nov. 03, 2022 5:06:48 P. M. org.apache.coyote.AbstractProtocol start
+nov. 03, 2022 8:57:26 P. M. org.apache.coyote.AbstractProtocol start
 INFO: Starting ProtocolHandler ["http-nio-5000"]
-nov. 03, 2022 5:08:22 P. M. org.apache.catalina.core.ApplicationContext log
-INFO: Initializing Spring DispatcherServlet 'dispatcherServlet'
-nov. 03, 2022 5:08:22 P. M. org.jalau.at18.searchobject.middleware.FaceDetectionControllerMiddleware doFilter
-INFO:  MODEL FACE DETECTION  
-nov. 03, 2022 5:08:22 P. M. org.jalau.at18.searchobject.middleware.FaceDetectionControllerMiddleware doFilter
-INFO: Remaining token uses: 2
-nov. 03, 2022 5:08:22 P. M. org.jalau.at18.searchobject.middleware.FaceDetectionControllerMiddleware doFilter
-INFO:  ACCEPT THE IMAGE 
-nov. 03, 2022 5:08:22 P. M. org.jalau.at18.searchobject.middleware.FaceDetectionControllerMiddleware doFilter
-INFO: FACE DETECTION ---- RUNNING -------
-nov. 03, 2022 5:08:23 P. M. org.jalau.at18.searchobject.model.facedetector.FaceDetect faceDetection
-INFO: multiple people in the image
-nov. 03, 2022 5:08:23 P. M. org.jalau.at18.searchobject.model.facedetector.FaceDetect getCommand
-INFO: the proccess go successfullytrue
