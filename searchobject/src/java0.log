@@ -1,2 +1,18 @@
-nov. 02, 2022 2:52:38 P. M. org.apache.coyote.AbstractProtocol start
-INFO: Starting ProtocolHandler ["http-nio-5000"]
+nov. 03, 2022 9:33:26 P. M. org.jalau.at18.searchobject.middleware.ProcessFrameControllerMidleware doFilter
+INFO: MODEL PROCESS FRAME CONTROLLER
+nov. 03, 2022 9:33:26 P. M. org.jalau.at18.searchobject.middleware.ProcessFrameControllerMidleware doFilter
+INFO: Remaining token uses: 5
+nov. 03, 2022 9:33:26 P. M. org.jalau.at18.searchobject.middleware.ProcessFrameControllerMidleware doFilter
+INFO:  ACCEPT THE FILE 
+nov. 03, 2022 9:33:26 P. M. org.jalau.at18.searchobject.middleware.ProcessFrameControllerMidleware doFilter
+INFO: PROCESS FRAME CONTROLLER ------ RUNNING ------
+nov. 03, 2022 9:33:26 P. M. org.jalau.at18.searchobject.middleware.ProcessFrameControllerMidleware doFilter
+INFO: MODEL PROCESS FRAME CONTROLLER
+nov. 03, 2022 9:33:26 P. M. org.jalau.at18.searchobject.middleware.ProcessFrameControllerMidleware doFilter
+INFO: Remaining token uses: 4
+nov. 03, 2022 9:33:26 P. M. org.jalau.at18.searchobject.middleware.ProcessFrameControllerMidleware doFilter
+INFO:  ACCEPT THE FILE 
+nov. 03, 2022 9:33:26 P. M. org.jalau.at18.searchobject.middleware.ProcessFrameControllerMidleware doFilter
+WARNING:  THE FIELDS ARE EMPTY 
+nov. 03, 2022 9:33:26 P. M. org.jalau.at18.searchobject.middleware.ProcessFrameControllerMidleware doFilter
+WARNING:  ERROR LOADING THE MODEL org.jalau.at18.searchobject.common.exception.MiddlewareException:  THE FIELDS ARE EMPTY
