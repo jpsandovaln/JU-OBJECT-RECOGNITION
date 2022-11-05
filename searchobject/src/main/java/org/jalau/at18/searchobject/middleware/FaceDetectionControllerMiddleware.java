@@ -75,10 +75,7 @@ public class FaceDetectionControllerMiddleware implements Filter {
                 myReader.close();
 
                 //Verify that an empty or null file isn't entered
-                //The next line (73) Use for running the project.
-                if (req.getPart("file").getSize() != 0L && req.getPart("file").getSize() > 100 && req.getPart("file").getContentType() != null) {
-                //if (res.getStatus() == 200) { //Use for running unit test of middleware package
-
+                if (req.getPart("file").getSize() != 0L && req.getPart("file").getSize() > 161 && req.getPart("file").getContentType() != null) {
                         LOG.info(" ACCEPT THE IMAGE ");
                     //Verify that a field isn't empty
                     if (!req.getParameter("type").isEmpty()) {
@@ -99,7 +96,7 @@ public class FaceDetectionControllerMiddleware implements Filter {
                 pw.flush(); //delete the content of the txt file.
                 pw.close();
                 fw.close();
-                throw new MiddlewareException("    Token has no more uses, please request another one");
+                throw new MiddlewareException(" Token has no more uses, please request another one");
             } else {
                 LOG.warning(" GENERATED TOKEN ");
                 throw new MiddlewareException("Generated token ");

@@ -75,22 +75,27 @@ public class EmotionRecognitionMiddleware implements Filter {
                 myReader.close();
 
                 //Verify that an empty or null file isn't entered
-                //The next line (75) Use for running the project.
-                if (req.getPart("file").getSize() != 0L && req.getPart("file").getSize() > 100 && req.getPart("file").getContentType() != null) {
-                //if (res.getStatus() == 200) { //Use for running unit test of middleware package
+                if (req.getPart("file").getSize() != 0L && req.getPart("file").getSize() > 161 && req.getPart("file").getContentType() != null) {
+                    LOG.info(" ACCEPT THE FILE ");
+                    if(req.getPart("file").getContentType().contains("jpg") || req.getPart("file").getContentType().contains("png") || req.getPart("file").getContentType().contains("jpeg")){
 
-                    LOG.info(" ACCEPT THE IMAGE ");
-                    //Verify that a field isn't empty
-                    if (!req.getParameter("token").isEmpty()) {
-                        LOG.info("EMOTION RECOGNITION ---- RUNNING -------");
-                        chain.doFilter(request, response);
+                        LOG.info("VALIDATED THE IMAGE ");
+                        //Verify that a field isn't empty
+                        if (!req.getParameter("token").isEmpty()) {
+                            LOG.info("EMOTION RECOGNITION ---- RUNNING -------");
+                            chain.doFilter(request, response);
+                        } else {
+                            LOG.warning(" ENTER AN TOKEN ");
+                            throw new MiddlewareException(" Enter an token ");
+                        }
                     } else {
-                        LOG.warning(" ENTER AN TOKEN ");
-                        throw new MiddlewareException(" Enter an token ");
+                        LOG.warning(" ENTER AN IMAGE ");
+                        throw new MiddlewareException(" Enter a image jpg, png or jpeg");
                     }
+
                 } else {
                         LOG.warning(" ENTER AN IMAGE ");
-                        throw new MiddlewareException(" Enter a image ");
+                    throw new MiddlewareException(" Enter a image jpg, png or jpeg");
                 }
             }
             else if (tokenCounter < 1) {
@@ -100,7 +105,7 @@ public class EmotionRecognitionMiddleware implements Filter {
                 pw.flush(); //delete the content of the txt file.
                 pw.close();
                 fw.close();
-                throw new MiddlewareException("    Token has no more uses, please request another one");
+                throw new MiddlewareException(" Token has no more uses, please request another one");
             } else {
                 LOG.warning(" GENERATED TOKEN");
                 throw new MiddlewareException(" Generated token ");
