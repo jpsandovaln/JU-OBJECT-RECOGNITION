@@ -7,8 +7,11 @@ package org.jalau.at18.searchobject.middleware;
  * Information and shall use it only in accordance with the terms of the
  * Licence agreement you entered into with Jalasoft
  */
+import com.google.gson.Gson;
 import org.jalau.at18.searchobject.common.exception.MiddlewareException;
 import org.jalau.at18.searchobject.common.logger.At18Logger;
+import org.jalau.at18.searchobject.controller.response.ErrorResponse;
+
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import java.io.File;
@@ -34,6 +37,7 @@ import javax.servlet.http.HttpServletResponse;
 @WebFilter(urlPatterns = "/processFrame")
 public class ProcessFrameControllerMidleware implements Filter {
     private static final Logger LOG = new At18Logger().getLogger();
+    private Gson gson = new Gson();
     /**
      * doFilter: It is the one that contains the logic of what the filter does. It receives by parameter the request, the response and the chain of filters.
      * Servlets: which contain the logic that is applied when receiving an HTTP request.
@@ -80,11 +84,11 @@ public class ProcessFrameControllerMidleware implements Filter {
                         chain.doFilter(request, response);
                     } else {
                         LOG.warning(" THE FIELDS ARE EMPTY ");
-                        throw new MiddlewareException(" THE FIELDS ARE EMPTY");
+                        throw new MiddlewareException(" The fields are empty");
                     }
                 } else {
                     LOG.warning(" THE FILE IS EMPTY OR NOT A .zip FILE ");
-                    throw new MiddlewareException("    THE FILE IS EMPTY OR NOT A .zip FILE ");
+                    throw new MiddlewareException(" The file is empty or not a .zip file");
                 }
             } else if (tokenCounter < 1) {
                 LOG.info("TOKEN HAS NO MORE USES, PLEASE REQUEST ANOTHER ONE");
@@ -96,15 +100,20 @@ public class ProcessFrameControllerMidleware implements Filter {
                 throw new MiddlewareException("    Token has no more uses, please request another one");
             } else {
                 LOG.warning(" GENERATED TOKEN ");
-                throw new MiddlewareException("    Generated token ");
+                throw new MiddlewareException(" Generated token ");
             }
         } catch (InstantiationError | MiddlewareException e) {
             LOG.warning(" ERROR LOADING THE MODEL " + e);
             e.printStackTrace();
-            PrintWriter out = response.getWriter();
             res.setStatus(400);
-            out.println ("    Status :    " + res.getStatus());
-            out.println (e.getMessage());
+            String x = Integer.toString( res.getStatus());
+            ErrorResponse employee = new ErrorResponse(x, e.getMessage());
+            String employeeJsonString = this.gson.toJson(employee);
+            PrintWriter outo = response.getWriter();
+            response.setContentType("application/json");
+            response.setCharacterEncoding("UTF-8");
+            outo.print(employeeJsonString);
+            outo.flush();
         }
     }
 }
