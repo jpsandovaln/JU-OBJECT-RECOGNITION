@@ -1,80 +1,100 @@
-nov. 04, 2022 10:12:27 P. M. org.apache.coyote.AbstractProtocol start
+nov. 04, 2022 10:24:31 P. M. org.apache.coyote.AbstractProtocol start
 INFO: Starting ProtocolHandler ["http-nio-5000"]
-nov. 04, 2022 10:12:45 P. M. org.apache.catalina.core.ApplicationContext log
+nov. 04, 2022 10:24:33 P. M. org.apache.catalina.core.ApplicationContext log
 INFO: Initializing Spring DispatcherServlet 'dispatcherServlet'
-nov. 04, 2022 10:12:45 P. M. org.jalau.at18.searchobject.middleware.FaceDetectionControllerMiddleware doFilter
-INFO:  MODEL FACE DETECTION  
-nov. 04, 2022 10:12:45 P. M. org.jalau.at18.searchobject.middleware.FaceDetectionControllerMiddleware doFilter
-INFO: Remaining token uses: 16
-nov. 04, 2022 10:12:45 P. M. org.jalau.at18.searchobject.middleware.FaceDetectionControllerMiddleware doFilter
-INFO:  ACCEPT THE IMAGE 
-nov. 04, 2022 10:12:45 P. M. org.jalau.at18.searchobject.middleware.FaceDetectionControllerMiddleware doFilter
-WARNING:  THE TYPE FIELD IS EMPTY 
-nov. 04, 2022 10:12:45 P. M. org.jalau.at18.searchobject.middleware.FaceDetectionControllerMiddleware doFilter
-WARNING:  ERROR LOADING THE MODEL org.jalau.at18.searchobject.common.exception.MiddlewareException:  The type field is empty 
-nov. 04, 2022 10:12:56 P. M. org.jalau.at18.searchobject.middleware.EmotionRecognitionMiddleware doFilter
-INFO: MODEL EMOTION RECOGNITION
-nov. 04, 2022 10:12:56 P. M. org.jalau.at18.searchobject.middleware.EmotionRecognitionMiddleware doFilter
-WARNING:  GENERATED TOKEN
-nov. 04, 2022 10:12:56 P. M. org.jalau.at18.searchobject.middleware.EmotionRecognitionMiddleware doFilter
-WARNING:  ERROR LOADING THE MODEL org.jalau.at18.searchobject.common.exception.MiddlewareException:  Generated token 
-nov. 04, 2022 10:13:06 P. M. org.jalau.at18.searchobject.middleware.ProcessFrameControllerMidleware doFilter
+nov. 04, 2022 10:24:33 P. M. org.jalau.at18.searchobject.middleware.ProcessFrameControllerMidleware doFilter
 INFO: MODEL PROCESS FRAME CONTROLLER
-nov. 04, 2022 10:13:06 P. M. org.jalau.at18.searchobject.middleware.ProcessFrameControllerMidleware doFilter
-WARNING:  GENERATED TOKEN 
-nov. 04, 2022 10:13:06 P. M. org.jalau.at18.searchobject.middleware.ProcessFrameControllerMidleware doFilter
-WARNING:  ERROR LOADING THE MODEL org.jalau.at18.searchobject.common.exception.MiddlewareException:  Generated token 
-nov. 04, 2022 10:13:14 P. M. org.jalau.at18.searchobject.middleware.token.GenerateToken generateToken
-INFO: There is a pending token to be used
-nov. 04, 2022 10:13:27 P. M. org.jalau.at18.searchobject.middleware.EmotionRecognitionMiddleware doFilter
-INFO: MODEL EMOTION RECOGNITION
-nov. 04, 2022 10:13:27 P. M. org.jalau.at18.searchobject.middleware.EmotionRecognitionMiddleware doFilter
-INFO: Remaining token uses: 15
-nov. 04, 2022 10:13:27 P. M. org.jalau.at18.searchobject.middleware.EmotionRecognitionMiddleware doFilter
-INFO:  ACCEPT THE IMAGE 
-nov. 04, 2022 10:13:27 P. M. org.jalau.at18.searchobject.middleware.EmotionRecognitionMiddleware doFilter
-WARNING:  ENTER AN TOKEN 
-nov. 04, 2022 10:13:27 P. M. org.jalau.at18.searchobject.middleware.EmotionRecognitionMiddleware doFilter
-WARNING:  ERROR LOADING THE MODEL org.jalau.at18.searchobject.common.exception.MiddlewareException:  Enter an token 
-nov. 04, 2022 10:13:38 P. M. org.jalau.at18.searchobject.middleware.FaceDetectionControllerMiddleware doFilter
-INFO:  MODEL FACE DETECTION  
-nov. 04, 2022 10:13:38 P. M. org.jalau.at18.searchobject.middleware.FaceDetectionControllerMiddleware doFilter
-INFO: Remaining token uses: 14
-nov. 04, 2022 10:13:38 P. M. org.jalau.at18.searchobject.middleware.FaceDetectionControllerMiddleware doFilter
-INFO:  ACCEPT THE IMAGE 
-nov. 04, 2022 10:13:38 P. M. org.jalau.at18.searchobject.middleware.FaceDetectionControllerMiddleware doFilter
-WARNING:  THE TYPE FIELD IS EMPTY 
-nov. 04, 2022 10:13:38 P. M. org.jalau.at18.searchobject.middleware.FaceDetectionControllerMiddleware doFilter
-WARNING:  ERROR LOADING THE MODEL org.jalau.at18.searchobject.common.exception.MiddlewareException:  The type field is empty 
-nov. 04, 2022 10:13:42 P. M. org.jalau.at18.searchobject.middleware.FaceDetectionControllerMiddleware doFilter
-INFO:  MODEL FACE DETECTION  
-nov. 04, 2022 10:13:42 P. M. org.jalau.at18.searchobject.middleware.FaceDetectionControllerMiddleware doFilter
-INFO: Remaining token uses: 13
-nov. 04, 2022 10:13:42 P. M. org.jalau.at18.searchobject.middleware.FaceDetectionControllerMiddleware doFilter
-WARNING:  ENTER AN IMAGE 
-nov. 04, 2022 10:13:42 P. M. org.jalau.at18.searchobject.middleware.FaceDetectionControllerMiddleware doFilter
-WARNING:  ERROR LOADING THE MODEL org.jalau.at18.searchobject.common.exception.MiddlewareException:  Enter a image 
-nov. 04, 2022 10:13:48 P. M. org.jalau.at18.searchobject.middleware.ProcessFrameControllerMidleware doFilter
-INFO: MODEL PROCESS FRAME CONTROLLER
-nov. 04, 2022 10:13:48 P. M. org.jalau.at18.searchobject.middleware.ProcessFrameControllerMidleware doFilter
-WARNING:  GENERATED TOKEN 
-nov. 04, 2022 10:13:48 P. M. org.jalau.at18.searchobject.middleware.ProcessFrameControllerMidleware doFilter
-WARNING:  ERROR LOADING THE MODEL org.jalau.at18.searchobject.common.exception.MiddlewareException:  Generated token 
-nov. 04, 2022 10:13:56 P. M. org.jalau.at18.searchobject.middleware.ProcessFrameControllerMidleware doFilter
-INFO: MODEL PROCESS FRAME CONTROLLER
-nov. 04, 2022 10:13:56 P. M. org.jalau.at18.searchobject.middleware.ProcessFrameControllerMidleware doFilter
-INFO: Remaining token uses: 12
-nov. 04, 2022 10:13:56 P. M. org.jalau.at18.searchobject.middleware.ProcessFrameControllerMidleware doFilter
+nov. 04, 2022 10:24:33 P. M. org.jalau.at18.searchobject.middleware.ProcessFrameControllerMidleware doFilter
+INFO: Remaining token uses: 0
+nov. 04, 2022 10:24:34 P. M. org.jalau.at18.searchobject.middleware.ProcessFrameControllerMidleware doFilter
 WARNING:  THE FILE IS EMPTY OR NOT A .zip FILE 
-nov. 04, 2022 10:13:56 P. M. org.jalau.at18.searchobject.middleware.ProcessFrameControllerMidleware doFilter
-WARNING:  ERROR LOADING THE MODEL org.jalau.at18.searchobject.common.exception.MiddlewareException:  THE FILE IS EMPTY OR NOT A .zip FILE 
-nov. 04, 2022 10:14:20 P. M. org.jalau.at18.searchobject.middleware.ProcessFrameControllerMidleware doFilter
+nov. 04, 2022 10:24:34 P. M. org.jalau.at18.searchobject.middleware.ProcessFrameControllerMidleware doFilter
+WARNING:  ERROR LOADING THE MODEL org.jalau.at18.searchobject.common.exception.MiddlewareException:  The file is empty or not a .zip file
+nov. 04, 2022 10:25:23 P. M. org.jalau.at18.searchobject.middleware.ProcessFrameControllerMidleware doFilter
 INFO: MODEL PROCESS FRAME CONTROLLER
-nov. 04, 2022 10:14:20 P. M. org.jalau.at18.searchobject.middleware.ProcessFrameControllerMidleware doFilter
+nov. 04, 2022 10:25:23 P. M. org.jalau.at18.searchobject.middleware.ProcessFrameControllerMidleware doFilter
+INFO: TOKEN HAS NO MORE USES, PLEASE REQUEST ANOTHER ONE
+nov. 04, 2022 10:25:23 P. M. org.jalau.at18.searchobject.middleware.ProcessFrameControllerMidleware doFilter
+WARNING:  ERROR LOADING THE MODEL org.jalau.at18.searchobject.common.exception.MiddlewareException:     Token has no more uses, please request another one
+nov. 04, 2022 10:26:00 P. M. org.jalau.at18.searchobject.middleware.ProcessFrameControllerMidleware doFilter
+INFO: MODEL PROCESS FRAME CONTROLLER
+nov. 04, 2022 10:26:00 P. M. org.jalau.at18.searchobject.middleware.ProcessFrameControllerMidleware doFilter
+INFO: Remaining token uses: 19
+nov. 04, 2022 10:26:00 P. M. org.jalau.at18.searchobject.middleware.ProcessFrameControllerMidleware doFilter
+WARNING:  THE FILE IS EMPTY OR NOT A .zip FILE 
+nov. 04, 2022 10:26:00 P. M. org.jalau.at18.searchobject.middleware.ProcessFrameControllerMidleware doFilter
+WARNING:  ERROR LOADING THE MODEL org.jalau.at18.searchobject.common.exception.MiddlewareException:  The file is empty or not a .zip file
+nov. 04, 2022 10:26:19 P. M. org.jalau.at18.searchobject.middleware.ProcessFrameControllerMidleware doFilter
+INFO: MODEL PROCESS FRAME CONTROLLER
+nov. 04, 2022 10:26:19 P. M. org.jalau.at18.searchobject.middleware.ProcessFrameControllerMidleware doFilter
+INFO: Remaining token uses: 18
+nov. 04, 2022 10:26:19 P. M. org.jalau.at18.searchobject.middleware.ProcessFrameControllerMidleware doFilter
+WARNING:  THE FILE IS EMPTY OR NOT A .zip FILE 
+nov. 04, 2022 10:26:19 P. M. org.jalau.at18.searchobject.middleware.ProcessFrameControllerMidleware doFilter
+WARNING:  ERROR LOADING THE MODEL org.jalau.at18.searchobject.common.exception.MiddlewareException:  The file is empty or not a .zip file
+nov. 04, 2022 10:26:40 P. M. org.jalau.at18.searchobject.middleware.ProcessFrameControllerMidleware doFilter
+INFO: MODEL PROCESS FRAME CONTROLLER
+nov. 04, 2022 10:26:40 P. M. org.jalau.at18.searchobject.middleware.ProcessFrameControllerMidleware doFilter
+INFO: Remaining token uses: 17
+nov. 04, 2022 10:26:40 P. M. org.jalau.at18.searchobject.middleware.ProcessFrameControllerMidleware doFilter
+WARNING:  THE FILE IS EMPTY OR NOT A .zip FILE 
+nov. 04, 2022 10:26:40 P. M. org.jalau.at18.searchobject.middleware.ProcessFrameControllerMidleware doFilter
+WARNING:  ERROR LOADING THE MODEL org.jalau.at18.searchobject.common.exception.MiddlewareException:  The file is empty or not a .zip file
+nov. 04, 2022 10:27:00 P. M. org.jalau.at18.searchobject.middleware.ProcessFrameControllerMidleware doFilter
+INFO: MODEL PROCESS FRAME CONTROLLER
+nov. 04, 2022 10:27:00 P. M. org.jalau.at18.searchobject.middleware.ProcessFrameControllerMidleware doFilter
+INFO: Remaining token uses: 16
+nov. 04, 2022 10:27:00 P. M. org.jalau.at18.searchobject.middleware.ProcessFrameControllerMidleware doFilter
+WARNING:  THE FILE IS EMPTY OR NOT A .zip FILE 
+nov. 04, 2022 10:27:00 P. M. org.jalau.at18.searchobject.middleware.ProcessFrameControllerMidleware doFilter
+WARNING:  ERROR LOADING THE MODEL org.jalau.at18.searchobject.common.exception.MiddlewareException:  The file is empty or not a .zip file
+nov. 04, 2022 10:27:24 P. M. org.jalau.at18.searchobject.middleware.ProcessFrameControllerMidleware doFilter
+INFO: MODEL PROCESS FRAME CONTROLLER
+nov. 04, 2022 10:27:24 P. M. org.jalau.at18.searchobject.middleware.ProcessFrameControllerMidleware doFilter
+INFO: Remaining token uses: 15
+nov. 04, 2022 10:27:25 P. M. org.jalau.at18.searchobject.middleware.ProcessFrameControllerMidleware doFilter
+WARNING:  THE FILE IS EMPTY OR NOT A .zip FILE 
+nov. 04, 2022 10:27:25 P. M. org.jalau.at18.searchobject.middleware.ProcessFrameControllerMidleware doFilter
+WARNING:  ERROR LOADING THE MODEL org.jalau.at18.searchobject.common.exception.MiddlewareException:  The file is empty or not a .zip file
+nov. 04, 2022 10:27:28 P. M. org.jalau.at18.searchobject.middleware.ProcessFrameControllerMidleware doFilter
+INFO: MODEL PROCESS FRAME CONTROLLER
+nov. 04, 2022 10:27:28 P. M. org.jalau.at18.searchobject.middleware.ProcessFrameControllerMidleware doFilter
+INFO: Remaining token uses: 14
+nov. 04, 2022 10:27:28 P. M. org.jalau.at18.searchobject.middleware.ProcessFrameControllerMidleware doFilter
+WARNING:  THE FILE IS EMPTY OR NOT A .zip FILE 
+nov. 04, 2022 10:27:28 P. M. org.jalau.at18.searchobject.middleware.ProcessFrameControllerMidleware doFilter
+WARNING:  ERROR LOADING THE MODEL org.jalau.at18.searchobject.common.exception.MiddlewareException:  The file is empty or not a .zip file
+nov. 04, 2022 10:28:13 P. M. org.jalau.at18.searchobject.middleware.ProcessFrameControllerMidleware doFilter
+INFO: MODEL PROCESS FRAME CONTROLLER
+nov. 04, 2022 10:28:13 P. M. org.jalau.at18.searchobject.middleware.ProcessFrameControllerMidleware doFilter
+INFO: Remaining token uses: 13
+nov. 04, 2022 10:28:15 P. M. org.jalau.at18.searchobject.middleware.ProcessFrameControllerMidleware doFilter
+WARNING:  THE FILE IS EMPTY OR NOT A .zip FILE 
+nov. 04, 2022 10:28:15 P. M. org.jalau.at18.searchobject.middleware.ProcessFrameControllerMidleware doFilter
+WARNING:  ERROR LOADING THE MODEL org.jalau.at18.searchobject.common.exception.MiddlewareException:  The file is empty or not a .zip file
+nov. 04, 2022 10:29:01 P. M. org.jalau.at18.searchobject.middleware.ProcessFrameControllerMidleware doFilter
+INFO: MODEL PROCESS FRAME CONTROLLER
+nov. 04, 2022 10:29:01 P. M. org.jalau.at18.searchobject.middleware.ProcessFrameControllerMidleware doFilter
+INFO: Remaining token uses: 12
+nov. 04, 2022 10:29:02 P. M. org.jalau.at18.searchobject.middleware.ProcessFrameControllerMidleware doFilter
+WARNING:  THE FILE IS EMPTY OR NOT A .zip FILE 
+nov. 04, 2022 10:29:02 P. M. org.jalau.at18.searchobject.middleware.ProcessFrameControllerMidleware doFilter
+WARNING:  ERROR LOADING THE MODEL org.jalau.at18.searchobject.common.exception.MiddlewareException:  The file is empty or not a .zip file
+nov. 04, 2022 10:29:12 P. M. org.jalau.at18.searchobject.middleware.ProcessFrameControllerMidleware doFilter
+INFO: MODEL PROCESS FRAME CONTROLLER
+nov. 04, 2022 10:29:12 P. M. org.jalau.at18.searchobject.middleware.ProcessFrameControllerMidleware doFilter
 INFO: Remaining token uses: 11
-nov. 04, 2022 10:14:20 P. M. org.jalau.at18.searchobject.middleware.ProcessFrameControllerMidleware doFilter
+nov. 04, 2022 10:29:12 P. M. org.jalau.at18.searchobject.middleware.ProcessFrameControllerMidleware doFilter
+WARNING:  THE FILE IS EMPTY OR NOT A .zip FILE 
+nov. 04, 2022 10:29:12 P. M. org.jalau.at18.searchobject.middleware.ProcessFrameControllerMidleware doFilter
+WARNING:  ERROR LOADING THE MODEL org.jalau.at18.searchobject.common.exception.MiddlewareException:  The file is empty or not a .zip file
+nov. 04, 2022 10:29:24 P. M. org.jalau.at18.searchobject.middleware.ProcessFrameControllerMidleware doFilter
+INFO: MODEL PROCESS FRAME CONTROLLER
+nov. 04, 2022 10:29:24 P. M. org.jalau.at18.searchobject.middleware.ProcessFrameControllerMidleware doFilter
+INFO: Remaining token uses: 10
+nov. 04, 2022 10:29:24 P. M. org.jalau.at18.searchobject.middleware.ProcessFrameControllerMidleware doFilter
 INFO:  ACCEPT THE FILE 
-nov. 04, 2022 10:14:20 P. M. org.jalau.at18.searchobject.middleware.ProcessFrameControllerMidleware doFilter
-WARNING:  THE FIELDS ARE EMPTY 
-nov. 04, 2022 10:14:20 P. M. org.jalau.at18.searchobject.middleware.ProcessFrameControllerMidleware doFilter
-WARNING:  ERROR LOADING THE MODEL org.jalau.at18.searchobject.common.exception.MiddlewareException:  THE FIELDS ARE EMPTY
+nov. 04, 2022 10:29:24 P. M. org.jalau.at18.searchobject.middleware.ProcessFrameControllerMidleware doFilter
+INFO: PROCESS FRAME CONTROLLER ------ RUNNING ------
+nov. 04, 2022 10:29:24 P. M. org.jalau.at18.searchobject.model.objectrecognizer.recognizer.VerifyModelRecognizer getModelRecognizer
+INFO: Model selected: YOLO
