@@ -1,182 +1,72 @@
-nov. 04, 2022 11:22:37 P. M. org.apache.coyote.AbstractProtocol start
+nov. 04, 2022 11:39:51 P. M. org.apache.coyote.AbstractProtocol start
 INFO: Starting ProtocolHandler ["http-nio-5000"]
-nov. 04, 2022 11:22:38 P. M. org.apache.catalina.core.ApplicationContext log
+nov. 04, 2022 11:40:00 P. M. org.apache.catalina.core.ApplicationContext log
 INFO: Initializing Spring DispatcherServlet 'dispatcherServlet'
-nov. 04, 2022 11:22:38 P. M. org.jalau.at18.searchobject.middleware.EmotionRecognitionMiddleware doFilter
-INFO: MODEL EMOTION RECOGNITION
-nov. 04, 2022 11:22:38 P. M. org.jalau.at18.searchobject.middleware.EmotionRecognitionMiddleware doFilter
-INFO: TOKEN HAS NO MORE USES, PLEASE REQUEST ANOTHER ONE
-nov. 04, 2022 11:22:38 P. M. org.jalau.at18.searchobject.middleware.EmotionRecognitionMiddleware doFilter
-WARNING:  ERROR LOADING THE MODEL org.jalau.at18.searchobject.common.exception.MiddlewareException:  Token has no more uses, please request another one
-nov. 04, 2022 11:23:08 P. M. org.jalau.at18.searchobject.middleware.EmotionRecognitionMiddleware doFilter
-INFO: MODEL EMOTION RECOGNITION
-nov. 04, 2022 11:23:08 P. M. org.jalau.at18.searchobject.middleware.EmotionRecognitionMiddleware doFilter
-INFO: Remaining token uses: 49
-nov. 04, 2022 11:23:08 P. M. org.jalau.at18.searchobject.middleware.EmotionRecognitionMiddleware doFilter
-INFO:  ACCEPT THE FILE 
-nov. 04, 2022 11:23:08 P. M. org.jalau.at18.searchobject.middleware.EmotionRecognitionMiddleware doFilter
-INFO: VALIDATED THE IMAGE 
-nov. 04, 2022 11:23:08 P. M. org.jalau.at18.searchobject.middleware.EmotionRecognitionMiddleware doFilter
-WARNING:  ENTER AN TOKEN 
-nov. 04, 2022 11:23:08 P. M. org.jalau.at18.searchobject.middleware.EmotionRecognitionMiddleware doFilter
-WARNING:  ERROR LOADING THE MODEL org.jalau.at18.searchobject.common.exception.MiddlewareException:  Enter an token 
-nov. 04, 2022 11:23:16 P. M. org.jalau.at18.searchobject.middleware.EmotionRecognitionMiddleware doFilter
-INFO: MODEL EMOTION RECOGNITION
-nov. 04, 2022 11:23:16 P. M. org.jalau.at18.searchobject.middleware.EmotionRecognitionMiddleware doFilter
-INFO: Remaining token uses: 48
-nov. 04, 2022 11:23:16 P. M. org.jalau.at18.searchobject.middleware.EmotionRecognitionMiddleware doFilter
-INFO:  ACCEPT THE FILE 
-nov. 04, 2022 11:23:16 P. M. org.jalau.at18.searchobject.middleware.EmotionRecognitionMiddleware doFilter
-WARNING:  ENTER AN IMAGE 
-nov. 04, 2022 11:23:16 P. M. org.jalau.at18.searchobject.middleware.EmotionRecognitionMiddleware doFilter
-WARNING:  ERROR LOADING THE MODEL org.jalau.at18.searchobject.common.exception.MiddlewareException:  Enter a image jpg, png or jpeg
-nov. 04, 2022 11:23:24 P. M. org.jalau.at18.searchobject.middleware.EmotionRecognitionMiddleware doFilter
-INFO: MODEL EMOTION RECOGNITION
-nov. 04, 2022 11:23:24 P. M. org.jalau.at18.searchobject.middleware.EmotionRecognitionMiddleware doFilter
-INFO: Remaining token uses: 47
-nov. 04, 2022 11:23:24 P. M. org.jalau.at18.searchobject.middleware.EmotionRecognitionMiddleware doFilter
-WARNING:  ENTER AN IMAGE 
-nov. 04, 2022 11:23:24 P. M. org.jalau.at18.searchobject.middleware.EmotionRecognitionMiddleware doFilter
-WARNING:  ERROR LOADING THE MODEL org.jalau.at18.searchobject.common.exception.MiddlewareException:  Enter a image jpg, png or jpeg
-nov. 04, 2022 11:23:32 P. M. org.jalau.at18.searchobject.middleware.EmotionRecognitionMiddleware doFilter
-INFO: MODEL EMOTION RECOGNITION
-nov. 04, 2022 11:23:32 P. M. org.jalau.at18.searchobject.middleware.EmotionRecognitionMiddleware doFilter
-INFO: Remaining token uses: 46
-nov. 04, 2022 11:23:32 P. M. org.jalau.at18.searchobject.middleware.EmotionRecognitionMiddleware doFilter
-WARNING:  ENTER AN IMAGE 
-nov. 04, 2022 11:23:32 P. M. org.jalau.at18.searchobject.middleware.EmotionRecognitionMiddleware doFilter
-WARNING:  ERROR LOADING THE MODEL org.jalau.at18.searchobject.common.exception.MiddlewareException:  Enter a image jpg, png or jpeg
-nov. 04, 2022 11:23:42 P. M. org.jalau.at18.searchobject.middleware.EmotionRecognitionMiddleware doFilter
-INFO: MODEL EMOTION RECOGNITION
-nov. 04, 2022 11:23:42 P. M. org.jalau.at18.searchobject.middleware.EmotionRecognitionMiddleware doFilter
-INFO: Remaining token uses: 45
-nov. 04, 2022 11:23:42 P. M. org.jalau.at18.searchobject.middleware.EmotionRecognitionMiddleware doFilter
-INFO:  ACCEPT THE FILE 
-nov. 04, 2022 11:23:42 P. M. org.jalau.at18.searchobject.middleware.EmotionRecognitionMiddleware doFilter
-WARNING:  ENTER AN IMAGE 
-nov. 04, 2022 11:23:42 P. M. org.jalau.at18.searchobject.middleware.EmotionRecognitionMiddleware doFilter
-WARNING:  ERROR LOADING THE MODEL org.jalau.at18.searchobject.common.exception.MiddlewareException:  Enter a image jpg, png or jpeg
-nov. 04, 2022 11:23:45 P. M. org.jalau.at18.searchobject.middleware.EmotionRecognitionMiddleware doFilter
-INFO: MODEL EMOTION RECOGNITION
-nov. 04, 2022 11:23:45 P. M. org.jalau.at18.searchobject.middleware.EmotionRecognitionMiddleware doFilter
-INFO: Remaining token uses: 44
-nov. 04, 2022 11:23:45 P. M. org.jalau.at18.searchobject.middleware.EmotionRecognitionMiddleware doFilter
-WARNING:  ENTER AN IMAGE 
-nov. 04, 2022 11:23:45 P. M. org.jalau.at18.searchobject.middleware.EmotionRecognitionMiddleware doFilter
-WARNING:  ERROR LOADING THE MODEL org.jalau.at18.searchobject.common.exception.MiddlewareException:  Enter a image jpg, png or jpeg
-nov. 04, 2022 11:24:00 P. M. org.jalau.at18.searchobject.middleware.EmotionRecognitionMiddleware doFilter
-INFO: MODEL EMOTION RECOGNITION
-nov. 04, 2022 11:24:00 P. M. org.jalau.at18.searchobject.middleware.EmotionRecognitionMiddleware doFilter
-INFO: Remaining token uses: 43
-nov. 04, 2022 11:24:00 P. M. org.jalau.at18.searchobject.middleware.EmotionRecognitionMiddleware doFilter
-INFO:  ACCEPT THE FILE 
-nov. 04, 2022 11:24:00 P. M. org.jalau.at18.searchobject.middleware.EmotionRecognitionMiddleware doFilter
-INFO: VALIDATED THE IMAGE 
-nov. 04, 2022 11:24:00 P. M. org.jalau.at18.searchobject.middleware.EmotionRecognitionMiddleware doFilter
-WARNING:  ENTER AN TOKEN 
-nov. 04, 2022 11:24:00 P. M. org.jalau.at18.searchobject.middleware.EmotionRecognitionMiddleware doFilter
-WARNING:  ERROR LOADING THE MODEL org.jalau.at18.searchobject.common.exception.MiddlewareException:  Enter an token 
-nov. 04, 2022 11:25:54 P. M. org.jalau.at18.searchobject.middleware.EmotionRecognitionMiddleware doFilter
-INFO: MODEL EMOTION RECOGNITION
-nov. 04, 2022 11:25:54 P. M. org.jalau.at18.searchobject.middleware.EmotionRecognitionMiddleware doFilter
-INFO: Remaining token uses: 42
-nov. 04, 2022 11:25:56 P. M. org.jalau.at18.searchobject.middleware.EmotionRecognitionMiddleware doFilter
-INFO:  ACCEPT THE FILE 
-nov. 04, 2022 11:25:56 P. M. org.jalau.at18.searchobject.middleware.EmotionRecognitionMiddleware doFilter
-INFO: VALIDATED THE IMAGE 
-nov. 04, 2022 11:25:56 P. M. org.jalau.at18.searchobject.middleware.EmotionRecognitionMiddleware doFilter
-INFO: EMOTION RECOGNITION ---- RUNNING -------
-nov. 04, 2022 11:26:06 P. M. org.jalau.at18.searchobject.middleware.EmotionRecognitionMiddleware doFilter
-INFO: MODEL EMOTION RECOGNITION
-nov. 04, 2022 11:26:06 P. M. org.jalau.at18.searchobject.middleware.EmotionRecognitionMiddleware doFilter
-INFO: Remaining token uses: 41
-nov. 04, 2022 11:26:06 P. M. org.jalau.at18.searchobject.middleware.EmotionRecognitionMiddleware doFilter
-WARNING:  ENTER AN IMAGE 
-nov. 04, 2022 11:26:06 P. M. org.jalau.at18.searchobject.middleware.EmotionRecognitionMiddleware doFilter
-WARNING:  ERROR LOADING THE MODEL org.jalau.at18.searchobject.common.exception.MiddlewareException:  Enter a image jpg, png or jpeg
-nov. 04, 2022 11:26:25 P. M. org.jalau.at18.searchobject.middleware.FaceDetectionControllerMiddleware doFilter
-INFO:  MODEL FACE DETECTION  
-nov. 04, 2022 11:26:25 P. M. org.jalau.at18.searchobject.middleware.FaceDetectionControllerMiddleware doFilter
-WARNING:  GENERATED TOKEN 
-nov. 04, 2022 11:26:25 P. M. org.jalau.at18.searchobject.middleware.FaceDetectionControllerMiddleware doFilter
-WARNING:  ERROR LOADING THE MODEL org.jalau.at18.searchobject.common.exception.MiddlewareException: Generated token 
-nov. 04, 2022 11:26:46 P. M. org.jalau.at18.searchobject.middleware.FaceDetectionControllerMiddleware doFilter
-INFO:  MODEL FACE DETECTION  
-nov. 04, 2022 11:26:46 P. M. org.jalau.at18.searchobject.middleware.FaceDetectionControllerMiddleware doFilter
-INFO: Remaining token uses: 40
-nov. 04, 2022 11:26:46 P. M. org.jalau.at18.searchobject.middleware.FaceDetectionControllerMiddleware doFilter
-WARNING:  ENTER AN IMAGE 
-nov. 04, 2022 11:26:46 P. M. org.jalau.at18.searchobject.middleware.FaceDetectionControllerMiddleware doFilter
-WARNING:  ERROR LOADING THE MODEL org.jalau.at18.searchobject.common.exception.MiddlewareException:  Enter a image 
-nov. 04, 2022 11:26:57 P. M. org.jalau.at18.searchobject.middleware.FaceDetectionControllerMiddleware doFilter
-INFO:  MODEL FACE DETECTION  
-nov. 04, 2022 11:26:57 P. M. org.jalau.at18.searchobject.middleware.FaceDetectionControllerMiddleware doFilter
-INFO: Remaining token uses: 39
-nov. 04, 2022 11:26:57 P. M. org.jalau.at18.searchobject.middleware.FaceDetectionControllerMiddleware doFilter
-INFO:  ACCEPT THE IMAGE 
-nov. 04, 2022 11:26:57 P. M. org.jalau.at18.searchobject.middleware.FaceDetectionControllerMiddleware doFilter
-INFO: FACE DETECTION ---- RUNNING -------
-nov. 04, 2022 11:27:09 P. M. org.jalau.at18.searchobject.middleware.FaceDetectionControllerMiddleware doFilter
-INFO:  MODEL FACE DETECTION  
-nov. 04, 2022 11:27:09 P. M. org.jalau.at18.searchobject.middleware.FaceDetectionControllerMiddleware doFilter
-INFO: Remaining token uses: 38
-nov. 04, 2022 11:27:09 P. M. org.jalau.at18.searchobject.middleware.FaceDetectionControllerMiddleware doFilter
-WARNING:  ENTER AN IMAGE 
-nov. 04, 2022 11:27:09 P. M. org.jalau.at18.searchobject.middleware.FaceDetectionControllerMiddleware doFilter
-WARNING:  ERROR LOADING THE MODEL org.jalau.at18.searchobject.common.exception.MiddlewareException:  Enter a image 
-nov. 04, 2022 11:27:21 P. M. org.jalau.at18.searchobject.middleware.FaceDetectionControllerMiddleware doFilter
-INFO:  MODEL FACE DETECTION  
-nov. 04, 2022 11:27:21 P. M. org.jalau.at18.searchobject.middleware.FaceDetectionControllerMiddleware doFilter
-INFO: Remaining token uses: 37
-nov. 04, 2022 11:27:21 P. M. org.jalau.at18.searchobject.middleware.FaceDetectionControllerMiddleware doFilter
-INFO:  ACCEPT THE IMAGE 
-nov. 04, 2022 11:27:21 P. M. org.jalau.at18.searchobject.middleware.FaceDetectionControllerMiddleware doFilter
-INFO: FACE DETECTION ---- RUNNING -------
-nov. 04, 2022 11:27:37 P. M. org.jalau.at18.searchobject.middleware.FaceDetectionControllerMiddleware doFilter
-INFO:  MODEL FACE DETECTION  
-nov. 04, 2022 11:27:37 P. M. org.jalau.at18.searchobject.middleware.FaceDetectionControllerMiddleware doFilter
-INFO: Remaining token uses: 36
-nov. 04, 2022 11:27:37 P. M. org.jalau.at18.searchobject.middleware.FaceDetectionControllerMiddleware doFilter
-INFO:  ACCEPT THE IMAGE 
-nov. 04, 2022 11:27:37 P. M. org.jalau.at18.searchobject.middleware.FaceDetectionControllerMiddleware doFilter
-INFO: FACE DETECTION ---- RUNNING -------
-nov. 04, 2022 11:27:42 P. M. org.jalau.at18.searchobject.middleware.FaceDetectionControllerMiddleware doFilter
-INFO:  MODEL FACE DETECTION  
-nov. 04, 2022 11:27:42 P. M. org.jalau.at18.searchobject.middleware.FaceDetectionControllerMiddleware doFilter
-INFO: Remaining token uses: 35
-nov. 04, 2022 11:27:42 P. M. org.jalau.at18.searchobject.middleware.FaceDetectionControllerMiddleware doFilter
-INFO:  ACCEPT THE IMAGE 
-nov. 04, 2022 11:27:42 P. M. org.jalau.at18.searchobject.middleware.FaceDetectionControllerMiddleware doFilter
-INFO: FACE DETECTION ---- RUNNING -------
-nov. 04, 2022 11:28:27 P. M. org.jalau.at18.searchobject.middleware.FaceDetectionControllerMiddleware doFilter
-INFO:  MODEL FACE DETECTION  
-nov. 04, 2022 11:28:27 P. M. org.jalau.at18.searchobject.middleware.FaceDetectionControllerMiddleware doFilter
-INFO: Remaining token uses: 34
-nov. 04, 2022 11:28:29 P. M. org.jalau.at18.searchobject.middleware.FaceDetectionControllerMiddleware doFilter
-INFO:  ACCEPT THE IMAGE 
-nov. 04, 2022 11:28:29 P. M. org.jalau.at18.searchobject.middleware.FaceDetectionControllerMiddleware doFilter
-INFO: FACE DETECTION ---- RUNNING -------
-nov. 04, 2022 11:28:57 P. M. org.jalau.at18.searchobject.middleware.ProcessFrameControllerMidleware doFilter
+nov. 04, 2022 11:40:20 P. M. org.jalau.at18.searchobject.middleware.ProcessFrameControllerMidleware doFilter
 INFO: MODEL PROCESS FRAME CONTROLLER
-nov. 04, 2022 11:28:57 P. M. org.jalau.at18.searchobject.middleware.ProcessFrameControllerMidleware doFilter
-WARNING:  GENERATED TOKEN 
-nov. 04, 2022 11:28:57 P. M. org.jalau.at18.searchobject.middleware.ProcessFrameControllerMidleware doFilter
-WARNING:  ERROR LOADING THE MODEL org.jalau.at18.searchobject.common.exception.MiddlewareException:  Generated token 
-nov. 04, 2022 11:29:11 P. M. org.jalau.at18.searchobject.middleware.token.GenerateToken generateToken
+nov. 04, 2022 11:40:20 P. M. org.jalau.at18.searchobject.middleware.ProcessFrameControllerMidleware doFilter
+INFO: Remaining token uses: 4
+nov. 04, 2022 11:40:20 P. M. org.jalau.at18.searchobject.middleware.ProcessFrameControllerMidleware doFilter
+WARNING:  THE FILE IS EMPTY OR NOT A .zip FILE 
+nov. 04, 2022 11:40:20 P. M. org.jalau.at18.searchobject.middleware.ProcessFrameControllerMidleware doFilter
+WARNING:  ERROR LOADING THE MODEL org.jalau.at18.searchobject.common.exception.MiddlewareException:  The file is empty or not a .zip file
+nov. 04, 2022 11:40:33 P. M. org.jalau.at18.searchobject.middleware.ProcessFrameControllerMidleware doFilter
+INFO: MODEL PROCESS FRAME CONTROLLER
+nov. 04, 2022 11:40:33 P. M. org.jalau.at18.searchobject.middleware.ProcessFrameControllerMidleware doFilter
+INFO: Remaining token uses: 3
+nov. 04, 2022 11:40:33 P. M. org.jalau.at18.searchobject.middleware.ProcessFrameControllerMidleware doFilter
+INFO:  ACCEPT THE FILE 
+nov. 04, 2022 11:40:33 P. M. org.jalau.at18.searchobject.middleware.ProcessFrameControllerMidleware doFilter
+WARNING:  THE FIELDS ARE EMPTY 
+nov. 04, 2022 11:40:33 P. M. org.jalau.at18.searchobject.middleware.ProcessFrameControllerMidleware doFilter
+WARNING:  ERROR LOADING THE MODEL org.jalau.at18.searchobject.common.exception.MiddlewareException:  The fields are empty
+nov. 04, 2022 11:40:39 P. M. org.jalau.at18.searchobject.middleware.ProcessFrameControllerMidleware doFilter
+INFO: MODEL PROCESS FRAME CONTROLLER
+nov. 04, 2022 11:40:39 P. M. org.jalau.at18.searchobject.middleware.ProcessFrameControllerMidleware doFilter
+INFO: Remaining token uses: 2
+nov. 04, 2022 11:40:39 P. M. org.jalau.at18.searchobject.middleware.ProcessFrameControllerMidleware doFilter
+INFO:  ACCEPT THE FILE 
+nov. 04, 2022 11:40:39 P. M. org.jalau.at18.searchobject.middleware.ProcessFrameControllerMidleware doFilter
+INFO: PROCESS FRAME CONTROLLER ------ RUNNING ------
+nov. 04, 2022 11:40:39 P. M. org.jalau.at18.searchobject.model.objectrecognizer.recognizer.VerifyModelRecognizer getModelRecognizer
+INFO: Model selected: YOLO
+nov. 04, 2022 11:40:47 P. M. org.jalau.at18.searchobject.middleware.token.GenerateToken generateToken
 INFO: There is a pending token to be used
-nov. 04, 2022 11:29:24 P. M. org.jalau.at18.searchobject.middleware.ProcessFrameControllerMidleware doFilter
+nov. 04, 2022 11:41:06 P. M. org.jalau.at18.searchobject.middleware.ProcessFrameControllerMidleware doFilter
 INFO: MODEL PROCESS FRAME CONTROLLER
-nov. 04, 2022 11:29:24 P. M. org.jalau.at18.searchobject.middleware.ProcessFrameControllerMidleware doFilter
-INFO: Remaining token uses: 33
-nov. 04, 2022 11:29:24 P. M. org.jalau.at18.searchobject.middleware.ProcessFrameControllerMidleware doFilter
+nov. 04, 2022 11:41:06 P. M. org.jalau.at18.searchobject.middleware.ProcessFrameControllerMidleware doFilter
+INFO: Remaining token uses: 1
+nov. 04, 2022 11:41:06 P. M. org.jalau.at18.searchobject.middleware.ProcessFrameControllerMidleware doFilter
 WARNING:  THE FILE IS EMPTY OR NOT A .zip FILE 
-nov. 04, 2022 11:29:24 P. M. org.jalau.at18.searchobject.middleware.ProcessFrameControllerMidleware doFilter
+nov. 04, 2022 11:41:06 P. M. org.jalau.at18.searchobject.middleware.ProcessFrameControllerMidleware doFilter
 WARNING:  ERROR LOADING THE MODEL org.jalau.at18.searchobject.common.exception.MiddlewareException:  The file is empty or not a .zip file
-nov. 04, 2022 11:29:31 P. M. org.jalau.at18.searchobject.middleware.ProcessFrameControllerMidleware doFilter
+nov. 04, 2022 11:41:10 P. M. org.jalau.at18.searchobject.middleware.ProcessFrameControllerMidleware doFilter
 INFO: MODEL PROCESS FRAME CONTROLLER
-nov. 04, 2022 11:29:31 P. M. org.jalau.at18.searchobject.middleware.ProcessFrameControllerMidleware doFilter
-INFO: Remaining token uses: 32
-nov. 04, 2022 11:29:31 P. M. org.jalau.at18.searchobject.middleware.ProcessFrameControllerMidleware doFilter
+nov. 04, 2022 11:41:10 P. M. org.jalau.at18.searchobject.middleware.ProcessFrameControllerMidleware doFilter
+INFO: Remaining token uses: 0
+nov. 04, 2022 11:41:10 P. M. org.jalau.at18.searchobject.middleware.ProcessFrameControllerMidleware doFilter
 WARNING:  THE FILE IS EMPTY OR NOT A .zip FILE 
-nov. 04, 2022 11:29:31 P. M. org.jalau.at18.searchobject.middleware.ProcessFrameControllerMidleware doFilter
+nov. 04, 2022 11:41:10 P. M. org.jalau.at18.searchobject.middleware.ProcessFrameControllerMidleware doFilter
 WARNING:  ERROR LOADING THE MODEL org.jalau.at18.searchobject.common.exception.MiddlewareException:  The file is empty or not a .zip file
+nov. 04, 2022 11:41:13 P. M. org.jalau.at18.searchobject.middleware.token.GenerateToken generateToken
+INFO: There is a pending token to be used
+nov. 04, 2022 11:41:28 P. M. org.jalau.at18.searchobject.middleware.token.GenerateToken generateToken
+INFO: There is a pending token to be used
+nov. 04, 2022 11:41:45 P. M. org.jalau.at18.searchobject.middleware.EmotionRecognitionMiddleware doFilter
+INFO: MODEL EMOTION RECOGNITION
+nov. 04, 2022 11:41:45 P. M. org.jalau.at18.searchobject.middleware.EmotionRecognitionMiddleware doFilter
+INFO: TOKEN HAS NO MORE USES, PLEASE REQUEST ANOTHER ONE
+nov. 04, 2022 11:41:45 P. M. org.jalau.at18.searchobject.middleware.EmotionRecognitionMiddleware doFilter
+WARNING:  ERROR LOADING THE MODEL org.jalau.at18.searchobject.common.exception.MiddlewareException:  Token has no more uses, please request another one
+nov. 04, 2022 11:42:30 P. M. org.jalau.at18.searchobject.middleware.EmotionRecognitionMiddleware doFilter
+INFO: MODEL EMOTION RECOGNITION
+nov. 04, 2022 11:42:30 P. M. org.jalau.at18.searchobject.middleware.EmotionRecognitionMiddleware doFilter
+INFO: Remaining token uses: 4
+nov. 04, 2022 11:42:31 P. M. org.jalau.at18.searchobject.middleware.EmotionRecognitionMiddleware doFilter
+INFO:  ACCEPT THE FILE 
+nov. 04, 2022 11:42:31 P. M. org.jalau.at18.searchobject.middleware.EmotionRecognitionMiddleware doFilter
+INFO: VALIDATED THE IMAGE 
+nov. 04, 2022 11:42:31 P. M. org.jalau.at18.searchobject.middleware.EmotionRecognitionMiddleware doFilter
+INFO: EMOTION RECOGNITION ---- RUNNING -------
+nov. 04, 2022 11:42:45 P. M. org.jalau.at18.searchobject.middleware.token.GenerateToken generateToken
+INFO: There is a pending token to be used

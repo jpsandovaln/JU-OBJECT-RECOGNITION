@@ -8,6 +8,8 @@ package org.jalau.at18.searchobject.middleware.token;
  * Licence agreement you entered into with Jalasoft
  */
 import org.jalau.at18.searchobject.common.logger.At18Logger;
+import org.jalau.at18.searchobject.controller.response.ResponseMessage;
+import org.jalau.at18.searchobject.controller.response.TokenResponse;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 import java.io.File;
@@ -31,7 +33,7 @@ public class GenerateToken {
      *of a StringBuilder object is exceeded, it automatically expands to accommodate the additional characters.
      */
     @GetMapping("/getToken")
-    public StringBuilder generateToken() throws IOException {
+    public TokenResponse generateToken() throws IOException {
         String Path = System.getProperty("user.dir") + "\\src\\main\\java\\org\\jalau\\at18\\searchobject\\middleware\\token\\token.txt";
         File myObj = new File(Path);
         Scanner myReader = new Scanner(myObj);
@@ -42,7 +44,7 @@ public class GenerateToken {
             token.append(myReader.nextLine());
             String tokenNumberReference = String.format("Active token with %s uses, the token is: ", myReader.nextLine());
             reference.append(tokenNumberReference).append(token);
-            return reference;
+            return new TokenResponse(reference);
         } else {
             FileWriter fw = new FileWriter(Path, false);
             Supplier<String> tokenSupplier = () -> {
@@ -57,6 +59,6 @@ public class GenerateToken {
         }
         myReader.close();
         reference.append("The new token is: ").append(token);
-        return reference;
+        return new TokenResponse(reference);
     }
 }
