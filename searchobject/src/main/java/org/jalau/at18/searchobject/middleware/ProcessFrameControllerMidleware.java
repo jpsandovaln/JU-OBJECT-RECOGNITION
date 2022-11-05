@@ -38,6 +38,7 @@ import javax.servlet.http.HttpServletResponse;
 public class ProcessFrameControllerMidleware implements Filter {
     private static final Logger LOG = new At18Logger().getLogger();
     private Gson gson = new Gson();
+    private static final int FILE_SIZE = 161;
     /**
      * doFilter: It is the one that contains the logic of what the filter does. It receives by parameter the request, the response and the chain of filters.
      * Servlets: which contain the logic that is applied when receiving an HTTP request.
@@ -73,7 +74,7 @@ public class ProcessFrameControllerMidleware implements Filter {
                 myReader.close();
 
                 //Verify that an empty or null file isn't entered
-                if (req.getPart("file").getSize() != 0L && req.getPart("file").getSize() > 161 && req.getPart("file").getContentType() != null  &&  req.getPart("file").getContentType().contains("zip")) {
+                if (req.getPart("file").getSize() != 0L && req.getPart("file").getSize() > FILE_SIZE && req.getPart("file").getContentType() != null  &&  req.getPart("file").getContentType().contains("zip")) {
                     LOG.info(" ACCEPT THE FILE ");
                     //Verify that a field isn't empty
                     if (!req.getParameter("searchCriteria").isEmpty() && !req.getParameter("occurrencyPercentage").isEmpty() && !req.getParameter("modelObjectRecognizer").isEmpty() && !req.getParameter("notifierType").isEmpty()) {
@@ -103,14 +104,14 @@ public class ProcessFrameControllerMidleware implements Filter {
             LOG.warning(" ERROR LOADING THE MODEL " + e);
             e.printStackTrace();
             res.setStatus(400);
-            String x = Integer.toString( res.getStatus());
-            ErrorResponse employee = new ErrorResponse(x, e.getMessage());
-            String employeeJsonString = this.gson.toJson(employee);
-            PrintWriter outo = response.getWriter();
+            String status = Integer.toString( res.getStatus());
+            ErrorResponse errorResponse = new ErrorResponse(status, e.getMessage());
+            String errorResponseJsonString = this.gson.toJson(errorResponse);
+            PrintWriter out = response.getWriter();
             response.setContentType("application/json");
             response.setCharacterEncoding("UTF-8");
-            outo.print(employeeJsonString);
-            outo.flush();
+            out.print(errorResponseJsonString);
+            out.flush();
         }
     }
 }

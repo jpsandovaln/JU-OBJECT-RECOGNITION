@@ -8,7 +8,6 @@ package org.jalau.at18.searchobject.middleware.token;
  * Licence agreement you entered into with Jalasoft
  */
 import org.jalau.at18.searchobject.common.logger.At18Logger;
-import org.jalau.at18.searchobject.controller.response.ResponseMessage;
 import org.jalau.at18.searchobject.controller.response.TokenResponse;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
