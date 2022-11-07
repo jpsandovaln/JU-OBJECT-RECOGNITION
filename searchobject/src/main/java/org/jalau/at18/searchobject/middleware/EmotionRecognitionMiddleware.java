@@ -7,8 +7,11 @@ package org.jalau.at18.searchobject.middleware;
  * Information and shall use it only in accordance with the terms of the
  * Licence agreement you entered into with Jalasoft
  */
+import com.google.gson.Gson;
 import org.jalau.at18.searchobject.common.exception.MiddlewareException;
 import org.jalau.at18.searchobject.common.logger.At18Logger;
+import org.jalau.at18.searchobject.controller.response.ErrorResponse;
+
 import javax.servlet.FilterChain;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
@@ -35,7 +38,8 @@ import javax.servlet.Filter;
 
 public class EmotionRecognitionMiddleware implements Filter {
     private static final Logger LOG = new At18Logger().getLogger();
-
+    private Gson gson = new Gson();
+    private static final int FILE_SIZE = 161;
     /**
      * doFilter: It is the one that contains the logic of what the filter does. It receives by parameter the request, the response and the chain of filters.
      * Servlets: which contain the logic that is applied when receiving an HTTP request.
@@ -72,22 +76,27 @@ public class EmotionRecognitionMiddleware implements Filter {
                 myReader.close();
 
                 //Verify that an empty or null file isn't entered
-                //The next line (75) Use for running the project.
-                if (req.getPart("file").getSize() != 0L && req.getPart("file").getSize() > 100 && req.getPart("file").getContentType() != null) {
-                //if (res.getStatus() == 200) { //Use for running unit test of middleware package
+                if (req.getPart("file").getSize() != 0L && req.getPart("file").getSize() > FILE_SIZE && req.getPart("file").getContentType() != null) {
+                    LOG.info(" ACCEPT THE FILE ");
+                    if(req.getPart("file").getContentType().contains("jpg") || req.getPart("file").getContentType().contains("png") || req.getPart("file").getContentType().contains("jpeg")){
 
-                    LOG.info(" ACCEPT THE IMAGE ");
-                    //Verify that a field isn't empty
-                    if (!req.getParameter("token").isEmpty()) {
-                        LOG.info("EMOTION RECOGNITION ---- RUNNING -------");
-                        chain.doFilter(request, response);
+                        LOG.info("VALIDATED THE IMAGE ");
+                        //Verify that a field isn't empty
+                        if (!req.getParameter("token").isEmpty()) {
+                            LOG.info("EMOTION RECOGNITION ---- RUNNING -------");
+                            chain.doFilter(request, response);
+                        } else {
+                            LOG.warning(" ENTER AN TOKEN ");
+                            throw new MiddlewareException(" Enter an token ");
+                        }
                     } else {
-                        LOG.warning(" ENTER AN TOKEN ");
-                        throw new MiddlewareException("    Enter an token ");
+                        LOG.warning(" ENTER AN IMAGE ");
+                        throw new MiddlewareException(" Enter a image jpg, png or jpeg");
                     }
+
                 } else {
                         LOG.warning(" ENTER AN IMAGE ");
-                        throw new MiddlewareException("    Enter a image ");
+                    throw new MiddlewareException(" Enter a image jpg, png or jpeg");
                 }
             }
             else if (tokenCounter < 1) {
@@ -97,18 +106,23 @@ public class EmotionRecognitionMiddleware implements Filter {
                 pw.flush(); //delete the content of the txt file.
                 pw.close();
                 fw.close();
-                throw new MiddlewareException("    Token has no more uses, please request another one");
+                throw new MiddlewareException(" Token has no more uses, please request another one");
             } else {
                 LOG.warning(" GENERATED TOKEN");
-                throw new MiddlewareException("    Generated token ");
+                throw new MiddlewareException(" Generated token ");
             }
         } catch (InstantiationError | MiddlewareException e) {
             LOG.warning(" ERROR LOADING THE MODEL " + e);
             e.printStackTrace();
-            PrintWriter out = response.getWriter();
             res.setStatus(400);
-            out.println ("    Status :    " + res.getStatus());
-            out.println (e.getMessage());
+            String status = Integer.toString( res.getStatus());
+            ErrorResponse errorResponse = new ErrorResponse(status, e.getMessage());
+            String errorResponseJsonString = this.gson.toJson(errorResponse);
+            PrintWriter out = response.getWriter();
+            response.setContentType("application/json");
+            response.setCharacterEncoding("UTF-8");
+            out.print(errorResponseJsonString);
+            out.flush();
         }
     }
 }
