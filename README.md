@@ -4,6 +4,13 @@
 
 
 [![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)](https://pjreddie.com/darknet/yolo/)
+Important
+YoloModel only accepts image with the next dimensions:
+608*
+EXAMPLE
+- 608*595
+- 400*608
+- 608*608
 
 YOLO is a Object Recogniser Model that can choose between 80 different objects, they are the next:
 
@@ -100,7 +107,7 @@ YOLO is a Object Recogniser Model that can choose between 80 different objects, 
 
   - OpenCV - 4.5.5: https://opencv.org/releases/
   - Intellij: https://www.jetbrains.com/es-es/idea/download/#section=windows
-
+  
 ## Important Notes
 > the file yolov3.weights must be downloaded from official YOLO web page and must be paste in the folder /searchobject/src/main/resources/YOLOConfigurationFiles/
 
