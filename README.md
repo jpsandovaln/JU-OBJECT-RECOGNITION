@@ -107,6 +107,10 @@ YOLO is a Object Recogniser Model that can choose between 80 different objects, 
 
   - OpenCV - 4.5.5: https://opencv.org/releases/
   - Intellij: https://www.jetbrains.com/es-es/idea/download/#section=windows
+  
+## Important Notes
+> the file yolov3.weights must be downloaded from official YOLO web page and must be paste in the folder /searchobject/src/main/resources/YOLOConfigurationFiles/
 
-## Important Note
-> the file yolov3.weights must be downloaded from official YOLO web page and must be paste in the folder OR-YOLOImages
+## UPDATE (18/10/2022)
+> Integration YOLO model with the main project with changes made as you can see below:
+![YOLOModel](https://user-images.githubusercontent.com/86843637/196486151-a94cab2a-0051-4f76-8b76-c717d35278a9.png)
